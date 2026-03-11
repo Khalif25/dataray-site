@@ -1,9 +1,9 @@
 export const siteConfig = {
-  name: "DataRay",
+  name: "DataRay Smart Solutions",
   tagline: "AI-driven analytics, dashboards, and strategic intelligence",
   description:
     "DataRay helps businesses, institutions, and public-sector teams turn complex data into dashboards, predictive insight, and decision-ready intelligence.",
-  email: "hello@dataray.ai",
+  email: "abdinur.khalif25@gmail.com",
   location: "Garowe, Somalia",
 };
 
@@ -11,6 +11,7 @@ export const navLinks = [
   { href: "/", label: "Home" },
   { href: "/services", label: "Services" },
   { href: "/insights", label: "Insights" },
+  { href: "/about", label: "About" },
   { href: "/contact", label: "Contact" },
 ];
 
