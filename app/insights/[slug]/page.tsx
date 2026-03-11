@@ -1,11 +1,54 @@
+import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { articles } from "@/lib/articles";
 
+type PageProps = {
+  params: Promise<{ slug: string }>;
+};
+
+export async function generateMetadata({
+  params,
+}: PageProps): Promise<Metadata> {
+  const { slug } = await params;
+
+  const article = articles.find((item) => item.slug === slug);
+
+  if (!article) {
+    return {
+      title: "Article not found | DataRay",
+    };
+  }
+
+  return {
+    title: `${article.title} | DataRay`,
+    description: article.excerpt,
+    openGraph: {
+      title: article.title,
+      description: article.excerpt,
+      url: `https://dataray-site.vercel.app/insights/${article.slug}`,
+      siteName: "DataRay",
+      images: [
+        {
+          url: "/og-image.png",
+          width: 1200,
+          height: 630,
+          alt: article.title,
+        },
+      ],
+      type: "article",
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: article.title,
+      description: article.excerpt,
+      images: ["/og-image.png"],
+    },
+  };
+}
+
 export default async function InsightArticlePage({
   params,
-}: {
-  params: Promise<{ slug: string }>;
-}) {
+}: PageProps) {
   const { slug } = await params;
 
   const article = articles.find((item) => item.slug === slug);
