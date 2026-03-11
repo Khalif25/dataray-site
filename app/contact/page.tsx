@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { siteConfig } from "@/lib/data";
+import { trackEvent } from "@/lib/analytics";
 
 export default function ContactPage() {
   const [form, setForm] = useState({
@@ -29,11 +30,16 @@ export default function ContactPage() {
         body: JSON.stringify(form),
       });
 
-      const data = await response.json();
+      const contentType = response.headers.get("content-type");
+      const isJson = contentType?.includes("application/json");
+
+      const data = isJson ? await response.json() : null;
 
       if (!response.ok) {
         throw new Error(data?.error || "Failed to send inquiry.");
       }
+
+      trackEvent("contact_submit", "contact", form.service);
 
       setStatus("success");
       setFeedback("Your inquiry was sent successfully.");
