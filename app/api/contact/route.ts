@@ -23,8 +23,8 @@ export async function POST(request: Request) {
       );
     }
 
-    const { error } = await resend.emails.send({
-      from: "DataRay Contact <onboarding@resend.dev>",
+    const { data, error } = await resend.emails.send({
+      from: "DataRay <onboarding@resend.dev>",
       to: ["abdinur.khalif25@gmail.com"],
       subject: `New DataRay inquiry: ${service}`,
       replyTo: email,
