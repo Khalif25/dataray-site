@@ -10,9 +10,9 @@ export type Article = {
 
 export const articles: Article[] = [
   {
-    slug: "how-ai-is-reshaping-competitive-advantage",
-    title: "How AI Is Reshaping Competitive Advantage",
-    category: "AI Strategy",
+    slug: "The-Future-of-Jobs-in-the-Age-of-Artificial-Intelligence",
+    title: "The Future of Jobs in the Age of Artificial Intelligence: What Skills Will Matter in Africa",
+    category: "AI literacy",
     excerpt:
       "Why workflow redesign, data maturity, and learning speed are becoming stronger differentiators for modern organizations.",
     author: "DataRay",
@@ -32,7 +32,7 @@ export const articles: Article[] = [
     excerpt:
       "The most common reasons dashboards become decorative instead of decision tools.",
     author: "DataRay",
-    date: "2026-03-11",
+    date: "2026-03-09",
     content: [
       "Many executive dashboards fail not because they are visually poor, but because they are disconnected from real decision-making.",
       "A dashboard becomes weak when it contains too many metrics, unclear priorities, and little connection to operational action.",
