@@ -70,7 +70,7 @@ export const articles: Article[] = [
   
   {
     slug: "why-executive-dashboards-fail",
-    title: "Why Executive Dashboards Fail — and How to Fix Them",
+    title: "Why Executive Dashboards Fail, and How to Fix Them",
     category: "Dashboards",
     excerpt:
       "The most common reasons dashboards become decorative instead of decision tools.",
