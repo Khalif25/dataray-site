@@ -1,3 +1,9 @@
+
+export function getReadingTime(content: string[]) {
+  const words = content.join(" ").trim().split(/\s+/).length;
+  const minutes = Math.max(1, Math.ceil(words / 200));
+  return `${minutes} min read`;
+}
 export type Article = {
   slug: string;
   title: string;
@@ -5,6 +11,7 @@ export type Article = {
   excerpt: string;
   author: string;
   date: string;
+  image: string;
   content: string[];
 };
 
@@ -17,6 +24,10 @@ export const articles: Article[] = [
     "Artificial intelligence is reshaping labor markets across the world, and Africa must prepare its workforce with the technical, analytical, and human-centered skills needed to thrive in the AI-driven economy.",
   author: "DataRay",
   date: "2026-03-11",
+  image: "/articles/future-of-jobs-ai-africa.png",
+
+
+
   content: [
     "Artificial intelligence is rapidly reshaping the global economy. From automated customer service systems to predictive healthcare analytics and intelligent financial platforms, AI technologies are redefining how work is performed across industries. While many discussions about AI focus on advanced economies, the transformation will be equally significant across Africa.",
 
@@ -76,6 +87,7 @@ export const articles: Article[] = [
       "The most common reasons dashboards become decorative instead of decision tools.",
     author: "DataRay",
     date: "2026-03-09",
+    image:  'articles/ai-competitive-advantage.png',
     content: [
       "Many executive dashboards fail not because they are visually poor, but because they are disconnected from real decision-making.",
       "A dashboard becomes weak when it contains too many metrics, unclear priorities, and little connection to operational action.",
@@ -92,6 +104,7 @@ export const articles: Article[] = [
       "Many organizations invest in AI tools but fail to build the systems needed to turn them into real advantage.",
     author: "DataRay",
     date: "2026-01-15",
+    image:  'articles/dashboards-fail.png',
     content: [
       "Artificial intelligence is rapidly becoming a strategic capability for organizations across the world. However, many institutions approach AI adoption in ways that limit its impact.",
       "One of the most common mistakes is focusing too heavily on tools rather than workflows. AI tools can produce impressive results, but without integration into real decision processes, those results rarely influence outcomes.",

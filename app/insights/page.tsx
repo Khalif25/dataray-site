@@ -1,6 +1,7 @@
+import { articles, getReadingTime } from "@/lib/articles";
 import Link from "next/link";
 import SectionHeading from "@/components/section-heading";
-import { articles } from "@/lib/articles";
+//import { articles } from "@/lib/articles";
 
 export default function InsightsPage() {
   const [featured, ...rest] = articles;
@@ -77,3 +78,30 @@ export default function InsightsPage() {
     </main>
   );
 }
+<section className="mt-20 rounded-3xl border border-black/5 bg-white p-10 shadow-sm">
+  <div className="max-w-2xl">
+    <p className="text-sm font-medium uppercase tracking-[0.2em] text-blue-500">
+      Newsletter
+    </p>
+    <h2 className="mt-3 text-3xl font-semibold tracking-tight text-black">
+      Get new DataRay insights in your inbox
+    </h2>
+    <p className="mt-4 text-lg leading-8 text-neutral-600">
+      Subscribe for articles on AI, analytics, dashboards, market intelligence, and the future of work.
+    </p>
+
+    <form className="mt-8 flex flex-col gap-4 sm:flex-row">
+      <input
+        type="email"
+        placeholder="Enter your email"
+        className="w-full rounded-full border border-black/10 px-5 py-3 outline-none"
+      />
+      <button
+        type="submit"
+        className="rounded-full bg-black px-6 py-3 text-sm font-medium text-white"
+      >
+        Subscribe
+      </button>
+    </form>
+  </div>
+</section>
