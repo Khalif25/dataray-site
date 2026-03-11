@@ -1,6 +1,57 @@
+"use client";
+
+import { useState } from "react";
 import { siteConfig } from "@/lib/data";
 
 export default function ContactPage() {
+  const [form, setForm] = useState({
+    name: "",
+    email: "",
+    organization: "",
+    service: "AI Strategy & Advisory",
+    message: "",
+  });
+
+  const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
+  const [feedback, setFeedback] = useState("");
+
+  async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
+    e.preventDefault();
+    setStatus("loading");
+    setFeedback("");
+
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(form),
+      });
+
+      const data = await response.json();
+
+      if (!response.ok) {
+        throw new Error(data?.error || "Failed to send inquiry.");
+      }
+
+      setStatus("success");
+      setFeedback("Your inquiry was sent successfully.");
+      setForm({
+        name: "",
+        email: "",
+        organization: "",
+        service: "AI Strategy & Advisory",
+        message: "",
+      });
+    } catch (error) {
+      setStatus("error");
+      setFeedback(
+        error instanceof Error ? error.message : "Failed to send inquiry."
+      );
+    }
+  }
+
   return (
     <main className="px-6 py-20">
       <div className="mx-auto max-w-6xl">
@@ -30,7 +81,7 @@ export default function ContactPage() {
               need, and the type of organization you represent.
             </p>
 
-            <form className="mt-8 space-y-6">
+            <form onSubmit={handleSubmit} className="mt-8 space-y-6">
               <div className="grid gap-6 sm:grid-cols-2">
                 <div>
                   <label className="block text-sm font-medium text-neutral-700">
@@ -38,8 +89,11 @@ export default function ContactPage() {
                   </label>
                   <input
                     type="text"
+                    value={form.name}
+                    onChange={(e) => setForm({ ...form, name: e.target.value })}
                     placeholder="Your name"
                     className="mt-2 w-full rounded-xl border border-neutral-200 px-4 py-3 outline-none transition focus:border-black/20"
+                    required
                   />
                 </div>
 
@@ -49,8 +103,11 @@ export default function ContactPage() {
                   </label>
                   <input
                     type="email"
+                    value={form.email}
+                    onChange={(e) => setForm({ ...form, email: e.target.value })}
                     placeholder="you@example.com"
                     className="mt-2 w-full rounded-xl border border-neutral-200 px-4 py-3 outline-none transition focus:border-black/20"
+                    required
                   />
                 </div>
               </div>
@@ -62,6 +119,10 @@ export default function ContactPage() {
                   </label>
                   <input
                     type="text"
+                    value={form.organization}
+                    onChange={(e) =>
+                      setForm({ ...form, organization: e.target.value })
+                    }
                     placeholder="Organization name"
                     className="mt-2 w-full rounded-xl border border-neutral-200 px-4 py-3 outline-none transition focus:border-black/20"
                   />
@@ -71,7 +132,11 @@ export default function ContactPage() {
                   <label className="block text-sm font-medium text-neutral-700">
                     Service of interest
                   </label>
-                  <select className="mt-2 w-full rounded-xl border border-neutral-200 px-4 py-3 outline-none transition focus:border-black/20">
+                  <select
+                    value={form.service}
+                    onChange={(e) => setForm({ ...form, service: e.target.value })}
+                    className="mt-2 w-full rounded-xl border border-neutral-200 px-4 py-3 outline-none transition focus:border-black/20"
+                  >
                     <option>AI Strategy & Advisory</option>
                     <option>Executive Dashboards</option>
                     <option>Advanced Analytics</option>
@@ -88,17 +153,31 @@ export default function ContactPage() {
                 </label>
                 <textarea
                   rows={6}
+                  value={form.message}
+                  onChange={(e) => setForm({ ...form, message: e.target.value })}
                   placeholder="Describe your project, challenge, or what you would like DataRay to help with."
                   className="mt-2 w-full rounded-xl border border-neutral-200 px-4 py-3 outline-none transition focus:border-black/20"
+                  required
                 />
               </div>
 
               <button
                 type="submit"
-                className="rounded-full bg-black px-6 py-3 text-sm font-medium text-white transition hover:bg-neutral-800"
+                disabled={status === "loading"}
+                className="rounded-full bg-black px-6 py-3 text-sm font-medium text-white transition hover:bg-neutral-800 disabled:opacity-60"
               >
-                Send inquiry
+                {status === "loading" ? "Sending..." : "Send inquiry"}
               </button>
+
+              {feedback ? (
+                <p
+                  className={`text-sm ${
+                    status === "success" ? "text-green-600" : "text-red-600"
+                  }`}
+                >
+                  {feedback}
+                </p>
+              ) : null}
             </form>
           </div>
 
@@ -114,18 +193,6 @@ export default function ContactPage() {
                 <li>• Leaders who want data-driven decision systems</li>
                 <li>• Groups interested in professional training programs</li>
               </ul>
-            </div>
-
-            <div className="rounded-3xl border border-black/5 bg-white p-8 shadow-sm">
-              <p className="text-sm font-medium uppercase tracking-[0.2em] text-blue-500">
-                Why Contact DataRay
-              </p>
-              <p className="mt-4 leading-8 text-neutral-600">
-                DataRay combines analytics, dashboards, research, and AI
-                strategy into one modern intelligence service. The aim is not
-                just technical delivery, but clearer decisions and stronger
-                execution.
-              </p>
             </div>
 
             <div className="rounded-3xl border border-black/5 bg-white p-8 shadow-sm">
