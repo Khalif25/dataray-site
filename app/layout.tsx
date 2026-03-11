@@ -1,18 +1,12 @@
-import { GoogleAnalytics } from "@next/third-parties/google";
-
 import type { Metadata } from "next";
 import "./globals.css";
 import Navbar from "@/components/navbar";
 import Footer from "@/components/footer";
+import { GoogleAnalytics } from "@next/third-parties/google";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://dataray-site.vercel.app"),
-    verification: {
-    google: "xhDx1ORWU4GNhzdiB6J3O0xjq_SbLCSeFIdPreyyPJ0",
-  },
 
-
-  
   title: {
     default: "DataRay | AI, Data & Strategic Intelligence",
     template: "%s | DataRay",
@@ -67,7 +61,8 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className="bg-black text-white antialiased">
+      <body className="min-h-screen text-white antialiased">
+        <div className="pointer-events-none fixed inset-0 -z-10 bg-[linear-gradient(rgba(255,255,255,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.02)_1px,transparent_1px)] bg-[size:40px_40px]" />
         <Navbar />
         {children}
         <Footer />
