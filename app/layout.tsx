@@ -6,7 +6,7 @@ import Footer from "@/components/footer";
 export const metadata: Metadata = {
   metadataBase: new URL("https://dataray-site.vercel.app"),
     verification: {
-    google: "ABC123XMsIARZCzSZyglQvhb0BfeEEHxyZLdHZ-TylK-3AnT0wYZ987",
+    google: "googleea04654398366f13",
   },
 
   title: {
