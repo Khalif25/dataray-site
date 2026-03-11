@@ -1,3 +1,4 @@
+
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Image from "next/image";
@@ -98,6 +99,7 @@ export default async function InsightArticlePage({
             {article.date} • {getReadingTime(article.content)}
           </p>
         </div>
+        
 
         <div className="mt-8 overflow-hidden rounded-3xl">
           <Image
@@ -108,6 +110,8 @@ export default async function InsightArticlePage({
             className="h-auto w-full object-cover"
           />
         </div>
+
+
 
         <div className="mt-10 space-y-6">
           {article.content.map((paragraph, index) => (

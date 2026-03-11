@@ -15,6 +15,7 @@ export type Article = {
   content: string[];
 };
 
+
 export const articles: Article[] = [
   {
   slug: "future-of-jobs-ai-skills-africa",
@@ -87,7 +88,7 @@ export const articles: Article[] = [
       "The most common reasons dashboards become decorative instead of decision tools.",
     author: "DataRay",
     date: "2026-03-09",
-    image:  'articles/ai-competitive-advantage.png',
+    image:  "/articles/ai-competitive-advantage.png",
     content: [
       "Many executive dashboards fail not because they are visually poor, but because they are disconnected from real decision-making.",
       "A dashboard becomes weak when it contains too many metrics, unclear priorities, and little connection to operational action.",
@@ -104,7 +105,7 @@ export const articles: Article[] = [
       "Many organizations invest in AI tools but fail to build the systems needed to turn them into real advantage.",
     author: "DataRay",
     date: "2026-01-15",
-    image:  'articles/dashboards-fail.png',
+    image:  "/articles/dashboards-fail.png",
     content: [
       "Artificial intelligence is rapidly becoming a strategic capability for organizations across the world. However, many institutions approach AI adoption in ways that limit its impact.",
       "One of the most common mistakes is focusing too heavily on tools rather than workflows. AI tools can produce impressive results, but without integration into real decision processes, those results rarely influence outcomes.",
