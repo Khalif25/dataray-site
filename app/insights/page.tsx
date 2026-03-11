@@ -1,50 +1,47 @@
 import Link from "next/link";
+import SectionHeading from "@/components/section-heading";
 import { articles } from "@/lib/articles";
 
 export default function InsightsPage() {
   return (
     <main className="px-6 py-20">
       <div className="mx-auto max-w-7xl">
+        <SectionHeading
+          eyebrow="Insights"
+          title="Research, analysis, and strategic perspective"
+          description="Explore DataRay articles on AI, analytics, dashboards, market intelligence, and decision-making."
+        />
 
-        <div className="max-w-3xl">
-          <p className="text-sm uppercase tracking-[0.2em] text-blue-400">
-            DataRay Insights
-          </p>
-
-          <h1 className="mt-3 text-4xl font-semibold">
-            Research, analysis, and perspectives on AI and data intelligence
-          </h1>
-
-          <p className="mt-6 text-lg text-neutral-400">
-            Our insights explore how artificial intelligence, analytics,
-            and modern data systems are transforming organizations.
-          </p>
-        </div>
-
-        <div className="mt-16 grid gap-10 md:grid-cols-2">
-
+        <div className="mt-12 grid gap-6 lg:grid-cols-3">
           {articles.map((article) => (
-            <Link
+            <article
               key={article.slug}
-              href={`/insights/${article.slug}`}
-              className="rounded-xl border border-white/10 bg-white/5 p-6 hover:bg-white/10 transition"
+              className="rounded-3xl border border-black/5 bg-white p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-md"
             >
-              <h2 className="text-2xl font-semibold">
+              <p className="text-sm font-medium uppercase tracking-[0.2em] text-blue-500">
+                {article.category}
+              </p>
+
+              <h2 className="mt-3 text-xl font-semibold tracking-tight text-black">
                 {article.title}
               </h2>
 
-              <p className="mt-3 text-neutral-400">
-                {article.excerpt}
-              </p>
+              <p className="mt-3 leading-7 text-neutral-600">{article.excerpt}</p>
 
-              <div className="mt-4 text-sm text-neutral-500">
-                {article.date} • {article.readTime}
+              <div className="mt-5 text-sm text-neutral-500">
+                <p>{article.author}</p>
+                <p>{article.date}</p>
               </div>
-            </Link>
+
+              <Link
+                href={`/insights/${article.slug}`}
+                className="mt-5 inline-block text-sm font-medium text-blue-600"
+              >
+                Read article →
+              </Link>
+            </article>
           ))}
-
         </div>
-
       </div>
     </main>
   );
