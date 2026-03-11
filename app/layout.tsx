@@ -9,6 +9,8 @@ export const metadata: Metadata = {
     google: "xhDx1ORWU4GNhzdiB6J3O0xjq_SbLCSeFIdPreyyPJ0",
   },
 
+
+  
   title: {
     default: "DataRay | AI, Data & Strategic Intelligence",
     template: "%s | DataRay",
