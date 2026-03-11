@@ -91,7 +91,7 @@ export const articles: Article[] = [
     excerpt:
       "Many organizations invest in AI tools but fail to build the systems needed to turn them into real advantage.",
     author: "DataRay",
-    date: "2026-03-11",
+    date: "2026-01-15",
     content: [
       "Artificial intelligence is rapidly becoming a strategic capability for organizations across the world. However, many institutions approach AI adoption in ways that limit its impact.",
       "One of the most common mistakes is focusing too heavily on tools rather than workflows. AI tools can produce impressive results, but without integration into real decision processes, those results rarely influence outcomes.",
