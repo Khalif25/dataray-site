@@ -1,32 +1,30 @@
+import Image from "next/image";
 import Link from "next/link";
-import { navLinks, siteConfig } from "@/lib/data";
+import { navLinks } from "@/lib/data";
 
 export default function Navbar() {
   return (
-    <header className="sticky top-0 z-50 border-b border-black/5 bg-white/80 backdrop-blur-xl">
+    <header className="border-b border-white/10 bg-black text-white">
       <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
-        <Link href="/" className="text-xl font-semibold tracking-tight text-black">
-          {siteConfig.name}
+
+        <Link href="/" className="flex items-center gap-3">
+          <Image
+            src="/logo-header.png"
+            alt="DataRay"
+            width={160}
+            height={40}
+            priority
+          />
         </Link>
 
-        <nav className="hidden items-center gap-8 md:flex">
+        <nav className="flex items-center gap-6 text-sm">
           {navLinks.map((link) => (
-            <Link
-              key={link.href}
-              href={link.href}
-              className="text-sm font-medium text-neutral-600 transition hover:text-black"
-            >
+            <Link key={link.href} href={link.href} className="hover:text-blue-300">
               {link.label}
             </Link>
           ))}
         </nav>
 
-        <Link
-          href="/contact"
-          className="rounded-full bg-black px-5 py-2.5 text-sm font-medium text-white transition hover:bg-neutral-800"
-        >
-          Request Consultation
-        </Link>
       </div>
     </header>
   );
