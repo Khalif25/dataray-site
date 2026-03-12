@@ -74,6 +74,147 @@ export default function HomePage() {
             </div>
           </div>
         </section>
+        <section className="border-t border-slate-200 bg-white px-6 py-24">
+  <div className="mx-auto grid max-w-7xl items-center gap-14 lg:grid-cols-[0.95fr_1.05fr]">
+    <div>
+      <p className="eyebrow">Decision Intelligence Showcase</p>
+
+      <h2 className="mt-4 max-w-3xl text-3xl font-semibold tracking-tight text-slate-950 sm:text-5xl">
+        See how DataRay turns data into executive-ready decisions
+      </h2>
+
+      <p className="mt-5 max-w-2xl text-base leading-8 text-slate-600">
+        DataRay combines analytics, visualization, research, and practical AI
+        into systems that help leaders monitor performance, identify risks,
+        interpret change, and act with confidence.
+      </p>
+
+      <div className="mt-8 grid gap-4 sm:grid-cols-2">
+        <div className="rounded-[24px] border border-slate-200 bg-slate-50 p-5 transition duration-300 hover:-translate-y-1 hover:shadow-[0_18px_40px_rgba(15,23,42,0.08)]">
+          <p className="text-sm font-medium text-slate-500">Dashboards</p>
+          <h3 className="mt-2 text-lg font-semibold text-slate-950">
+            KPI visibility for leaders
+          </h3>
+          <p className="mt-2 text-sm leading-7 text-slate-600">
+            Clear visual systems for monitoring operations, outcomes, and strategic priorities.
+          </p>
+        </div>
+
+        <div className="rounded-[24px] border border-slate-200 bg-slate-50 p-5 transition duration-300 hover:-translate-y-1 hover:shadow-[0_18px_40px_rgba(15,23,42,0.08)]">
+          <p className="text-sm font-medium text-slate-500">Research Intelligence</p>
+          <h3 className="mt-2 text-lg font-semibold text-slate-950">
+            Evidence behind strategy
+          </h3>
+          <p className="mt-2 text-sm leading-7 text-slate-600">
+            Structured analysis that helps decision-makers move beyond instinct and noise.
+          </p>
+        </div>
+
+        <div className="rounded-[24px] border border-slate-200 bg-slate-50 p-5 transition duration-300 hover:-translate-y-1 hover:shadow-[0_18px_40px_rgba(15,23,42,0.08)]">
+          <p className="text-sm font-medium text-slate-500">Predictive Insight</p>
+          <h3 className="mt-2 text-lg font-semibold text-slate-950">
+            Forward-looking signals
+          </h3>
+          <p className="mt-2 text-sm leading-7 text-slate-600">
+            Forecasting and scenario analysis that support proactive planning and risk awareness.
+          </p>
+        </div>
+
+        <div className="rounded-[24px] border border-slate-200 bg-slate-50 p-5 transition duration-300 hover:-translate-y-1 hover:shadow-[0_18px_40px_rgba(15,23,42,0.08)]">
+          <p className="text-sm font-medium text-slate-500">Communication</p>
+          <h3 className="mt-2 text-lg font-semibold text-slate-950">
+            Insight people can use
+          </h3>
+          <p className="mt-2 text-sm leading-7 text-slate-600">
+            Reports, visuals, and intelligence outputs designed to be understood and acted on.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div className="relative">
+      <div className="overflow-hidden rounded-[32px] border border-slate-200 bg-slate-950 p-6 text-white shadow-[0_30px_80px_rgba(15,23,42,0.22)]">
+        <div className="mb-6 flex items-center justify-between">
+          <div>
+            <p className="text-sm font-medium text-slate-400">
+              Decision Intelligence Interface
+            </p>
+            <h3 className="mt-1 text-xl font-semibold text-white">
+              Strategic Operations View
+            </h3>
+          </div>
+
+          <div className="flex items-center gap-2 rounded-full border border-cyan-400/20 bg-cyan-400/10 px-3 py-1 text-xs font-medium text-cyan-300">
+            <span className="h-2 w-2 rounded-full bg-cyan-300 animate-pulse" />
+            Live
+          </div>
+        </div>
+
+        <div className="grid gap-4 sm:grid-cols-2">
+          <div className="rounded-2xl border border-white/10 bg-white/5 p-4">
+            <p className="text-sm text-slate-400">Risk Alert Index</p>
+            <p className="mt-3 text-3xl font-semibold text-white">Low</p>
+          </div>
+
+          <div className="rounded-2xl border border-white/10 bg-white/5 p-4">
+            <p className="text-sm text-slate-400">Decision Confidence</p>
+            <p className="mt-3 text-3xl font-semibold text-white">89%</p>
+          </div>
+
+          <div className="rounded-2xl border border-white/10 bg-white/5 p-4 sm:col-span-2">
+            <div className="flex items-center justify-between">
+              <p className="text-sm text-slate-400">Priority Signals</p>
+              <p className="text-xs text-slate-500">Updated continuously</p>
+            </div>
+
+            <div className="mt-4 space-y-4">
+              <div>
+                <div className="mb-1 flex items-center justify-between text-xs text-slate-500">
+                  <span>Operational performance</span>
+                  <span>78%</span>
+                </div>
+                <div className="h-3 w-full rounded-full bg-white/10">
+                  <div className="h-3 w-[78%] rounded-full bg-gradient-to-r from-cyan-400 to-blue-500" />
+                </div>
+              </div>
+
+              <div>
+                <div className="mb-1 flex items-center justify-between text-xs text-slate-500">
+                  <span>Research confidence</span>
+                  <span>84%</span>
+                </div>
+                <div className="h-3 w-full rounded-full bg-white/10">
+                  <div className="h-3 w-[84%] rounded-full bg-gradient-to-r from-blue-500 to-indigo-500" />
+                </div>
+              </div>
+
+              <div>
+                <div className="mb-1 flex items-center justify-between text-xs text-slate-500">
+                  <span>Forecast readiness</span>
+                  <span>69%</span>
+                </div>
+                <div className="h-3 w-full rounded-full bg-white/10">
+                  <div className="h-3 w-[69%] rounded-full bg-gradient-to-r from-sky-400 to-cyan-300" />
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div className="rounded-2xl border border-white/10 bg-white/5 p-4 sm:col-span-2">
+            <p className="text-sm text-slate-400">Recommended Action</p>
+            <p className="mt-3 text-base leading-7 text-slate-200">
+              Strengthen executive dashboard visibility, prioritize strategic
+              research inputs, and monitor leading indicators for early intervention.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div className="absolute -left-6 top-8 -z-10 h-28 w-28 rounded-full bg-cyan-400/15 blur-3xl" />
+      <div className="absolute -right-6 bottom-6 -z-10 h-32 w-32 rounded-full bg-blue-500/15 blur-3xl" />
+    </div>
+  </div>
+</section>
 
         {/* Why DataRay Section */}
 
