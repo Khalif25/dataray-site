@@ -6,37 +6,37 @@ const services = [
     title: "AI Strategy & Advisory",
     description:
       "Roadmaps for AI adoption, workflow redesign, and data maturity for ambitious organizations.",
-    href: "/services",
+    href: "/services/ai-strategy",
   },
   {
     title: "Executive Dashboards",
     description:
       "Modern dashboards for leadership teams to monitor KPIs, risks, and opportunities clearly.",
-    href: "/services",
+    href: "/services/executive-dashboards",
   },
   {
     title: "Advanced Analytics",
     description:
       "Analysis pipelines that uncover trends, performance patterns, and actionable intelligence.",
-    href: "/services",
+    href: "/services/advanced-analytics",
   },
   {
     title: "Research & Market Intelligence",
     description:
       "Evidence-based studies, sector analysis, and strategic insights for institutions and businesses.",
-    href: "/services",
+    href: "/services/research-intelligence",
   },
   {
     title: "Predictive Modeling",
     description:
       "Practical machine learning solutions for forecasting, risk scoring, and scenario analysis.",
-    href: "/services",
+    href: "/services/predictive-modeling",
   },
   {
     title: "Training Programs",
     description:
       "Professional training in AI, analytics, dashboards, and data literacy for teams and institutions.",
-    href: "/services",
+    href: "/services/training-programs",
   },
 ];
 
