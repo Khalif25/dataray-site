@@ -3,48 +3,58 @@ import Image from "next/image";
 
 export default function Navbar() {
   return (
-    <header className="sticky top-0 z-50 border-b border-cyan-500/10 bg-[#040F2A]/80 backdrop-blur-xl">
-      
+    <header className="sticky top-0 z-50 border-b border-cyan-400/10 bg-[#06152D]/88 backdrop-blur-xl">
       <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
-        
-        {/* LOGO */}
         <Link href="/" className="flex items-center">
           <Image
             src="/logo.png"
             alt="DataRay"
-            width={150}
-            height={50}
+            width={130}
+            height={42}
             priority
+            className="h-10 w-auto"
           />
         </Link>
 
-        {/* NAVIGATION */}
         <nav className="hidden items-center gap-8 md:flex">
-          <Link href="/" className="nav-link">
+          <Link
+            href="/"
+            className="text-sm text-white/78 transition-colors duration-300 hover:text-cyan-300"
+          >
             Home
           </Link>
-          <Link href="/services" className="nav-link">
+          <Link
+            href="/services"
+            className="text-sm text-white/78 transition-colors duration-300 hover:text-cyan-300"
+          >
             Services
           </Link>
-          <Link href="/insights" className="nav-link">
+          <Link
+            href="/insights"
+            className="text-sm text-white/78 transition-colors duration-300 hover:text-cyan-300"
+          >
             Insights
           </Link>
-          <Link href="/about" className="nav-link">
+          <Link
+            href="/about"
+            className="text-sm text-white/78 transition-colors duration-300 hover:text-cyan-300"
+          >
             About
           </Link>
-          <Link href="/contact" className="nav-link">
+          <Link
+            href="/contact"
+            className="text-sm text-white/78 transition-colors duration-300 hover:text-cyan-300"
+          >
             Contact
           </Link>
         </nav>
 
-        {/* CTA BUTTON */}
         <Link
           href="/contact"
           className="hidden rounded-full border border-white/15 bg-white/5 px-5 py-2.5 text-sm font-medium text-white transition duration-300 hover:border-cyan-300/40 hover:bg-white/10 md:inline-flex"
         >
           Request Consultation
         </Link>
-
       </div>
     </header>
   );
