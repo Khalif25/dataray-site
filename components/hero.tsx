@@ -12,7 +12,7 @@ export default function Hero() {
             Modern AI, Analytics & Intelligence
           </p>
 
-          <h1 className="mt-6 max-w-4xl bg-gradient-to-r from-white via-cyan-200 to-blue-400 bg-clip-text text-5xl font-semibold leading-[1.04] tracking-tight text-transparent sm:text-7xl">
+          <h1 className="mt-6 text-5xl font-semibold leading-[1.05] tracking-tight text-white sm:text-7xl">
             Data-driven intelligence for organizations that want to move with clarity.
           </h1>
 
