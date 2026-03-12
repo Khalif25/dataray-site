@@ -393,6 +393,7 @@ export default function HomePage() {
             </div>
           </div>
         </section>
+
         <NewsletterSignup />
 
         {/* Research Initiative Section */}
@@ -415,9 +416,7 @@ export default function HomePage() {
 
                   <div className="mt-8 flex flex-wrap gap-4">
                     <a
-                      href="https://forms.gle/BxT6WPCRs3tt7KuHA"
-                      target="_blank"
-                      rel="noopener noreferrer"
+                      href="/research-survey"
                       className="inline-flex rounded-full bg-slate-950 px-6 py-3 text-sm font-medium text-white transition hover:bg-slate-800"
                     >
                       Participate in the Survey

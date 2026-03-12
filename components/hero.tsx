@@ -80,26 +80,34 @@ export default function Hero() {
             insight, and practical AI solutions.
           </motion.p>
 
-          <motion.div
-            className="mt-10 flex flex-wrap gap-4"
-            initial={{ opacity: 0, y: 18 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.55, delay: 0.32 }}
-          >
-            <Link
-              href="/services"
-              className="rounded-full bg-gradient-to-r from-cyan-400 to-blue-500 px-7 py-3.5 text-sm font-semibold text-white shadow-lg shadow-cyan-500/25 transition duration-300 hover:scale-[1.03] hover:shadow-cyan-400/40"
-            >
-              Explore Services
-            </Link>
+       <motion.div
+  className="mt-10 flex flex-wrap gap-4"
+  initial={{ opacity: 0, y: 18 }}
+  animate={{ opacity: 1, y: 0 }}
+  transition={{ duration: 0.55, delay: 0.32 }}
+>
+  <Link
+    href="/services"
+    className="rounded-full bg-gradient-to-r from-cyan-400 to-blue-500 px-7 py-3.5 text-sm font-semibold text-white shadow-lg shadow-cyan-500/25 transition duration-300 hover:scale-[1.03] hover:shadow-cyan-400/40"
+  >
+    Explore Services
+  </Link>
 
-            <Link
-              href="/contact"
-              className="rounded-full border border-white/15 bg-white/5 px-6 py-3.5 text-sm font-medium text-white backdrop-blur-md transition duration-300 hover:border-cyan-300/40 hover:bg-white/10"
-            >
-              Start a Project
-            </Link>
-          </motion.div>
+  <Link
+    href="/contact"
+    className="rounded-full border border-white/15 bg-white/5 px-6 py-3.5 text-sm font-medium text-white backdrop-blur-md transition duration-300 hover:border-cyan-300/40 hover:bg-white/10"
+  >
+    Start a Project
+  </Link>
+<a
+  href="https://forms.gle/BxT6WPCRs3tt7KuHA"
+  target="_blank"
+  rel="noopener noreferrer"
+  className="rounded-full border border-cyan-400/25 bg-cyan-400/10 px-6 py-3.5 text-sm font-medium text-cyan-200 backdrop-blur-md transition duration-300 hover:border-cyan-300/45 hover:bg-cyan-400/15"
+>
+  Participate in Survey
+</a>
+</motion.div>
 
           <motion.div
             className="mt-12 flex flex-wrap gap-8 text-sm text-slate-400"
