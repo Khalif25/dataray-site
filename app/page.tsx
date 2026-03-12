@@ -81,9 +81,11 @@ export default function HomePage() {
           <div className="mx-auto grid max-w-7xl gap-12 lg:grid-cols-2 lg:items-start">
             <div>
               <p className="eyebrow">Why DataRay</p>
+
               <h2 className="mt-4 text-3xl font-semibold tracking-tight text-slate-950 sm:text-4xl">
                 Built for decision-makers who need clarity, not noise
               </h2>
+
               <p className="mt-5 max-w-2xl text-base leading-8 text-slate-600">
                 DataRay combines analytics, research, and practical AI into systems that
                 help organizations make stronger decisions, communicate insights clearly,
@@ -93,28 +95,36 @@ export default function HomePage() {
 
             <div className="grid gap-5 sm:grid-cols-2">
               <div className="rounded-[28px] border border-slate-200 bg-slate-50 p-6">
-                <h3 className="text-lg font-semibold text-slate-950">Executive Focus</h3>
+                <h3 className="text-lg font-semibold text-slate-950">
+                  Executive Focus
+                </h3>
                 <p className="mt-3 text-sm leading-7 text-slate-600">
                   Outputs designed for leadership teams, project owners, and institutional decision-makers.
                 </p>
               </div>
 
               <div className="rounded-[28px] border border-slate-200 bg-slate-50 p-6">
-                <h3 className="text-lg font-semibold text-slate-950">Practical AI</h3>
+                <h3 className="text-lg font-semibold text-slate-950">
+                  Practical AI
+                </h3>
                 <p className="mt-3 text-sm leading-7 text-slate-600">
                   AI applied where it creates measurable value, not where it only sounds impressive.
                 </p>
               </div>
 
               <div className="rounded-[28px] border border-slate-200 bg-slate-50 p-6">
-                <h3 className="text-lg font-semibold text-slate-950">Clear Communication</h3>
+                <h3 className="text-lg font-semibold text-slate-950">
+                  Clear Communication
+                </h3>
                 <p className="mt-3 text-sm leading-7 text-slate-600">
                   Dashboards, reports, and insight systems built to be readable, actionable, and trusted.
                 </p>
               </div>
 
               <div className="rounded-[28px] border border-slate-200 bg-slate-50 p-6">
-                <h3 className="text-lg font-semibold text-slate-950">Scalable Systems</h3>
+                <h3 className="text-lg font-semibold text-slate-950">
+                  Scalable Systems
+                </h3>
                 <p className="mt-3 text-sm leading-7 text-slate-600">
                   Solutions that support growth across business operations, research work, and public-sector use cases.
                 </p>
@@ -128,7 +138,10 @@ export default function HomePage() {
         <section className="border-t border-slate-200 bg-slate-50 px-6 py-24">
           <div className="mx-auto max-w-7xl">
             <div className="overflow-hidden rounded-[32px] border border-slate-200 bg-white shadow-[0_20px_60px_rgba(15,23,42,0.06)]">
+
               <div className="grid gap-10 px-8 py-10 lg:grid-cols-[1.2fr_0.8fr] lg:px-12 lg:py-12">
+
+                {/* Left side */}
 
                 <div>
                   <p className="eyebrow">Current Research Initiative</p>
@@ -140,13 +153,15 @@ export default function HomePage() {
                   <p className="mt-5 max-w-2xl text-base leading-8 text-slate-600">
                     DataRay is conducting a research survey to understand how organizations
                     use market intelligence, strategic research, and data-driven insight in
-                    decision-making. The findings will inform an upcoming publication on how
-                    leaders balance research, analytics, and intuition.
+                    decision-making.
                   </p>
 
                   <div className="mt-8 flex flex-wrap gap-4">
+
+                    {/* Survey Button */}
+
                     <a
-                      href="PASTE_YOUR_GOOGLE_FORM_LINK_HERE"
+                      href="https://forms.gle/BxT6WPCRs3tt7KuHA"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="inline-flex rounded-full bg-slate-950 px-6 py-3 text-sm font-medium text-white transition hover:bg-slate-800"
@@ -163,10 +178,15 @@ export default function HomePage() {
                   </div>
                 </div>
 
+                {/* Right side */}
+
                 <div className="rounded-[28px] border border-slate-200 bg-slate-50 p-6">
+
                   <div className="flex items-center justify-between">
                     <div>
-                      <p className="text-sm font-medium text-slate-500">Research Status</p>
+                      <p className="text-sm font-medium text-slate-500">
+                        Research Status
+                      </p>
                       <h3 className="mt-1 text-xl font-semibold text-slate-950">
                         Survey Now Open
                       </h3>
@@ -178,9 +198,14 @@ export default function HomePage() {
                   </div>
 
                   <div className="mt-8">
+
                     <div className="mb-2 flex items-center justify-between text-sm">
-                      <span className="font-medium text-slate-700">Collection progress</span>
-                      <span className="text-slate-500">Early stage</span>
+                      <span className="font-medium text-slate-700">
+                        Collection progress
+                      </span>
+                      <span className="text-slate-500">
+                        Early stage
+                      </span>
                     </div>
 
                     <div className="h-3 w-full rounded-full bg-slate-200">
@@ -190,31 +215,9 @@ export default function HomePage() {
                     <p className="mt-3 text-sm leading-7 text-slate-600">
                       Responses are being collected for DataRay’s first public research report.
                     </p>
+
                   </div>
 
-                  <div className="mt-8 grid gap-4 sm:grid-cols-2">
-                    <div className="rounded-2xl border border-slate-200 bg-white p-4">
-                      <p className="text-sm text-slate-500">Focus</p>
-                      <p className="mt-2 text-sm font-medium leading-6 text-slate-900">
-                        Strategic intelligence, research use, and decision-making practices
-                      </p>
-                    </div>
-
-                    <div className="rounded-2xl border border-slate-200 bg-white p-4">
-                      <p className="text-sm text-slate-500">Publication</p>
-                      <p className="mt-2 text-sm font-medium leading-6 text-slate-900">
-                        Research report coming soon in the Insights section
-                      </p>
-                    </div>
-                  </div>
-
-                  <div className="mt-6 rounded-2xl bg-slate-950 p-5 text-white">
-                    <p className="text-sm font-medium text-cyan-300">Why it matters</p>
-                    <p className="mt-2 text-sm leading-7 text-slate-300">
-                      This initiative helps identify how organizations use evidence,
-                      where research gaps exist, and what strategic support leaders need most.
-                    </p>
-                  </div>
                 </div>
 
               </div>
