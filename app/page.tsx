@@ -1,3 +1,4 @@
+import NewsletterSignup from "@/components/newsletter-signup";
 import Hero from "@/components/hero";
 import ServiceCard from "@/components/service-card";
 
@@ -392,6 +393,7 @@ export default function HomePage() {
             </div>
           </div>
         </section>
+        <NewsletterSignup />
 
         {/* Research Initiative Section */}
         <section className="border-t border-slate-200 bg-slate-50 px-6 py-24">
