@@ -44,7 +44,7 @@ export default function Hero() {
     <section className="relative overflow-hidden bg-[#020B1F] px-6 py-20 text-white sm:py-24">
       <AnimatedBackground />
 
-      <div className="relative z-10 mx-auto grid max-w-7xl items-center gap-16 lg:grid-cols-2">
+      <div className="relative z-10 mx-auto grid max-w-7xl items-center gap-12 lg:grid-cols-2">
         <motion.div
           className="max-w-3xl"
           initial={{ opacity: 0, y: 28 }}
@@ -61,7 +61,7 @@ export default function Hero() {
           </motion.p>
 
           <motion.h1
-            className="mt-6 text-5xl font-bold leading-[1.05] tracking-tight text-white sm:text-6xl lg:text-7xl"
+            className="mt-6 text-4xl font-bold leading-[1.05] tracking-tight text-white sm:text-5xl lg:text-7xl"
             initial={{ opacity: 0, y: 18 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.65, delay: 0.12 }}
@@ -70,7 +70,7 @@ export default function Hero() {
           </motion.h1>
 
           <motion.p
-            className="mt-6 max-w-2xl text-xl leading-9 text-slate-300"
+            className="mt-6 max-w-2xl text-xl leading-7 text-slate-300 sm:text-lg sm:leading-8"
             initial={{ opacity: 0, y: 18 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.55, delay: 0.22 }}

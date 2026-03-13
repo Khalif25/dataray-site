@@ -5,16 +5,20 @@ export default function Navbar() {
   return (
     <header className="sticky top-0 z-50 border-b border-cyan-400/10 bg-[#06152D]/88 backdrop-blur-xl">
       <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
-        <Link href="/" className="flex items-center">
-          <Image
-            src="/logo.png"
-            alt="DataRay"
-            width={130}
-            height={42}
-            priority
-            className="h-10 w-auto"
-          />
-        </Link>
+        <Link href="/" className="flex items-center gap-3">
+  <div className="relative h-17 w-[220px] overflow-hidden">
+    <Image
+      src="/logo.png"
+      alt="DataRay"
+      width={180}
+      height={80}
+      priority
+      className="object-contain object-left"
+      //className="h-13 w-auto"
+    />
+  </div>
+</Link>
+
 
         <nav className="hidden items-center gap-8 md:flex">
           <Link
