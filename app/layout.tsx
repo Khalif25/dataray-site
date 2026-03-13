@@ -5,7 +5,7 @@ import Footer from "@/components/footer";
 import { GoogleAnalytics } from "@next/third-parties/google";
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://dataray-site.vercel.app"),
+  metadataBase: new URL("https://www.dataraysmart.com"),
 
   title: {
     default: "DataRay | AI, Data & Strategic Intelligence",
@@ -32,7 +32,7 @@ export const metadata: Metadata = {
     title: "DataRay | AI, Data & Strategic Intelligence",
     description:
       "AI-driven analytics, dashboards, research insights, and strategic intelligence.",
-    url: "https://dataray-site.vercel.app",
+    url: "https://www.dataraysmart.com",
     siteName: "DataRay",
     images: [
       {

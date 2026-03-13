@@ -6,6 +6,6 @@ export default function robots(): MetadataRoute.Robots {
       userAgent: "*",
       allow: "/",
     },
-    sitemap: "https://dataray-site.vercel.app/sitemap.xml",
+    sitemap: "https://www.dataraysmart.com/sitemap.xml",
   };
 }
