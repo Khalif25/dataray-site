@@ -41,12 +41,12 @@ export default function Hero() {
   }, []);
 
   return (
-    <section className="relative overflow-hidden bg-[#020B1F] px-6 py-20 text-white sm:py-24">
+    <section className="relative overflow-hidden bg-[#020B1F] px-4 py-16 text-white sm:px-6 sm:py-20 lg:py-24">
       <AnimatedBackground />
 
-      <div className="relative z-10 mx-auto grid max-w-7xl items-center gap-12 lg:grid-cols-2">
+      <div className="relative z-10 mx-auto grid max-w-7xl items-center gap-10 lg:grid-cols-[1.2fr_0.8fr]">
         <motion.div
-          className="max-w-3xl"
+          className="max-w-4xl"
           initial={{ opacity: 0, y: 28 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.65, ease: "easeOut" }}
@@ -61,60 +61,62 @@ export default function Hero() {
           </motion.p>
 
           <motion.h1
-            className="mt-6 text-4xl font-bold leading-[1.05] tracking-tight text-white sm:text-5xl lg:text-7xl"
+            className="mt-6 text-5xl font-bold leading-[1.02] tracking-tight text-white drop-shadow-[0_2px_20px_rgba(56,189,248,0.15)] sm:text-6xl lg:text-7xl xl:text-8xl"
             initial={{ opacity: 0, y: 18 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.65, delay: 0.12 }}
           >
-            Data-driven intelligence for organizations that want to move with clarity.
+            Data-driven intelligence for organizations that want to move with
+            clarity.
           </motion.h1>
 
           <motion.p
-            className="mt-6 max-w-2xl text-xl leading-7 text-slate-300 sm:text-lg sm:leading-8"
+            className="mt-6 max-w-2xl text-base leading-7 text-slate-300 sm:text-lg sm:leading-8"
             initial={{ opacity: 0, y: 18 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.55, delay: 0.22 }}
           >
             DataRay helps businesses, institutions, and public-sector teams turn
-            complex data into executive dashboards, strategic research, predictive
-            insight, and practical AI solutions.
+            complex data into executive dashboards, strategic research,
+            predictive insight, and practical AI solutions.
           </motion.p>
 
-       <motion.div
-  className="mt-10 flex flex-wrap gap-4"
-  initial={{ opacity: 0, y: 18 }}
-  animate={{ opacity: 1, y: 0 }}
-  transition={{ duration: 0.55, delay: 0.32 }}
->
-  <Link
-    href="/services"
-    className="rounded-full bg-gradient-to-r from-cyan-400 to-blue-500 px-7 py-3.5 text-sm font-semibold text-white shadow-lg shadow-cyan-500/25 transition duration-300 hover:scale-[1.03] hover:shadow-cyan-400/40"
-  >
-    Explore Services
-  </Link>
-    <Link
-    href="/projects"
-    className="rounded-full border border-cyan-400/30 bg-cyan-400/10 px-7 py-3.5 text-sm font-semibold text-cyan-300 transition duration-300 hover:bg-cyan-400/20"
-  >
-    Explore Projects
-  </Link>
+          <motion.div
+            className="mt-10 flex flex-wrap gap-3 lg:flex-nowrap"
+            initial={{ opacity: 0, y: 18 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.55, delay: 0.32 }}
+          >
+            <Link
+              href="/services"
+              className="rounded-full bg-gradient-to-r from-cyan-400 to-blue-500 px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-cyan-500/25 transition duration-300 hover:scale-[1.03] hover:shadow-cyan-400/40"
+            >
+              Explore Services
+            </Link>
 
+            <Link
+              href="/projects"
+              className="rounded-full border border-cyan-400/30 bg-cyan-400/10 px-6 py-3 text-sm font-semibold text-cyan-300 transition duration-300 hover:bg-cyan-400/20"
+            >
+              Explore Projects
+            </Link>
 
-  <Link
-    href="/contact"
-    className="rounded-full border border-white/15 bg-white/5 px-6 py-3.5 text-sm font-medium text-white backdrop-blur-md transition duration-300 hover:border-cyan-300/40 hover:bg-white/10"
-  >
-    Start a Project
-  </Link>
-<a
-  href="https://forms.gle/BxT6WPCRs3tt7KuHA"
-  target="_blank"
-  rel="noopener noreferrer"
-  className="rounded-full border border-cyan-400/25 bg-cyan-400/10 px-6 py-3.5 text-sm font-medium text-cyan-200 backdrop-blur-md transition duration-300 hover:border-cyan-300/45 hover:bg-cyan-400/15"
->
-  Participate in Survey
-</a>
-</motion.div>
+            <Link
+              href="/contact"
+              className="rounded-full border border-white/15 bg-white/5 px-6 py-3 text-sm font-medium text-white backdrop-blur-md transition duration-300 hover:border-cyan-300/40 hover:bg-white/10"
+            >
+              Start a Project
+            </Link>
+
+            <a
+              href="https://forms.gle/BxT6WPCRs3tt7KuHA"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="rounded-full border border-cyan-400/25 bg-cyan-400/10 px-6 py-3 text-sm font-medium text-cyan-200 backdrop-blur-md transition duration-300 hover:border-cyan-300/45 hover:bg-cyan-400/15"
+            >
+              Participate in Survey
+            </a>
+          </motion.div>
 
           <motion.div
             className="mt-12 flex flex-wrap gap-8 text-sm text-slate-400"
@@ -138,12 +140,12 @@ export default function Hero() {
         </motion.div>
 
         <motion.div
-          className="relative"
+          className="relative w-full"
           initial={{ opacity: 0, x: 40, scale: 0.98 }}
           animate={{ opacity: 1, x: 0, scale: 1 }}
           transition={{ duration: 0.7, delay: 0.22, ease: "easeOut" }}
         >
-          <div className="rounded-[32px] border border-white/10 bg-white/10 p-6 shadow-[0_20px_80px_rgba(0,0,0,0.28)] backdrop-blur-xl">
+          <div className="rounded-[28px] border border-white/10 bg-white/10 p-5 shadow-[0_20px_80px_rgba(0,0,0,0.28)] backdrop-blur-xl sm:p-6">
             <div className="mb-6 flex items-center justify-between">
               <div>
                 <p className="text-sm font-medium text-slate-400">
@@ -193,7 +195,9 @@ export default function Hero() {
               >
                 <div className="flex items-center justify-between">
                   <p className="text-sm text-slate-400">Operational Signals</p>
-                  <span className="text-xs text-slate-500">Real-time activity</span>
+                  <span className="text-xs text-slate-500">
+                    Real-time activity
+                  </span>
                 </div>
 
                 <div className="mt-4 space-y-4">
@@ -222,7 +226,11 @@ export default function Hero() {
                         className="h-3 rounded-full bg-gradient-to-r from-blue-500 to-indigo-500"
                         initial={{ width: 0 }}
                         animate={{ width: `${signalB}%` }}
-                        transition={{ duration: 1, ease: "easeOut", delay: 0.08 }}
+                        transition={{
+                          duration: 1,
+                          ease: "easeOut",
+                          delay: 0.08,
+                        }}
                       />
                     </div>
                   </div>
@@ -237,7 +245,11 @@ export default function Hero() {
                         className="h-3 rounded-full bg-gradient-to-r from-sky-400 to-cyan-300"
                         initial={{ width: 0 }}
                         animate={{ width: `${signalC}%` }}
-                        transition={{ duration: 1, ease: "easeOut", delay: 0.16 }}
+                        transition={{
+                          duration: 1,
+                          ease: "easeOut",
+                          delay: 0.16,
+                        }}
                       />
                     </div>
                   </div>
