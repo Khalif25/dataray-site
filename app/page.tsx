@@ -1,3 +1,4 @@
+import Link from "next/link";
 import NewsletterSignup from "@/components/newsletter-signup";
 import Hero from "@/components/hero";
 import ServiceCard from "@/components/service-card";
@@ -48,7 +49,7 @@ export default function HomePage() {
 
       <main className="bg-slate-50 text-slate-900">
         {/* Services Section */}
-        <section className="px-6 py-24">
+        <section className="px-4 py-16 sm:px-6 sm:py-20 lg:py-24">
           <div className="mx-auto max-w-7xl">
             <p className="eyebrow">Services</p>
 
@@ -70,6 +71,15 @@ export default function HomePage() {
                   href={service.href}
                 />
               ))}
+            </div>
+
+            <div className="mt-12 text-center">
+              <Link
+                href="/projects"
+                className="rounded-full bg-gradient-to-r from-cyan-400 to-blue-500 px-7 py-3.5 text-sm font-semibold text-white shadow-lg shadow-cyan-500/25 transition duration-300 hover:scale-[1.03]"
+              >
+                Explore Project Demonstrations
+              </Link>
             </div>
           </div>
         </section>
@@ -348,7 +358,7 @@ export default function HomePage() {
         </section>
 
         {/* Why DataRay Section */}
-        <section className="border-t border-slate-200 bg-white px-6 py-24">
+        <section className="border-t border-slate-200 bg-white px-4 py-16 sm:px-6 sm:py-20 lg:py-24">
           <div className="mx-auto grid max-w-7xl gap-12 lg:grid-cols-2 lg:items-start">
             <div>
               <p className="eyebrow">Why DataRay</p>
