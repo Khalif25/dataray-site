@@ -92,6 +92,13 @@ export default function Hero() {
   >
     Explore Services
   </Link>
+    <Link
+    href="/projects"
+    className="rounded-full border border-cyan-400/30 bg-cyan-400/10 px-7 py-3.5 text-sm font-semibold text-cyan-300 transition duration-300 hover:bg-cyan-400/20"
+  >
+    Explore Projects
+  </Link>
+
 
   <Link
     href="/contact"
