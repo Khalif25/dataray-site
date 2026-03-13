@@ -2,7 +2,6 @@ import { MetadataRoute } from "next";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const base = "https://www.dataraysmart.com";
-
   return [
     {
       url: base,
