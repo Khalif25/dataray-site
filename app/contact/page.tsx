@@ -1,4 +1,5 @@
 "use client";
+//import { siteConfig } from "@/lib/site-config";
 
 import { useState } from "react";
 import { siteConfig } from "@/lib/data";
@@ -208,7 +209,10 @@ export default function ContactPage() {
               <p className="mt-4 text-neutral-600">
                 Email:
                 <span className="ml-2 font-medium text-black">
-                  {siteConfig.email}
+                 {siteConfig.contact.Director}
+
+
+
                 </span>
               </p>
               <p className="mt-2 text-neutral-600">

@@ -3,9 +3,13 @@ export const siteConfig = {
   tagline: "AI-driven analytics, dashboards, and strategic intelligence",
   description:
     "DataRay helps businesses, institutions, and public-sector teams turn complex data into dashboards, predictive insight, and decision-ready intelligence.",
-  email: "abdinur.khalif25@gmail.com",
+  contact: {
+    General: "info@dataraysmart.com",
+    Director: "abdinur.khalif@dataraysmart.com",
+  },
   location: "Garowe, Somalia",
 };
+
 
 export const navLinks = [
   { href: "/", label: "Home" },
