@@ -56,8 +56,13 @@ export default function Navbar() {
             href="/about"
             className="text-sm text-white/80 transition-colors duration-300 hover:text-cyan-300"
           >
+          
             About
           </Link>
+
+  <Link href="/publications" className="text-sm text-white/80 transition-colors duration-300 hover:text-cyan-300">
+    Publications
+  </Link>
 
           <Link
             href="/contact"
