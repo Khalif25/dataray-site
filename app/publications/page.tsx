@@ -2,7 +2,6 @@ export default function PublicationsPage() {
   return (
     <main className="min-h-screen bg-[#020817] px-6 py-20 text-white">
       <div className="mx-auto max-w-6xl">
-        
         <h1 className="text-4xl font-bold tracking-tight">
           DataRay Publications
         </h1>
@@ -14,22 +13,21 @@ export default function PublicationsPage() {
         </p>
 
         <div className="mt-12 grid gap-8 md:grid-cols-2">
-
           {/* Somalia AI Report */}
           <div className="rounded-2xl border border-white/10 bg-white/5 p-6">
-    
-            <img
-            src="/publications/ai-somalia-cover.png"
-            alt="AI Somalia Report Cover"
-            className="mb-4 rounded-lg"
-            />
+            {/*<img
+              src="/publications/cover.png"
+              alt="AI Somalia Report Cover"
+              className="mb-4 w-full rounded-lg object-cover"
+            />*/}
+
             <h2 className="text-xl font-semibold">
               The Age of AI: A Nation at Risk of Being Left Out
             </h2>
 
             <p className="mt-3 text-sm text-slate-300">
               Artificial Intelligence Readiness, Policy Gaps, and Strategic
-              Challenges in Somalia. This report examines Somalia's position in
+              Challenges in Somalia. This report examines Somalia&apos;s position in
               the emerging global AI landscape and identifies critical policy,
               infrastructure, and education gaps shaping future technological
               development.
@@ -40,10 +38,10 @@ export default function PublicationsPage() {
             </p>
 
             <div className="mt-5 flex gap-4">
-
               <a
                 href="/reports/DataRay-AI-Strategy-Somalia-Report.pdf"
                 target="_blank"
+                rel="noopener noreferrer"
                 className="rounded-lg bg-cyan-500 px-4 py-2 text-sm font-semibold text-slate-900"
               >
                 Read Publication
@@ -56,10 +54,8 @@ export default function PublicationsPage() {
               >
                 Download PDF
               </a>
-
             </div>
           </div>
-
 
           {/* Publication Card */}
           <div className="rounded-2xl border border-white/10 bg-white/5 p-6">
@@ -81,7 +77,6 @@ export default function PublicationsPage() {
             </button>
           </div>
 
-
           {/* Publication Card */}
           <div className="rounded-2xl border border-white/10 bg-white/5 p-6">
             <h2 className="text-xl font-semibold">
@@ -102,7 +97,6 @@ export default function PublicationsPage() {
               Read Publication
             </button>
           </div>
-
         </div>
       </div>
     </main>
