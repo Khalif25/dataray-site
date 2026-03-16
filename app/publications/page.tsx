@@ -17,6 +17,12 @@ export default function PublicationsPage() {
 
           {/* Somalia AI Report */}
           <div className="rounded-2xl border border-white/10 bg-white/5 p-6">
+    
+            <img
+            src="/publications/ai-somalia-cover.png"
+            alt="AI Somalia Report Cover"
+            className="mb-4 rounded-lg"
+            />
             <h2 className="text-xl font-semibold">
               The Age of AI: A Nation at Risk of Being Left Out
             </h2>
