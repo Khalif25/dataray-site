@@ -15,6 +15,46 @@ export default function PublicationsPage() {
 
         <div className="mt-12 grid gap-8 md:grid-cols-2">
 
+          {/* Somalia AI Report */}
+          <div className="rounded-2xl border border-white/10 bg-white/5 p-6">
+            <h2 className="text-xl font-semibold">
+              The Age of AI: A Nation at Risk of Being Left Out
+            </h2>
+
+            <p className="mt-3 text-sm text-slate-300">
+              Artificial Intelligence Readiness, Policy Gaps, and Strategic
+              Challenges in Somalia. This report examines Somalia's position in
+              the emerging global AI landscape and identifies critical policy,
+              infrastructure, and education gaps shaping future technological
+              development.
+            </p>
+
+            <p className="mt-3 text-xs text-slate-400">
+              DataRay Research Series · 2026
+            </p>
+
+            <div className="mt-5 flex gap-4">
+
+              <a
+                href="/reports/DataRay-AI-Strategy-Somalia-Report.pdf"
+                target="_blank"
+                className="rounded-lg bg-cyan-500 px-4 py-2 text-sm font-semibold text-slate-900"
+              >
+                Read Publication
+              </a>
+
+              <a
+                href="/reports/DataRay-AI-Strategy-Somalia-Report.pdf"
+                download
+                className="rounded-lg border border-white/20 px-4 py-2 text-sm font-semibold text-white hover:bg-white/10"
+              >
+                Download PDF
+              </a>
+
+            </div>
+          </div>
+
+
           {/* Publication Card */}
           <div className="rounded-2xl border border-white/10 bg-white/5 p-6">
             <h2 className="text-xl font-semibold">
@@ -22,8 +62,8 @@ export default function PublicationsPage() {
             </h2>
 
             <p className="mt-3 text-sm text-slate-300">
-              {/*A research report exploring how artificial intelligence will reshape*/}
-              {/*employment patterns, skill demand, and economic opportunity across African economies.*/}
+              {/* A research report exploring how artificial intelligence will reshape
+              employment patterns, skill demand, and economic opportunity across African economies. */}
             </p>
 
             <p className="mt-3 text-xs text-slate-400">
@@ -34,6 +74,7 @@ export default function PublicationsPage() {
               Read Publication
             </button>
           </div>
+
 
           {/* Publication Card */}
           <div className="rounded-2xl border border-white/10 bg-white/5 p-6">
