@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { academyCourses } from "@/lib/data";
+import { academyTracks, getCoursesByTrack } from "@/lib/data";
 
 export default function AcademyCoursesPage() {
   return (
@@ -11,51 +11,89 @@ export default function AcademyCoursesPage() {
           </p>
           <h1 className="mt-4 text-4xl font-semibold tracking-tight">Courses</h1>
           <p className="mt-5 text-base leading-7 text-slate-300">
-            Explore self-paced and guided courses designed to build practical capability in
-            machine learning, SQL, and applied analytics.
+            Explore self-paced and guided courses grouped by learning maturity:
+            Foundation, Professional, and Advanced.
           </p>
         </div>
 
-        <div className="mt-12 grid gap-6 md:grid-cols-2 xl:grid-cols-3">
-          {academyCourses.map((course) => (
-            <Link
-              key={course.slug}
-              href={`/academy/courses/${course.slug}`}
-              className="rounded-[24px] border border-white/10 bg-white/5 p-6 transition hover:bg-white/[0.07]"
-            >
-              <div className="flex items-start justify-between gap-4">
-                <h2 className="text-xl font-semibold">{course.title}</h2>
-                <span
-                  className={`rounded-full px-3 py-1 text-xs font-medium ${
-                    course.status === "live"
-                      ? "border border-cyan-300/20 bg-cyan-400/10 text-cyan-100"
-                      : "border border-amber-300/20 bg-amber-400/10 text-amber-100"
-                  }`}
-                >
-                  {course.status === "live" ? "Available" : "Coming soon"}
-                </span>
-              </div>
+        <div className="mt-12 space-y-12">
+          {academyTracks.map((track) => {
+            const courses = getCoursesByTrack(track.slug);
 
-              <p className="mt-4 text-sm leading-6 text-slate-400">{course.description}</p>
+            if (courses.length === 0) return null;
 
-              <div className="mt-6 grid gap-3">
-                <div>
-                  <p className="text-sm text-slate-500">Duration</p>
-                  <p className="text-sm font-medium text-slate-200">{course.duration}</p>
+            return (
+              <section key={track.slug}>
+                <div className="max-w-3xl">
+                  <h2 className="text-2xl font-semibold">{track.title}</h2>
+                  <p className="mt-3 text-slate-400">{track.description}</p>
                 </div>
-                <div>
-                  <p className="text-sm text-slate-500">Level</p>
-                  <p className="text-sm font-medium text-slate-200">{course.level}</p>
-                </div>
-                <div>
-                  <p className="text-sm text-slate-500">Format</p>
-                  <p className="text-sm font-medium text-slate-200">{course.format}</p>
-                </div>
-              </div>
 
-              <p className="mt-6 text-sm font-medium text-cyan-300">View course →</p>
-            </Link>
-          ))}
+                <div className="mt-6 grid gap-6 md:grid-cols-2 xl:grid-cols-3">
+                  {courses.map((course) => (
+                    <Link
+                      key={course.slug}
+                      href={`/academy/courses/${course.slug}`}
+                      className="rounded-[24px] border border-white/10 bg-white/5 p-6 transition hover:bg-white/[0.07]"
+                    >
+                      <div className="flex items-start justify-between gap-4">
+                        <h3 className="text-xl font-semibold">{course.title}</h3>
+                        <span
+                          className={`rounded-full px-3 py-1 text-xs font-medium ${
+                            course.status === "live"
+                              ? "border border-cyan-300/20 bg-cyan-400/10 text-cyan-100"
+                              : "border border-amber-300/20 bg-amber-400/10 text-amber-100"
+                          }`}
+                        >
+                          {course.status === "live" ? "Available" : "Coming soon"}
+                        </span>
+                      </div>
+
+                      <p className="mt-4 text-sm leading-6 text-slate-400">
+                        {course.description}
+                      </p>
+
+                      <div className="mt-6 grid gap-3">
+                        <div>
+                          <p className="text-sm text-slate-500">Track</p>
+                          <p className="text-sm font-medium text-slate-200">
+                            {track.title}
+                          </p>
+                        </div>
+                        <p className="mt-5 text-base leading-7 text-slate-300">
+  This course is part of DataRay Academy’s Professional Track and is being prepared
+  for release. The page is available now so learners can understand the planned scope,
+  structure, and expected learning outcomes.
+</p>
+                        <div>
+                          <p className="text-sm text-slate-500">Duration</p>
+                          <p className="text-sm font-medium text-slate-200">
+                            {course.duration}
+                          </p>
+                        </div>
+                        <div>
+                          <p className="text-sm text-slate-500">Level</p>
+                          <p className="text-sm font-medium text-slate-200">
+                            {course.level}
+                          </p>
+                        </div>
+                        <div>
+                          <p className="text-sm text-slate-500">Format</p>
+                          <p className="text-sm font-medium text-slate-200">
+                            {course.format}
+                          </p>
+                        </div>
+                      </div>
+
+                      <p className="mt-6 text-sm font-medium text-cyan-300">
+                        View course →
+                      </p>
+                    </Link>
+                  ))}
+                </div>
+              </section>
+            );
+          })}
         </div>
       </div>
     </main>

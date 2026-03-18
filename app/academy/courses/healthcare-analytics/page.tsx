@@ -16,11 +16,11 @@ export default function HealthcareAnalyticsCoursePage() {
             DataRay Academy / Courses
           </p>
           <h1 className="mt-4 text-4xl font-semibold tracking-tight">{course.title}</h1>
-          <p className="mt-5 text-base leading-7 text-slate-300">
-            This course is under development and will be released soon. It is being designed for
-            learners and institutions interested in applied healthcare data analysis and dashboard
-            decision support.
-          </p>
+      <p className="mt-5 text-base leading-7 text-slate-300">
+  This course is part of DataRay Academy’s Advanced Track and is under development.
+  It is being designed for learners and institutions interested in applied healthcare
+  data analysis and dashboard decision support.
+</p>
         </div>
 
         <div className="mt-8 inline-flex rounded-full border border-amber-300/20 bg-amber-400/10 px-4 py-2 text-sm font-medium text-amber-100">

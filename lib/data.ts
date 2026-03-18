@@ -27,10 +27,54 @@ export const navLinks = [
   { href: "/contact", label: "Contact" },
 ];
 
+
+// =======================
+// ACADEMY TRACKS (NEW CORE STRUCTURE)
+// =======================
+
+export const academyTracks = [
+  {
+    slug: "foundation",
+    title: "Foundation Track",
+    description:
+      "Build essential data understanding and core analytical thinking for practical decision-making.",
+    courses: ["data-literacy", "basic-analytics"],
+    pathwayTitle: "Foundation Pathway",
+    pathwayDescription:
+      "For institutions building foundational data literacy and analytical awareness across teams.",
+  },
+  {
+    slug: "professional",
+    title: "Professional Track",
+    description:
+      "Develop applied capability in dashboards, reporting, SQL, and monitoring frameworks.",
+    courses: ["sql", "dashboard-analytics", "me-analytics"],
+    pathwayTitle: "Professional Pathway",
+    pathwayDescription:
+      "For institutions strengthening reporting systems, dashboards, and operational analytics.",
+  },
+  {
+    slug: "advanced",
+    title: "Advanced Track",
+    description:
+      "Support advanced capability in machine learning, AI, decision intelligence, and specialized analytics.",
+    courses: ["ml", "ai-decision", "healthcare-analytics"],
+    pathwayTitle: "Advanced Pathway",
+    pathwayDescription:
+      "For institutions adopting predictive analytics, AI systems, and sector-focused decision intelligence.",
+  },
+];
+
+
+// =======================
+// COURSES
+// =======================
+
 export const academyCourses = [
   {
     slug: "ml",
     title: "Machine Learning",
+    track: "advanced", // ✅ NEW
     description:
       "A practical machine learning course covering foundations, model building, evaluation, and real-world applications.",
     duration: "6–8 weeks",
@@ -58,6 +102,7 @@ export const academyCourses = [
   {
     slug: "sql",
     title: "SQL & Data Management",
+    track: "professional", // ✅ NEW
     description:
       "A practical SQL course for querying, transforming, and managing structured data for analytics and reporting.",
     duration: "4–6 weeks",
@@ -83,6 +128,7 @@ export const academyCourses = [
   {
     slug: "healthcare-analytics",
     title: "Healthcare Analytics",
+    track: "advanced", // ✅ NEW
     description:
       "A specialized learning path on healthcare data, disease trends, indicators, dashboards, and analytical decision support.",
     duration: "6–8 weeks",
@@ -107,10 +153,16 @@ export const academyCourses = [
   },
 ];
 
+
+// =======================
+// TRAINING PROGRAMS
+// =======================
+
 export const academyPrograms = [
   {
     slug: "ml-training",
     title: "Machine Learning Training Program",
+    track: "advanced", // ✅ NEW
     description:
       "A structured team training program for organizations building machine learning and predictive analytics capacity.",
     audience: "Organizations, NGOs, institutions, technical teams",
@@ -127,6 +179,7 @@ export const academyPrograms = [
   {
     slug: "healthcare-training",
     title: "Healthcare Analytics Training Program",
+    track: "advanced", // ✅ NEW
     description:
       "A specialized program for hospitals, health programs, NGOs, and public-sector teams using data for operational and strategic decisions.",
     audience: "Hospitals, NGOs, healthcare institutions, public health teams",
@@ -143,6 +196,7 @@ export const academyPrograms = [
   {
     slug: "custom-training",
     title: "Custom Institutional Training",
+    track: "professional", // ✅ NEW
     description:
       "Custom-designed data, analytics, dashboard, and AI training aligned to your organization’s goals and technical maturity.",
     audience: "Businesses, NGOs, universities, government teams",
@@ -157,3 +211,16 @@ export const academyPrograms = [
     ],
   },
 ];
+
+
+// =======================
+// HELPERS (VERY USEFUL)
+// =======================
+
+export const getCoursesByTrack = (trackSlug: string) => {
+  return academyCourses.filter((course) => course.track === trackSlug);
+};
+
+export const getProgramsByTrack = (trackSlug: string) => {
+  return academyPrograms.filter((program) => program.track === trackSlug);
+};

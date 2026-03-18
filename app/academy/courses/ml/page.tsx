@@ -1,12 +1,11 @@
 import Link from "next/link";
-import { academyCourses } from "@/lib/data";
+import { academyCourses, academyTracks } from "@/lib/data";
 
 const course = academyCourses.find((item) => item.slug === "ml");
+const track = academyTracks.find((item) => item.slug === course?.track);
 
 export default function MachineLearningCoursePage() {
-  if (!course) {
-    return null;
-  }
+  if (!course) return null;
 
   return (
     <main className="min-h-screen bg-[#020817] px-4 py-12 text-white sm:px-6 lg:px-8">
@@ -19,7 +18,15 @@ export default function MachineLearningCoursePage() {
           <p className="mt-5 text-base leading-7 text-slate-300">{course.description}</p>
         </div>
 
-        <div className="mt-10 grid gap-4 md:grid-cols-3">
+        <div className="mt-8 inline-flex rounded-full border border-cyan-300/20 bg-cyan-400/10 px-4 py-2 text-sm font-medium text-cyan-100">
+          {track?.title ?? "Advanced Track"}
+        </div>
+
+        <div className="mt-10 grid gap-4 md:grid-cols-4">
+          <div className="rounded-xl border border-white/10 bg-white/5 p-5">
+            <p className="text-sm text-slate-500">Track</p>
+            <p className="mt-1 font-medium">{track?.title ?? "Advanced Track"}</p>
+          </div>
           <div className="rounded-xl border border-white/10 bg-white/5 p-5">
             <p className="text-sm text-slate-500">Duration</p>
             <p className="mt-1 font-medium">{course.duration}</p>
@@ -36,7 +43,14 @@ export default function MachineLearningCoursePage() {
 
         <section className="mt-12 grid gap-10 lg:grid-cols-[1.3fr_0.7fr]">
           <div>
-            <h2 className="text-2xl font-semibold">Course objectives</h2>
+            <h2 className="text-2xl font-semibold">Course overview</h2>
+            <p className="mt-4 text-slate-400">
+              This course belongs to DataRay Academy’s Advanced Track and is designed
+              for learners building capability in predictive analytics, model development,
+              and practical machine learning workflows.
+            </p>
+
+            <h2 className="mt-10 text-2xl font-semibold">Learning objectives</h2>
             <ul className="mt-5 space-y-3 text-slate-400">
               {course.objectives.map((objective) => (
                 <li key={objective}>• {objective}</li>
@@ -62,21 +76,11 @@ export default function MachineLearningCoursePage() {
 
             <div className="mt-6 space-y-5 text-sm">
               <div>
-                <p className="text-slate-500">Estimated duration</p>
-                <p className="mt-1 font-medium text-slate-200">{course.duration}</p>
-              </div>
-
-              <div>
-                <p className="text-slate-500">Target learners</p>
+                <p className="text-slate-500">Audience</p>
                 <p className="mt-1 font-medium text-slate-200">
-                  Students, junior analysts, aspiring ML practitioners, and teams building
-                  practical analytics capability
+                  Students, junior analysts, aspiring ML practitioners, and teams
+                  building practical analytics capability
                 </p>
-              </div>
-
-              <div>
-                <p className="text-slate-500">Delivery</p>
-                <p className="mt-1 font-medium text-slate-200">{course.format}</p>
               </div>
 
               <div>
@@ -85,6 +89,11 @@ export default function MachineLearningCoursePage() {
                   Basic Python familiarity and general analytical interest are helpful
                 </p>
               </div>
+
+              <div>
+                <p className="text-slate-500">Availability</p>
+                <p className="mt-1 font-medium text-slate-200">Public overview available now</p>
+              </div>
             </div>
 
             <div className="mt-8 flex flex-col gap-3">
@@ -92,7 +101,7 @@ export default function MachineLearningCoursePage() {
                 href="/contact"
                 className="rounded-xl bg-cyan-400 px-5 py-3 text-center font-semibold text-slate-950 transition hover:brightness-110"
               >
-                Enroll / Request Access
+                Request access / enroll
               </Link>
 
               <Link
