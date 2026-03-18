@@ -98,18 +98,18 @@ export default function MachineLearningCoursePage() {
 
             <div className="mt-8 flex flex-col gap-3">
               <Link
-                href="/contact"
-                className="rounded-xl bg-cyan-400 px-5 py-3 text-center font-semibold text-slate-950 transition hover:brightness-110"
-              >
-                Request access / enroll
-              </Link>
+  href="/academy/register"
+  className="rounded-xl bg-cyan-400 px-5 py-3 text-center font-semibold text-slate-950 transition hover:brightness-110"
+>
+  Register to Enroll
+</Link>
 
-              <Link
-                href="/academy/programs"
-                className="rounded-xl border border-white/10 px-5 py-3 text-center font-medium text-white transition hover:bg-white/5"
-              >
-                Need team training?
-              </Link>
+<Link
+  href="/academy/programs"
+  className="rounded-xl border border-white/10 px-5 py-3 text-center font-medium text-white transition hover:bg-white/5"
+>
+  Request Team Training
+</Link>
             </div>
           </aside>
         </section>
