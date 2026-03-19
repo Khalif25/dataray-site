@@ -11,16 +11,15 @@ export default function AcademyCoursesPage() {
           </p>
           <h1 className="mt-4 text-4xl font-semibold tracking-tight">Courses</h1>
           <p className="mt-5 text-base leading-7 text-slate-300">
-            Explore self-paced and guided courses grouped by learning maturity:
-            Foundation, Professional, and Advanced.
+            Explore the full DataRay Academy course catalog, organized across
+            Data Foundations, Applied Analytics & Visualization, and
+            AI & Advanced Data Science.
           </p>
         </div>
 
         <div className="mt-12 space-y-12">
           {academyTracks.map((track) => {
             const courses = getCoursesByTrack(track.slug);
-
-            if (courses.length === 0) return null;
 
             return (
               <section key={track.slug}>
@@ -33,7 +32,11 @@ export default function AcademyCoursesPage() {
                   {courses.map((course) => (
                     <Link
                       key={course.slug}
-                      href={`/academy/courses/${course.slug}`}
+                      href={
+                        ["ml", "sql", "healthcare-analytics"].includes(course.slug)
+                          ? `/academy/courses/${course.slug}`
+                          : "/academy/courses"
+                      }
                       className="rounded-[24px] border border-white/10 bg-white/5 p-6 transition hover:bg-white/[0.07]"
                     >
                       <div className="flex items-start justify-between gap-4">
@@ -60,11 +63,6 @@ export default function AcademyCoursesPage() {
                             {track.title}
                           </p>
                         </div>
-                        <p className="mt-5 text-base leading-7 text-slate-300">
-  This course is part of DataRay Academy’s Professional Track and is being prepared
-  for release. The page is available now so learners can understand the planned scope,
-  structure, and expected learning outcomes.
-</p>
                         <div>
                           <p className="text-sm text-slate-500">Duration</p>
                           <p className="text-sm font-medium text-slate-200">
@@ -86,7 +84,9 @@ export default function AcademyCoursesPage() {
                       </div>
 
                       <p className="mt-6 text-sm font-medium text-cyan-300">
-                        View course →
+                        {["ml", "sql", "healthcare-analytics"].includes(course.slug)
+                          ? "View course →"
+                          : "Planned for release →"}
                       </p>
                     </Link>
                   ))}

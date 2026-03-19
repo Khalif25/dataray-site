@@ -35,18 +35,30 @@ export default function AcademyRegisterPage() {
       },
     });
 
-    if (error) {
-      setError(error.message);
-      setLoading(false);
-      return;
-    }
+  if (error) {
+  setError(error.message);
+  setLoading(false);
+  return;
+}
 
-    setSuccess("Account created successfully. You can now log in.");
+if (data.user) {
+  const { error: profileError } = await supabase.from("profiles").insert({
+    id: data.user.id,
+    full_name: fullName,
+    organization,
+    role: "learner",
+  });
+
+  if (profileError) {
+    setError(profileError.message);
     setLoading(false);
+    return;
+  }
+}
 
-    if (data.user) {
-      router.push("/academy/login");
-    }
+setSuccess("Account created successfully. You can now log in.");
+setLoading(false);
+router.push("/academy/login");
   };
 
   return (

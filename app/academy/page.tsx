@@ -2,7 +2,6 @@ import Link from "next/link";
 import {
   academyTracks,
   academyCourses,
-  academyPrograms,
   getCoursesByTrack,
   getProgramsByTrack,
 } from "@/lib/data";
@@ -17,15 +16,14 @@ export default function AcademyPage() {
           <p className="text-sm font-medium uppercase tracking-[0.2em] text-cyan-300/80">
             DataRay Academy
           </p>
-
           <h1 className="mt-4 text-4xl font-semibold tracking-tight sm:text-5xl">
-            Structured learning in AI, analytics, and decision intelligence
+            Structured learning in data, analytics, and AI
           </h1>
-
           <p className="mt-5 text-base leading-7 text-slate-300 sm:text-lg">
-            DataRay Academy delivers practical learning for individuals and institutions
-            through public courses and structured training programs. Our offerings are
-            organized across Foundation, Professional, and Advanced capability tracks.
+            DataRay Academy supports both individual learners and institutions through
+            public courses and structured training programs across three capability
+            layers: Data Foundations, Applied Analytics & Visualization, and
+            AI & Advanced Data Science.
           </p>
         </div>
 
@@ -39,8 +37,8 @@ export default function AcademyPage() {
             </p>
             <h2 className="mt-3 text-2xl font-semibold">Courses</h2>
             <p className="mt-3 text-sm leading-6 text-slate-400">
-              Self-paced and guided learning paths with public overviews, objectives,
-              modules, and clear progression.
+              Public course pages with overviews, objectives, modules, duration,
+              level, and learning progression.
             </p>
             <p className="mt-5 text-sm font-medium text-cyan-300">Explore courses →</p>
           </Link>
@@ -54,7 +52,7 @@ export default function AcademyPage() {
             </p>
             <h2 className="mt-3 text-2xl font-semibold">Training Programs</h2>
             <p className="mt-3 text-sm leading-6 text-slate-400">
-              Institutional pathways designed for NGOs, healthcare teams, businesses,
+              Institutional pathways for NGOs, businesses, healthcare teams,
               and public-sector organizations.
             </p>
             <p className="mt-5 text-sm font-medium text-cyan-300">View training programs →</p>
@@ -63,10 +61,10 @@ export default function AcademyPage() {
 
         <section className="mt-14">
           <div className="max-w-3xl">
-            <h2 className="text-2xl font-semibold">Learning tracks</h2>
+            <h2 className="text-2xl font-semibold">Learning architecture</h2>
             <p className="mt-3 text-slate-400">
-              DataRay Academy keeps Courses and Training Programs as the main offering
-              types, then groups them by learning maturity and institutional pathway.
+              DataRay Academy keeps Courses and Training Programs as the primary
+              offering types, then layers learning maturity on top through three tracks.
             </p>
           </div>
 
@@ -95,9 +93,7 @@ export default function AcademyPage() {
                   </div>
 
                   <div className="mt-6">
-                    <p className="text-sm font-medium text-slate-300">
-                      Institutional pathway
-                    </p>
+                    <p className="text-sm font-medium text-slate-300">Institutional pathway</p>
                     <p className="mt-2 text-sm font-medium text-slate-200">
                       {track.pathwayTitle}
                     </p>
@@ -124,14 +120,13 @@ export default function AcademyPage() {
             <p className="text-sm font-medium uppercase tracking-[0.18em] text-cyan-300/80">
               Featured live course
             </p>
-
             <h2 className="mt-3 text-3xl font-semibold">{featuredCourse.title}</h2>
             <p className="mt-4 max-w-3xl text-slate-400">{featuredCourse.description}</p>
 
             <div className="mt-6 grid gap-4 sm:grid-cols-4">
               <div className="rounded-xl border border-white/10 bg-black/20 p-4">
                 <p className="text-sm text-slate-400">Track</p>
-                <p className="mt-1 font-medium">Advanced Track</p>
+                <p className="mt-1 font-medium">AI & Advanced Data Science</p>
               </div>
               <div className="rounded-xl border border-white/10 bg-black/20 p-4">
                 <p className="text-sm text-slate-400">Duration</p>
@@ -154,48 +149,15 @@ export default function AcademyPage() {
               >
                 Open ML Course
               </Link>
-
               <Link
                 href="/academy/courses"
                 className="rounded-xl border border-white/10 px-5 py-3 font-medium text-white transition hover:bg-white/5"
               >
-                View all courses
+                View full catalog
               </Link>
             </div>
           </section>
         )}
-
-        <section className="mt-14 rounded-[24px] border border-white/10 bg-white/5 p-6 sm:p-8">
-          <div className="max-w-3xl">
-            <h2 className="text-2xl font-semibold">For early-stage learners and institutions</h2>
-            <p className="mt-3 text-slate-400">
-              At this stage, public pages provide clear course and program information,
-              including objectives, modules, overviews, audience, duration, and format.
-              Protected lesson delivery and learner registration will be layered in next.
-            </p>
-          </div>
-
-          <div className="mt-8 flex flex-wrap gap-4">
-            <Link
-              href="/academy/courses"
-              className="rounded-xl border border-white/10 px-5 py-3 font-medium text-white transition hover:bg-white/5"
-            >
-              Browse public courses
-            </Link>
-            <Link
-              href="/academy/programs"
-              className="rounded-xl border border-white/10 px-5 py-3 font-medium text-white transition hover:bg-white/5"
-            >
-              Browse training programs
-            </Link>
-            <Link
-              href="/contact"
-              className="rounded-xl border border-white/10 px-5 py-3 font-medium text-white transition hover:bg-white/5"
-            >
-              Request institutional training
-            </Link>
-          </div>
-        </section>
       </div>
     </main>
   );

@@ -13,9 +13,8 @@ export default function AcademyProgramsPage() {
             Training Programs
           </h1>
           <p className="mt-5 text-base leading-7 text-slate-300">
-            Tailored training for organizations, NGOs, healthcare teams, and institutions
-            seeking structured capability building across Foundation, Professional, and
-            Advanced pathways.
+            Structured institutional pathways designed for organizations seeking
+            practical capability building in data, analytics, visualization, and AI.
           </p>
         </div>
 

@@ -45,7 +45,7 @@ export default function MachineLearningCoursePage() {
           <div>
             <h2 className="text-2xl font-semibold">Course overview</h2>
             <p className="mt-4 text-slate-400">
-              This course belongs to DataRay Academy’s Advanced Track and is designed
+              This course belongs to DataRay Academy’s AI & Advanced Data Science and is designed
               for learners building capability in predictive analytics, model development,
               and practical machine learning workflows.
             </p>

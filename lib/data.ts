@@ -27,54 +27,191 @@ export const navLinks = [
   { href: "/contact", label: "Contact" },
 ];
 
-
-// =======================
-// ACADEMY TRACKS (NEW CORE STRUCTURE)
-// =======================
-
 export const academyTracks = [
   {
     slug: "foundation",
-    title: "Foundation Track",
+    title: "Data Foundations",
+    shortTitle: "Foundation",
     description:
-      "Build essential data understanding and core analytical thinking for practical decision-making.",
-    courses: ["data-literacy", "basic-analytics"],
-    pathwayTitle: "Foundation Pathway",
+      "Build essential data literacy, analytical thinking, and core technical confidence for modern data work.",
+    courses: ["data-literacy", "python-data-analysis", "sql"],
+    pathwayTitle: "Data Foundations Pathway",
     pathwayDescription:
-      "For institutions building foundational data literacy and analytical awareness across teams.",
+      "For institutions building foundational data understanding and technical confidence across teams.",
   },
   {
     slug: "professional",
-    title: "Professional Track",
+    title: "Applied Analytics & Visualization",
+    shortTitle: "Professional",
     description:
-      "Develop applied capability in dashboards, reporting, SQL, and monitoring frameworks.",
-    courses: ["sql", "dashboard-analytics", "me-analytics"],
-    pathwayTitle: "Professional Pathway",
+      "Develop practical capability in dashboards, reporting, visualization, and monitoring for real-world decision support.",
+    courses: ["powerbi-data-visualization", "dashboard-analytics", "me-analytics"],
+    pathwayTitle: "Applied Analytics Pathway",
     pathwayDescription:
-      "For institutions strengthening reporting systems, dashboards, and operational analytics.",
+      "For institutions strengthening reporting systems, dashboard capability, and operational analytics.",
   },
   {
     slug: "advanced",
-    title: "Advanced Track",
+    title: "AI & Advanced Data Science",
+    shortTitle: "Advanced",
     description:
-      "Support advanced capability in machine learning, AI, decision intelligence, and specialized analytics.",
-    courses: ["ml", "ai-decision", "healthcare-analytics"],
-    pathwayTitle: "Advanced Pathway",
+      "Advance into machine learning, predictive analytics, sector-focused intelligence, and higher-value analytical systems.",
+    courses: ["ml", "r-data-analysis", "healthcare-analytics", "ai-decision"],
+    pathwayTitle: "AI & Advanced Data Science Pathway",
     pathwayDescription:
-      "For institutions adopting predictive analytics, AI systems, and sector-focused decision intelligence.",
+      "For institutions adopting predictive analytics, AI systems, and specialized decision intelligence.",
   },
 ];
 
-
-// =======================
-// COURSES
-// =======================
-
 export const academyCourses = [
+  {
+    slug: "data-literacy",
+    title: "Data Literacy",
+    track: "foundation",
+    description:
+      "An introductory course that builds core data understanding, analytical thinking, and confidence in working with information for decisions.",
+    duration: "2–4 weeks",
+    level: "Beginner",
+    format: "Self-paced / guided",
+    status: "coming-soon",
+    objectives: [
+      "Understand what data is and how it supports decision-making",
+      "Interpret basic charts, tables, and indicators",
+      "Build confidence in data-informed thinking",
+      "Recognize common data quality issues",
+    ],
+    modules: [
+      "What Data Means in Practice",
+      "Basic Data Types and Structures",
+      "Reading Tables and Charts",
+      "Indicators, Trends, and Interpretation",
+    ],
+  },
+  {
+    slug: "python-data-analysis",
+    title: "Python for Data Analysis",
+    track: "foundation",
+    description:
+      "A practical introduction to using Python for cleaning, exploring, and analyzing data in real-world workflows.",
+    duration: "5–7 weeks",
+    level: "Beginner to Intermediate",
+    format: "Self-paced / guided exercises",
+    status: "coming-soon",
+    objectives: [
+      "Use Python for data loading and cleaning",
+      "Work with tabular datasets effectively",
+      "Perform basic exploratory data analysis",
+      "Build confidence in practical analytical workflows",
+    ],
+    modules: [
+      "Python Setup and Essentials",
+      "Working with DataFrames",
+      "Cleaning and Transforming Data",
+      "Exploratory Data Analysis",
+      "Summaries, Grouping, and Practical Workflows",
+    ],
+  },
+  {
+    slug: "sql",
+    title: "SQL & Data Management",
+    track: "foundation",
+    description:
+      "A practical SQL course for querying, transforming, and managing structured data for analytics and reporting.",
+    duration: "4–6 weeks",
+    level: "Beginner to Intermediate",
+    format: "Self-paced / guided exercises",
+    status: "coming-soon",
+    objectives: [
+      "Understand relational databases and SQL basics",
+      "Write practical analytical queries",
+      "Use joins, grouping, filtering, and aggregation",
+      "Prepare data for dashboards and reporting",
+      "Build confidence in working with structured datasets",
+    ],
+    modules: [
+      "Database Fundamentals",
+      "SELECT, WHERE, ORDER BY",
+      "GROUP BY and Aggregation",
+      "JOINs and Relationships",
+      "SQL for Data Cleaning",
+      "SQL for Analytics and Dashboards",
+    ],
+  },
+  {
+    slug: "powerbi-data-visualization",
+    title: "Data Visualization with Power BI",
+    track: "professional",
+    description:
+      "A practical course on designing clear, useful dashboards and visual reports in Power BI for real-world decision support.",
+    duration: "4–6 weeks",
+    level: "Intermediate",
+    format: "Applied / project-based",
+    status: "coming-soon",
+    objectives: [
+      "Design clear and effective visual reports",
+      "Build dashboard pages in Power BI",
+      "Connect visuals to decision-making needs",
+      "Apply practical reporting and storytelling principles",
+    ],
+    modules: [
+      "Power BI Foundations",
+      "Data Modeling Basics",
+      "Visual Design Principles",
+      "Interactive Dashboards",
+      "Reporting for Decision Support",
+    ],
+  },
+  {
+    slug: "dashboard-analytics",
+    title: "Dashboard & Analytics",
+    track: "professional",
+    description:
+      "A course focused on dashboard thinking, KPI design, analytics workflows, and operational reporting.",
+    duration: "4–6 weeks",
+    level: "Intermediate",
+    format: "Practical / applied analytics",
+    status: "coming-soon",
+    objectives: [
+      "Design dashboards around clear questions and metrics",
+      "Build useful KPI frameworks",
+      "Translate data into operational insights",
+      "Improve reporting quality and usability",
+    ],
+    modules: [
+      "Dashboard Thinking",
+      "KPI and Metric Design",
+      "Operational Analytics",
+      "Reporting Workflows",
+      "Interpreting and Communicating Insights",
+    ],
+  },
+  {
+    slug: "me-analytics",
+    title: "M&E with Data",
+    track: "professional",
+    description:
+      "A practical course on using data for monitoring, evaluation, and program performance improvement.",
+    duration: "4–6 weeks",
+    level: "Intermediate",
+    format: "Applied / program-focused",
+    status: "coming-soon",
+    objectives: [
+      "Understand data use in monitoring and evaluation",
+      "Work with indicators and program metrics",
+      "Support reporting and accountability workflows",
+      "Interpret results for decision support",
+    ],
+    modules: [
+      "Foundations of M&E with Data",
+      "Indicators and Measurement",
+      "Program Reporting and Dashboards",
+      "Using Data for Learning and Improvement",
+    ],
+  },
   {
     slug: "ml",
     title: "Machine Learning",
-    track: "advanced", // ✅ NEW
+    track: "advanced",
     description:
       "A practical machine learning course covering foundations, model building, evaluation, and real-world applications.",
     duration: "6–8 weeks",
@@ -100,35 +237,33 @@ export const academyCourses = [
     ],
   },
   {
-    slug: "sql",
-    title: "SQL & Data Management",
-    track: "professional", // ✅ NEW
+    slug: "r-data-analysis",
+    title: "R for Data Analysis",
+    track: "advanced",
     description:
-      "A practical SQL course for querying, transforming, and managing structured data for analytics and reporting.",
-    duration: "4–6 weeks",
-    level: "Beginner to Intermediate",
-    format: "Self-paced / guided exercises",
+      "A practical course on using R for statistical analysis, data exploration, and analytical workflows.",
+    duration: "5–7 weeks",
+    level: "Intermediate",
+    format: "Applied / analytical",
     status: "coming-soon",
     objectives: [
-      "Understand relational databases and SQL basics",
-      "Write practical analytical queries",
-      "Use joins, grouping, filtering, and aggregation",
-      "Prepare data for dashboards and reporting",
-      "Build confidence in working with structured datasets",
+      "Use R for structured data analysis",
+      "Work with data transformation and summaries",
+      "Build confidence in analytical scripting",
+      "Apply R in practical data workflows",
     ],
     modules: [
-      "Database Fundamentals",
-      "SELECT, WHERE, ORDER BY",
-      "GROUP BY and Aggregation",
-      "JOINs and Relationships",
-      "SQL for Data Cleaning",
-      "SQL for Analytics and Dashboards",
+      "R Foundations",
+      "Working with Data in R",
+      "Data Cleaning and Transformation",
+      "Exploratory Analysis",
+      "Applied Analytical Workflows",
     ],
   },
   {
     slug: "healthcare-analytics",
     title: "Healthcare Analytics",
-    track: "advanced", // ✅ NEW
+    track: "advanced",
     description:
       "A specialized learning path on healthcare data, disease trends, indicators, dashboards, and analytical decision support.",
     duration: "6–8 weeks",
@@ -151,52 +286,87 @@ export const academyCourses = [
       "Applied Case Studies",
     ],
   },
+  {
+    slug: "ai-decision",
+    title: "AI for Decision-Making",
+    track: "advanced",
+    description:
+      "A course focused on how AI and analytical systems can support strategic, operational, and sector-specific decisions.",
+    duration: "4–6 weeks",
+    level: "Intermediate to Advanced",
+    format: "Conceptual / applied",
+    status: "coming-soon",
+    objectives: [
+      "Understand how AI supports decision workflows",
+      "Identify practical AI use cases in organizations",
+      "Connect analytics outputs to real decisions",
+      "Build confidence in AI-enabled decision support thinking",
+    ],
+    modules: [
+      "AI in Decision Contexts",
+      "From Data to Decision Intelligence",
+      "Use Cases Across Sectors",
+      "Risk, Interpretation, and Practical Adoption",
+    ],
+  },
 ];
-
-
-// =======================
-// TRAINING PROGRAMS
-// =======================
 
 export const academyPrograms = [
   {
-    slug: "ml-training",
-    title: "Machine Learning Training Program",
-    track: "advanced", // ✅ NEW
+    slug: "foundation-pathway",
+    title: "Data Foundations Program",
+    track: "foundation",
     description:
-      "A structured team training program for organizations building machine learning and predictive analytics capacity.",
-    audience: "Organizations, NGOs, institutions, technical teams",
+      "A structured training pathway for institutions building essential data understanding and analytical confidence across teams.",
+    audience: "Beginners, junior staff, operational teams, institutions building baseline capability",
     duration: "4–8 weeks",
     format: "Live / cohort-based / customized",
     status: "available",
     highlights: [
-      "Tailored learning outcomes for teams",
-      "Applied exercises and guided labs",
-      "Practical project work",
-      "Optional customized datasets and use cases",
+      "Foundational data literacy and interpretation",
+      "Practical exposure to Python and SQL basics",
+      "Designed for broad organizational upskilling",
+      "Suitable for early-stage data maturity contexts",
     ],
   },
   {
-    slug: "healthcare-training",
-    title: "Healthcare Analytics Training Program",
-    track: "advanced", // ✅ NEW
+    slug: "applied-analytics-pathway",
+    title: "Applied Analytics & Visualization Program",
+    track: "professional",
     description:
-      "A specialized program for hospitals, health programs, NGOs, and public-sector teams using data for operational and strategic decisions.",
-    audience: "Hospitals, NGOs, healthcare institutions, public health teams",
+      "A structured pathway for organizations strengthening dashboards, reporting, monitoring, and visualization capability.",
+    audience: "Analysts, M&E teams, reporting teams, program staff, institutions",
     duration: "4–8 weeks",
     format: "Live / workshop-based / customized",
-    status: "coming-soon",
+    status: "available",
     highlights: [
-      "Healthcare metrics and dashboard design",
-      "Disease and trend analysis",
-      "Operational data interpretation",
-      "Decision-intelligence focused delivery",
+      "Dashboards, KPI design, and reporting workflows",
+      "Power BI and visual decision support",
+      "M&E-oriented analytical practice",
+      "Strong fit for NGOs and operational teams",
+    ],
+  },
+  {
+    slug: "advanced-data-science-pathway",
+    title: "AI & Advanced Data Science Program",
+    track: "advanced",
+    description:
+      "A higher-level pathway for organizations adopting machine learning, advanced analytics, and sector-focused intelligence.",
+    audience: "Technical teams, analysts, institutions, healthcare teams, innovation-focused organizations",
+    duration: "6–10 weeks",
+    format: "Live / cohort-based / customized",
+    status: "available",
+    highlights: [
+      "Machine learning and predictive analytics",
+      "Advanced analytical workflows with R and applied AI",
+      "Healthcare and decision-intelligence specialization",
+      "Suitable for ambitious teams building advanced capability",
     ],
   },
   {
     slug: "custom-training",
     title: "Custom Institutional Training",
-    track: "professional", // ✅ NEW
+    track: "professional",
     description:
       "Custom-designed data, analytics, dashboard, and AI training aligned to your organization’s goals and technical maturity.",
     audience: "Businesses, NGOs, universities, government teams",
@@ -211,11 +381,6 @@ export const academyPrograms = [
     ],
   },
 ];
-
-
-// =======================
-// HELPERS (VERY USEFUL)
-// =======================
 
 export const getCoursesByTrack = (trackSlug: string) => {
   return academyCourses.filter((course) => course.track === trackSlug);
