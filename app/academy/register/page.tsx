@@ -24,7 +24,7 @@ export default function AcademyRegisterPage() {
     setError("");
     setSuccess("");
 
-    const { data, error } = await supabase.auth.signUp({
+    const { error } = await supabase.auth.signUp({
       email,
       password,
       options: {
@@ -35,30 +35,20 @@ export default function AcademyRegisterPage() {
       },
     });
 
-  if (error) {
-  setError(error.message);
-  setLoading(false);
-  return;
-}
+    if (error) {
+      setError(error.message);
+      setLoading(false);
+      return;
+    }
 
-if (data.user) {
-  const { error: profileError } = await supabase.from("profiles").insert({
-    id: data.user.id,
-    full_name: fullName,
-    organization,
-    role: "learner",
-  });
-
-  if (profileError) {
-    setError(profileError.message);
-    setLoading(false);
-    return;
-  }
-}
-
-setSuccess("Account created successfully. You can now log in.");
+   setSuccess(
+  "Account created successfully. You can now log in to access your learner dashboard and request course enrollment."
+);
 setLoading(false);
-router.push("/academy/login");
+
+setTimeout(() => {
+  router.push("/academy/login");
+}, 1800);
   };
 
   return (
@@ -68,17 +58,21 @@ router.push("/academy/login");
           <p className="text-sm font-medium uppercase tracking-[0.2em] text-cyan-300/80">
             DataRay Academy
           </p>
+
           <h1 className="mt-4 text-3xl font-semibold tracking-tight">
             Create your account
           </h1>
+
           <p className="mt-3 text-sm leading-6 text-slate-400">
-            Register to access DataRay Academy. Course enrollment can be approved manually
-            after registration.
+            Register to access DataRay Academy. Course enrollment can be approved
+            manually after registration.
           </p>
 
           <form onSubmit={handleRegister} className="mt-8 space-y-5">
             <div>
-              <label className="mb-2 block text-sm text-slate-300">Full name</label>
+              <label className="mb-2 block text-sm text-slate-300">
+                Full name
+              </label>
               <input
                 type="text"
                 value={fullName}
@@ -115,7 +109,9 @@ router.push("/academy/login");
             </div>
 
             <div>
-              <label className="mb-2 block text-sm text-slate-300">Password</label>
+              <label className="mb-2 block text-sm text-slate-300">
+                Password
+              </label>
               <input
                 type="password"
                 value={password}

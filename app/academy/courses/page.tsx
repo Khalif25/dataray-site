@@ -32,11 +32,7 @@ export default function AcademyCoursesPage() {
                   {courses.map((course) => (
                     <Link
                       key={course.slug}
-                      href={
-                        ["ml", "sql", "healthcare-analytics"].includes(course.slug)
-                          ? `/academy/courses/${course.slug}`
-                          : "/academy/courses"
-                      }
+                      href={`/academy/courses/${course.slug}`}
                       className="rounded-[24px] border border-white/10 bg-white/5 p-6 transition hover:bg-white/[0.07]"
                     >
                       <div className="flex items-start justify-between gap-4">
@@ -84,9 +80,7 @@ export default function AcademyCoursesPage() {
                       </div>
 
                       <p className="mt-6 text-sm font-medium text-cyan-300">
-                        {["ml", "sql", "healthcare-analytics"].includes(course.slug)
-                          ? "View course →"
-                          : "Planned for release →"}
+                        View course →
                       </p>
                     </Link>
                   ))}

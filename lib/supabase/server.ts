@@ -18,7 +18,7 @@ export async function createClient() {
               cookieStore.set(name, value, options),
             );
           } catch {
-            // Ignore in Server Components where setting cookies may not be allowed.
+            // ignore in server component context
           }
         },
       },

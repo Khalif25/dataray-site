@@ -1,8 +1,10 @@
-import { redirect } from "next/navigation";
 import Link from "next/link";
+import { redirect } from "next/navigation";
 import { createClient } from "@/lib/supabase/server";
+import LogoutButton from "@/components/LogoutButton";
+import { academyCourses } from "@/lib/data";
 
-export default async function AcademyDashboardPage() {
+export default async function DashboardPage() {
   const supabase = await createClient();
 
   const {
@@ -13,71 +15,291 @@ export default async function AcademyDashboardPage() {
     redirect("/academy/login");
   }
 
-  const fullName =
-    (user.user_metadata?.full_name as string | undefined) || user.email || "Learner";
+  const { data: profile } = await supabase
+    .from("profiles")
+    .select("*")
+    .eq("id", user.id)
+    .single();
+
+  const { data: enrollments, error } = await supabase
+    .from("enrollments")
+    .select("*")
+    .order("created_at", { ascending: false });
+
+  const approvedEnrollments =
+    enrollments?.filter((item) => item.status === "approved") ?? [];
 
   return (
     <main className="min-h-screen bg-[#020817] px-4 py-12 text-white sm:px-6 lg:px-8">
       <div className="mx-auto max-w-6xl">
-        <div className="max-w-3xl">
-          <p className="text-sm font-medium uppercase tracking-[0.2em] text-cyan-300/80">
-            DataRay Academy
-          </p>
-          <h1 className="mt-4 text-4xl font-semibold tracking-tight">
-            Learner Dashboard
-          </h1>
-          <p className="mt-5 text-base leading-7 text-slate-300">
-            Welcome, {fullName}. This is your Academy dashboard. Approved course
-            access and progress tracking will appear here.
-          </p>
-        </div>
+        {/* HEADER */}
+        <div className="rounded-[24px] border border-white/10 bg-white/5 p-6">
+          <div className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
+            <div className="max-w-3xl">
+              <p className="text-sm font-medium uppercase tracking-[0.2em] text-cyan-300/80">
+                DataRay Academy
+              </p>
+              <h1 className="mt-3 text-3xl font-semibold tracking-tight sm:text-4xl">
+                Learner Dashboard
+              </h1>
+              <p className="mt-3 text-base leading-7 text-slate-300">
+                Welcome{profile?.full_name ? `, ${profile.full_name}` : ""}. View your
+                enrollment requests, access approved courses, or browse more offerings.
+              </p>
+            </div>
 
-        <div className="mt-12 grid gap-6 md:grid-cols-2 xl:grid-cols-3">
-          <div className="rounded-[24px] border border-white/10 bg-white/5 p-6">
-            <h2 className="text-xl font-semibold">Machine Learning</h2>
-            <p className="mt-3 text-sm leading-6 text-slate-400">
-              Public course information is available now. Protected learning access
-              can be enabled after enrollment approval.
-            </p>
-
-            <div className="mt-6 flex flex-wrap gap-3">
+            <div className="flex flex-wrap gap-3">
               <Link
-                href="/academy/courses/ml"
-                className="rounded-xl border border-white/10 px-4 py-3 text-sm font-medium text-white transition hover:bg-white/5"
+                href="/academy/courses"
+                className="inline-flex items-center justify-center rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-sm font-medium text-white transition hover:bg-white/10"
               >
-                View public page
+                Browse courses
               </Link>
 
               <Link
-  href="/academy/course/ml/learn"
-  className="rounded-xl bg-cyan-400 px-4 py-3 text-sm font-semibold text-slate-950 transition hover:brightness-110"
->
-  Start learning
-</Link>
+                href="/contact"
+                className="inline-flex items-center justify-center rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-sm font-medium text-white transition hover:bg-white/10"
+              >
+                Support
+              </Link>
+
+              <LogoutButton />
             </div>
           </div>
+        </div>
 
-          <div className="rounded-[24px] border border-white/10 bg-white/5 p-6">
-            <h2 className="text-xl font-semibold">Account</h2>
-            <div className="mt-4 space-y-3 text-sm">
-              <div>
-                <p className="text-slate-500">Email</p>
-                <p className="font-medium text-slate-200">{user.email}</p>
-              </div>
-              <div>
-                <p className="text-slate-500">User ID</p>
-                <p className="break-all font-medium text-slate-200">{user.id}</p>
+        <div className="mt-10 grid gap-6 lg:grid-cols-[0.9fr_1.1fr]">
+          <section className="space-y-6">
+            <div className="rounded-[24px] border border-white/10 bg-white/5 p-6">
+              <h2 className="text-xl font-semibold">Profile</h2>
+
+              <div className="mt-5 space-y-4 text-sm">
+                <div>
+                  <p className="text-slate-500">Full name</p>
+                  <p className="mt-1 font-medium text-slate-200">
+                    {profile?.full_name || user.user_metadata?.full_name || "Not provided"}
+                  </p>
+                </div>
+
+                <div>
+                  <p className="text-slate-500">Email</p>
+                  <p className="mt-1 font-medium text-slate-200">{user.email}</p>
+                </div>
+
+                <div>
+                  <p className="text-slate-500">Organization</p>
+                  <p className="mt-1 font-medium text-slate-200">
+                    {profile?.organization ||
+                      user.user_metadata?.organization ||
+                      "Not provided"}
+                  </p>
+                </div>
               </div>
             </div>
-          </div>
 
-          <div className="rounded-[24px] border border-white/10 bg-white/5 p-6">
-            <h2 className="text-xl font-semibold">Next step</h2>
-            <p className="mt-3 text-sm leading-6 text-slate-400">
-              The next MVP layer is enrollment approval, protected ML learning pages,
-              and lesson progress tracking.
-            </p>
-          </div>
+            <div className="rounded-[24px] border border-white/10 bg-white/5 p-6">
+              <h2 className="text-xl font-semibold">Quick actions</h2>
+
+              <div className="mt-5 flex flex-col gap-3">
+                <Link
+                  href="/academy/courses"
+                  className="rounded-xl border border-white/10 px-4 py-3 text-sm font-medium text-white transition hover:bg-white/5"
+                >
+                  Browse more courses
+                </Link>
+
+                <Link
+                  href="/academy/programs"
+                  className="rounded-xl border border-white/10 px-4 py-3 text-sm font-medium text-white transition hover:bg-white/5"
+                >
+                  Explore training programs
+                </Link>
+
+                <Link
+                  href="/contact"
+                  className="rounded-xl border border-white/10 px-4 py-3 text-sm font-medium text-white transition hover:bg-white/5"
+                >
+                  Contact / Support
+                </Link>
+              </div>
+            </div>
+          </section>
+
+          <section>
+            <div className="rounded-[24px] border border-white/10 bg-white/5 p-6">
+              <div className="flex items-center justify-between gap-4">
+                <h2 className="text-xl font-semibold">Your Courses</h2>
+                <span className="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs text-slate-300">
+                  {enrollments?.length ?? 0} request(s)
+                </span>
+              </div>
+
+              <p className="mt-3 text-sm leading-6 text-slate-400">
+                View your enrollment requests and access approved courses.
+              </p>
+
+              {error && (
+                <div className="mt-6 rounded-xl border border-red-400/20 bg-red-400/10 p-4 text-sm text-red-200">
+                  Failed to load enrollments.
+                </div>
+              )}
+
+              <div className="mt-8 space-y-4">
+                {!enrollments || enrollments.length === 0 ? (
+                  <div className="rounded-xl border border-white/10 bg-black/20 p-5">
+                    <p className="font-medium text-slate-200">
+                      No enrollment requests yet
+                    </p>
+                    <p className="mt-2 text-sm text-slate-400">
+                      Browse the Academy catalog and submit your first enrollment request.
+                    </p>
+
+                    <Link
+                      href="/academy/courses"
+                      className="mt-4 inline-flex rounded-xl bg-cyan-500 px-4 py-3 text-sm font-semibold text-black transition hover:brightness-110"
+                    >
+                      Browse courses
+                    </Link>
+                  </div>
+                ) : (
+                  enrollments.map((enroll) => {
+                    const matchedCourse = academyCourses.find(
+                      (course) => course.slug === enroll.course_slug,
+                    );
+
+                    return (
+                      <div
+                        key={enroll.id}
+                        className="rounded-xl border border-white/10 bg-black/20 p-5"
+                      >
+                        <div className="flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between">
+                          <div>
+                            <p className="text-lg font-medium">
+                              {matchedCourse?.title || enroll.course_slug}
+                            </p>
+                            <p className="mt-1 text-sm text-slate-500">
+                              Requested on{" "}
+                              {new Date(enroll.created_at).toLocaleDateString()}
+                            </p>
+                          </div>
+
+                          <span
+                            className={`inline-flex w-fit rounded-full px-3 py-1 text-xs font-medium ${
+                              enroll.status === "approved"
+                                ? "border border-cyan-300/20 bg-cyan-400/10 text-cyan-100"
+                                : enroll.status === "rejected"
+                                ? "border border-red-300/20 bg-red-400/10 text-red-100"
+                                : "border border-amber-300/20 bg-amber-400/10 text-amber-100"
+                            }`}
+                          >
+                            {enroll.status === "approved"
+                              ? "Approved"
+                              : enroll.status === "rejected"
+                              ? "Rejected"
+                              : "Pending"}
+                          </span>
+                        </div>
+
+                        {enroll.status === "approved" ? (
+                          <div className="mt-4">
+                            <p className="text-sm text-slate-300">
+                              Your access is active. You can now start learning.
+                            </p>
+                            <Link
+                              href={`/academy/learn/${enroll.course_slug}`}
+                              className="mt-4 inline-flex rounded-xl bg-cyan-500 px-4 py-3 text-sm font-semibold text-black transition hover:brightness-110"
+                            >
+                              Start learning
+                            </Link>
+                          </div>
+                        ) : enroll.status === "rejected" ? (
+                          <div className="mt-4">
+                            <p className="text-sm text-slate-300">
+                              Your request was not approved. Contact support if you
+                              need clarification.
+                            </p>
+                            <Link
+                              href="/contact"
+                              className="mt-4 inline-flex rounded-xl border border-white/10 px-4 py-3 text-sm font-medium text-white transition hover:bg-white/5"
+                            >
+                              Contact support
+                            </Link>
+                          </div>
+                        ) : (
+                          <div className="mt-4">
+                            <p className="text-sm text-slate-300">
+                              Your enrollment request is awaiting approval.
+                            </p>
+                            <p className="mt-2 text-sm text-slate-400">
+                              While you wait, you can review the public course page,
+                              browse more courses, or contact support if needed.
+                            </p>
+
+                            <div className="mt-4 flex flex-wrap gap-3">
+                              <Link
+                                href={`/academy/courses/${enroll.course_slug}`}
+                                className="rounded-xl border border-white/10 px-4 py-3 text-sm font-medium text-white transition hover:bg-white/5"
+                              >
+                                View course page
+                              </Link>
+
+                              <Link
+                                href="/academy/courses"
+                                className="rounded-xl border border-white/10 px-4 py-3 text-sm font-medium text-white transition hover:bg-white/5"
+                              >
+                                Browse more courses
+                              </Link>
+
+                              <Link
+                                href="/contact"
+                                className="rounded-xl border border-white/10 px-4 py-3 text-sm font-medium text-white transition hover:bg-white/5"
+                              >
+                                Contact / Support
+                              </Link>
+                            </div>
+                          </div>
+                        )}
+                      </div>
+                    );
+                  })
+                )}
+              </div>
+            </div>
+
+            <div className="mt-6 rounded-[24px] border border-white/10 bg-white/5 p-6">
+              <h2 className="text-xl font-semibold">Approved access</h2>
+              <p className="mt-3 text-sm leading-6 text-slate-400">
+                Approved courses appear here and open your protected learning area.
+              </p>
+
+              <div className="mt-6 space-y-3">
+                {approvedEnrollments.length === 0 ? (
+                  <p className="text-sm text-slate-400">No approved courses yet.</p>
+                ) : (
+                  approvedEnrollments.map((enroll) => {
+                    const matchedCourse = academyCourses.find(
+                      (course) => course.slug === enroll.course_slug,
+                    );
+
+                    return (
+                      <Link
+                        key={enroll.id}
+                        href={`/academy/learn/${enroll.course_slug}`}
+                        className="block rounded-xl border border-white/10 bg-black/20 p-4 transition hover:bg-white/5"
+                      >
+                        <p className="font-medium">
+                          {matchedCourse?.title || enroll.course_slug}
+                        </p>
+                        <p className="mt-1 text-sm text-cyan-300">
+                          Open learning area →
+                        </p>
+                      </Link>
+                    );
+                  })
+                )}
+              </div>
+            </div>
+          </section>
         </div>
       </div>
     </main>
