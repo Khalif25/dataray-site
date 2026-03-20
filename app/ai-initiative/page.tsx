@@ -12,7 +12,7 @@ export const metadata: Metadata = {
     siteName: "DataRay Smart Solutions",
     images: [
       {
-        url: "https://www.dataraysmart.com/sadli-poster.png",
+        url: "https://www.dataraysmart.com/opengraph-image.png",
         width: 1200,
         height: 630,
         alt: "SADLI Poster",
@@ -25,7 +25,7 @@ export const metadata: Metadata = {
     title: "Somalia AI & Data Literacy Initiative (SADLI)",
     description:
       "Building the foundation for Somalia’s digital future through AI and data literacy.",
-    images: ["https://www.dataraysmart.com/sadli-poster.png"],
+    images: ["https://www.dataraysmart.com/opengraph-image.png"],
   },
 };
 export default function AIInitiativePage() {
