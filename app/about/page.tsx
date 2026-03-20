@@ -3,20 +3,29 @@ export default function AboutPage() {
     <main className="px-6 py-20">
       <div className="mx-auto max-w-6xl">
         <section className="max-w-4xl">
-          <p className="text-sm font-medium uppercase tracking-[0.2em] text-blue-500">
-            About
-          </p>
+       <p className="text-sm font-semibold text-blue-600">
+  About DataRay
+</p>
 
-          <h1 className="mt-4 text-4xl font-semibold tracking-tight text-black sm:text-5xl">
-            Data-driven intelligence for modern organizations
-          </h1>
+<h2 className="mt-4 text-2xl font-semibold tracking-tight text-black">
+  Building the intelligence systems that power better decisions.
+</h2>
 
-          <p className="mt-6 text-lg leading-8 text-neutral-600">
-            DataRay is an AI-driven analytics and intelligence firm that helps
-            organizations transform complex data into clearer strategy, better
-            decisions, and stronger execution. We combine analytics, dashboards,
-            research, and AI thinking into one modern service platform.
-          </p>
+<p className="mt-4 leading-8 text-neutral-600">
+  DataRay Smart Solutions is an AI-driven analytics and data intelligence company focused on transforming how organizations use data to make decisions. We work with governments, NGOs, healthcare institutions, and businesses to design systems that turn complex data into clear, actionable insight.
+</p>
+
+<p className="mt-4 leading-8 text-neutral-600">
+  Our approach goes beyond dashboards and reporting. We build integrated decision intelligence systems that combine data pipelines, analytics, research, and strategic interpretation, ensuring that insights are not only generated, but understood and applied in real-world environments.
+</p>
+
+<p className="mt-4 leading-8 text-neutral-600">
+  At the core of DataRay is a belief that technology alone is not enough. Sustainable impact requires both intelligent systems and the people who can use them. Through our national AI and data literacy initiative, we are developing a new generation of data-literate professionals while building the analytical infrastructure needed for long-term transformation.
+</p>
+
+<p className="mt-4 leading-8 text-neutral-600">
+  By connecting AI, analytics, research, and human capacity, DataRay is building the foundation for smarter, more informed decision-making in Somalia and across Africa.
+</p>
         </section>
 
         <section className="mt-20 grid gap-8 lg:grid-cols-2">
@@ -28,10 +37,11 @@ export default function AboutPage() {
               A strategic analytics and intelligence partner
             </h2>
             <p className="mt-4 leading-8 text-neutral-600">
-              DataRay is built to help organizations move beyond raw data and
-              fragmented reporting. The goal is to turn information into
-              decision-ready intelligence through practical analytics systems,
-              dashboards, predictive thinking, and research-based insight.
+             DataRay is built to help organizations move beyond raw data and fragmented reporting toward integrated, decision-ready intelligence. 
+             We design and deliver AI-powered analytics systems, interactive dashboards, and research-driven insights that support real-world decision-making. 
+             Our approach combines technology, analytical thinking, and human capacity development to ensure that data is not only processed, 
+             but understood, trusted, and applied effectively. By connecting data, tools, and people, we enable institutions to make smarter, faster,
+             and more strategic decisions in complex environments.
             </p>
           </div>
 
@@ -58,13 +68,13 @@ export default function AboutPage() {
               Mission
             </p>
             <h2 className="mt-4 text-2xl font-semibold tracking-tight text-black">
-              From data overload to decision clarity
+  Powering Somalia’s and next generation of intelligent decisions through AI, data, and human capital.
             </h2>
             <p className="mt-4 leading-8 text-neutral-600">
-              Our mission is to help organizations make better decisions through
-              practical intelligence systems. That means clearer reporting,
-              stronger analytics, better research, more effective training, and
-              a more thoughtful use of AI in real-world environments.
+              Our mission is to bridge the gap between data and decision-making by developing AI-powered systems,
+               analytical platforms, and skilled talent capable of solving real-world challenges. 
+               We work at the intersection of technology, research, and human capacity to ensure that data is not just collected,
+              but translated into meaningful insight, strategic action, and measurable impact across institutions and industries.
             </p>
           </div>
 
@@ -73,14 +83,15 @@ export default function AboutPage() {
               Why DataRay Is Different
             </p>
             <h2 className="mt-4 text-2xl font-semibold tracking-tight text-black">
-              Beyond tools, toward intelligence systems
+              Building intelligence systems,and the people who power them.
+
             </h2>
             <p className="mt-4 leading-8 text-neutral-600">
-              Many firms focus only on technology or one-off reporting. DataRay
-              focuses on the full decision system: the data, the dashboards, the
-              analysis, the research, and the strategic meaning behind them. We
-              aim to deliver not just outputs, but insight that leaders can
-              actually use.
+
+              DataRay goes beyond traditional analytics by combining technology with human capital development. 
+              While many firms focus only on tools or reporting, we build end-to-end intelligence systems supported by trained talent and real-world application. 
+            Through our integrated model-linking AI solutions, research, and national capacity building,we ensure that data systems are not only delivered,
+             but actively used, scaled, and embedded within organizations. The result is sustainable, long-term decision intelligence rather than short-term outputs.
             </p>
           </div>
         </section>
