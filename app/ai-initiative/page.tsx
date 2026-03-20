@@ -1,13 +1,13 @@
 import type { Metadata } from "next";
-export const metadata = {
+
+export const metadata: Metadata = {
   title: "Somalia AI & Data Literacy Initiative (SADLI)",
   description:
     "Building the foundation for Somalia’s digital future through AI and data literacy.",
-
   openGraph: {
     title: "Somalia AI & Data Literacy Initiative (SADLI)",
     description:
-      "A new initiative focused on building AI and data skills for the future.",
+      "Building the foundation for Somalia’s digital future through AI and data literacy.",
     url: "https://www.dataraysmart.com/ai-initiative",
     siteName: "DataRay Smart Solutions",
     images: [
@@ -20,12 +20,11 @@ export const metadata = {
     ],
     type: "website",
   },
-
   twitter: {
     card: "summary_large_image",
     title: "Somalia AI & Data Literacy Initiative (SADLI)",
     description:
-      "Building AI and data skills for the future economy.",
+      "Building the foundation for Somalia’s digital future through AI and data literacy.",
     images: ["https://www.dataraysmart.com/sadli-poster.png"],
   },
 };
