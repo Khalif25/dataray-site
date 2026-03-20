@@ -1,3 +1,34 @@
+import type { Metadata } from "next";
+export const metadata = {
+  title: "Somalia AI & Data Literacy Initiative (SADLI)",
+  description:
+    "Building the foundation for Somalia’s digital future through AI and data literacy.",
+
+  openGraph: {
+    title: "Somalia AI & Data Literacy Initiative (SADLI)",
+    description:
+      "A new initiative focused on building AI and data skills for the future.",
+    url: "https://www.dataraysmart.com/ai-initiative",
+    siteName: "DataRay Smart Solutions",
+    images: [
+      {
+        url: "https://www.dataraysmart.com/sadli-poster.png",
+        width: 1200,
+        height: 630,
+        alt: "SADLI Poster",
+      },
+    ],
+    type: "website",
+  },
+
+  twitter: {
+    card: "summary_large_image",
+    title: "Somalia AI & Data Literacy Initiative (SADLI)",
+    description:
+      "Building AI and data skills for the future economy.",
+    images: ["https://www.dataraysmart.com/sadli-poster.png"],
+  },
+};
 export default function AIInitiativePage() {
   const focusAreas = [
     "Expanding access to AI and data education",
