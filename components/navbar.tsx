@@ -47,6 +47,13 @@ export default function Navbar() {
           </Link>
 
           <Link
+            href="/ai-initiative"
+            className="text-sm text-white/80 transition-colors duration-300 hover:text-cyan-300"
+          >
+            National Initiative
+          </Link>
+
+          <Link
             href="/insights"
             className="text-sm text-white/80 transition-colors duration-300 hover:text-cyan-300"
           >
@@ -168,6 +175,14 @@ export default function Navbar() {
               onClick={() => setMenuOpen(false)}
             >
               Projects
+            </Link>
+
+            <Link
+              href="/ai-initiative"
+              className="rounded-lg px-3 py-3 text-sm text-white/85 transition hover:bg-white/5 hover:text-cyan-300"
+              onClick={() => setMenuOpen(false)}
+            >
+              National Initiative
             </Link>
 
             <Link
