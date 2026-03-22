@@ -109,7 +109,7 @@ export default function Hero() {
             </Link>
 
             <a
-              href="https://forms.gle/BxT6WPCRs3tt7KuHA"
+              href="https://forms.gle/QaQ73fqKPAPmBtCQ7"
               target="_blank"
               rel="noopener noreferrer"
               className="rounded-full border border-cyan-400/25 bg-cyan-400/10 px-6 py-3 text-sm font-medium text-cyan-200 backdrop-blur-md transition duration-300 hover:border-cyan-300/45 hover:bg-cyan-400/15"
