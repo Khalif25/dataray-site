@@ -4,6 +4,13 @@ import { createClient } from "@/lib/supabase/server";
 import LogoutButton from "@/components/LogoutButton";
 import { academyCourses } from "@/lib/data";
 
+const WHATSAPP_NUMBER = "252907736110";
+
+function buildWhatsAppLink(courseTitle: string, courseSlug: string) {
+  const message = `Hello DataRay, I want to complete payment / send proof for ${courseTitle} (${courseSlug}).`;
+  return `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
+}
+
 export default async function DashboardPage() {
   const supabase = await createClient();
 
@@ -24,6 +31,7 @@ export default async function DashboardPage() {
   const { data: enrollments, error } = await supabase
     .from("enrollments")
     .select("*")
+    .eq("user_id", user.id)
     .order("created_at", { ascending: false });
 
   const approvedEnrollments =
@@ -32,7 +40,6 @@ export default async function DashboardPage() {
   return (
     <main className="min-h-screen bg-[#020817] px-4 py-12 text-white sm:px-6 lg:px-8">
       <div className="mx-auto max-w-6xl">
-        {/* HEADER */}
         <div className="rounded-[24px] border border-white/10 bg-white/5 p-6">
           <div className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
             <div className="max-w-3xl">
@@ -44,7 +51,7 @@ export default async function DashboardPage() {
               </h1>
               <p className="mt-3 text-base leading-7 text-slate-300">
                 Welcome{profile?.full_name ? `, ${profile.full_name}` : ""}. View your
-                enrollment requests, access approved courses, or browse more offerings.
+                requests, complete payment where needed, and access approved courses.
               </p>
             </div>
 
@@ -83,7 +90,9 @@ export default async function DashboardPage() {
 
                 <div>
                   <p className="text-slate-500">Email</p>
-                  <p className="mt-1 font-medium text-slate-200">{user.email}</p>
+                  <p className="mt-1 font-medium text-slate-200">
+                    {profile?.email || user.email || "Not provided"}
+                  </p>
                 </div>
 
                 <div>
@@ -92,6 +101,41 @@ export default async function DashboardPage() {
                     {profile?.organization ||
                       user.user_metadata?.organization ||
                       "Not provided"}
+                  </p>
+                </div>
+
+                <div>
+                  <p className="text-slate-500">Phone</p>
+                  <p className="mt-1 font-medium text-slate-200">
+                    {profile?.phone || user.user_metadata?.phone || "Not provided"}
+                  </p>
+                </div>
+
+                <div>
+                  <p className="text-slate-500">Country</p>
+                  <p className="mt-1 font-medium text-slate-200">
+                    {profile?.country || user.user_metadata?.country || "Not provided"}
+                  </p>
+                </div>
+
+                <div>
+                  <p className="text-slate-500">City</p>
+                  <p className="mt-1 font-medium text-slate-200">
+                    {profile?.city || user.user_metadata?.city || "Not provided"}
+                  </p>
+                </div>
+
+                <div>
+                  <p className="text-slate-500">Job title</p>
+                  <p className="mt-1 font-medium text-slate-200">
+                    {profile?.job_title || user.user_metadata?.job_title || "Not provided"}
+                  </p>
+                </div>
+
+                <div>
+                  <p className="text-slate-500">Work status</p>
+                  <p className="mt-1 font-medium text-slate-200">
+                    {profile?.work_status || user.user_metadata?.work_status || "Not provided"}
                   </p>
                 </div>
               </div>
@@ -135,23 +179,21 @@ export default async function DashboardPage() {
               </div>
 
               <p className="mt-3 text-sm leading-6 text-slate-400">
-                View your enrollment requests and access approved courses.
+                View your waitlist requests, payment steps, and approved course access.
               </p>
 
               {error && (
                 <div className="mt-6 rounded-xl border border-red-400/20 bg-red-400/10 p-4 text-sm text-red-200">
-                  Failed to load enrollments.
+                  Failed to load requests.
                 </div>
               )}
 
               <div className="mt-8 space-y-4">
                 {!enrollments || enrollments.length === 0 ? (
                   <div className="rounded-xl border border-white/10 bg-black/20 p-5">
-                    <p className="font-medium text-slate-200">
-                      No enrollment requests yet
-                    </p>
+                    <p className="font-medium text-slate-200">No requests yet</p>
                     <p className="mt-2 text-sm text-slate-400">
-                      Browse the Academy catalog and submit your first enrollment request.
+                      Browse the Academy catalog and submit your first enrollment or waitlist request.
                     </p>
 
                     <Link
@@ -167,6 +209,12 @@ export default async function DashboardPage() {
                       (course) => course.slug === enroll.course_slug,
                     );
 
+                    const courseTitle = matchedCourse?.title || enroll.course_slug;
+                    const whatsappLink = buildWhatsAppLink(
+                      courseTitle,
+                      enroll.course_slug,
+                    );
+
                     return (
                       <div
                         key={enroll.id}
@@ -174,8 +222,9 @@ export default async function DashboardPage() {
                       >
                         <div className="flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between">
                           <div>
-                            <p className="text-lg font-medium">
-                              {matchedCourse?.title || enroll.course_slug}
+                            <p className="text-lg font-medium">{courseTitle}</p>
+                            <p className="mt-1 text-xs text-slate-500">
+                              Course ID: {enroll.course_slug}
                             </p>
                             <p className="mt-1 text-sm text-slate-500">
                               Requested on{" "}
@@ -188,15 +237,19 @@ export default async function DashboardPage() {
                               enroll.status === "approved"
                                 ? "border border-cyan-300/20 bg-cyan-400/10 text-cyan-100"
                                 : enroll.status === "rejected"
-                                ? "border border-red-300/20 bg-red-400/10 text-red-100"
-                                : "border border-amber-300/20 bg-amber-400/10 text-amber-100"
+                                  ? "border border-red-300/20 bg-red-400/10 text-red-100"
+                                  : enroll.status === "waitlist"
+                                    ? "border border-blue-300/20 bg-blue-400/10 text-blue-100"
+                                    : "border border-amber-300/20 bg-amber-400/10 text-amber-100"
                             }`}
                           >
                             {enroll.status === "approved"
                               ? "Approved"
                               : enroll.status === "rejected"
-                              ? "Rejected"
-                              : "Pending"}
+                                ? "Rejected"
+                                : enroll.status === "waitlist"
+                                  ? "Waitlist"
+                                  : "Pending"}
                           </span>
                         </div>
 
@@ -215,8 +268,7 @@ export default async function DashboardPage() {
                         ) : enroll.status === "rejected" ? (
                           <div className="mt-4">
                             <p className="text-sm text-slate-300">
-                              Your request was not approved. Contact support if you
-                              need clarification.
+                              Your request was not approved. Contact support if you need clarification.
                             </p>
                             <Link
                               href="/contact"
@@ -225,14 +277,13 @@ export default async function DashboardPage() {
                               Contact support
                             </Link>
                           </div>
-                        ) : (
+                        ) : enroll.status === "waitlist" ? (
                           <div className="mt-4">
                             <p className="text-sm text-slate-300">
-                              Your enrollment request is awaiting approval.
+                              You are on the waitlist for this course.
                             </p>
                             <p className="mt-2 text-sm text-slate-400">
-                              While you wait, you can review the public course page,
-                              browse more courses, or contact support if needed.
+                              We’ve recorded your interest. When your place opens, your status will change and you’ll be prompted to complete payment.
                             </p>
 
                             <div className="mt-4 flex flex-wrap gap-3">
@@ -248,6 +299,47 @@ export default async function DashboardPage() {
                                 className="rounded-xl border border-white/10 px-4 py-3 text-sm font-medium text-white transition hover:bg-white/5"
                               >
                                 Browse more courses
+                              </Link>
+
+                              <Link
+                                href="/contact"
+                                className="rounded-xl border border-white/10 px-4 py-3 text-sm font-medium text-white transition hover:bg-white/5"
+                              >
+                                Contact / Support
+                              </Link>
+                            </div>
+                          </div>
+                        ) : (
+                          <div className="mt-4">
+                            <p className="text-sm text-slate-300">
+                              Your place is ready. Complete payment and send proof to proceed.
+                            </p>
+                            <p className="mt-2 text-sm text-slate-400">
+                              After payment verification, your course access will be approved.
+                            </p>
+
+                            <div className="mt-4 flex flex-wrap gap-3">
+                              <Link
+                                href={`/academy/payment?course=${enroll.course_slug}`}
+                                className="rounded-xl bg-cyan-500 px-4 py-3 text-sm font-semibold text-black transition hover:brightness-110"
+                              >
+                                Complete payment
+                              </Link>
+
+                              <a
+                                href={whatsappLink}
+                                target="_blank"
+                                rel="noreferrer"
+                                className="rounded-xl border border-white/10 px-4 py-3 text-sm font-medium text-white transition hover:bg-white/5"
+                              >
+                                Send proof via WhatsApp
+                              </a>
+
+                              <Link
+                                href={`/academy/courses/${enroll.course_slug}`}
+                                className="rounded-xl border border-white/10 px-4 py-3 text-sm font-medium text-white transition hover:bg-white/5"
+                              >
+                                View course page
                               </Link>
 
                               <Link

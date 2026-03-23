@@ -1,3 +1,4 @@
+
 import Link from "next/link";
 import { academyTracks, getCoursesByTrack } from "@/lib/data";
 
@@ -80,7 +81,9 @@ export default function AcademyCoursesPage() {
                       </div>
 
                       <p className="mt-6 text-sm font-medium text-cyan-300">
-                        View course →
+                        {course.status === "live"
+                          ? "View course →"
+                          : "View course / Join waitlist →"}
                       </p>
                     </Link>
                   ))}

@@ -1,16 +1,25 @@
 "use client";
 
 import { FormEvent, useState } from "react";
+import { useRouter, useSearchParams } from "next/navigation";
 import Link from "next/link";
-import { useRouter } from "next/navigation";
 import { createClient } from "@/lib/supabase/client";
 
-export default function AcademyRegisterPage() {
-  const router = useRouter();
+export default function RegisterPage() {
   const supabase = createClient();
+  const router = useRouter();
+  const searchParams = useSearchParams();
+
+  const course = searchParams.get("course");
+  const action = searchParams.get("action");
 
   const [fullName, setFullName] = useState("");
   const [organization, setOrganization] = useState("");
+  const [phone, setPhone] = useState("");
+  const [country, setCountry] = useState("");
+  const [city, setCity] = useState("");
+  const [jobTitle, setJobTitle] = useState("");
+  const [workStatus, setWorkStatus] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
@@ -18,7 +27,7 @@ export default function AcademyRegisterPage() {
   const [error, setError] = useState("");
   const [success, setSuccess] = useState("");
 
-  const handleRegister = async (e: FormEvent<HTMLFormElement>) => {
+  const handleRegister = async (e: FormEvent) => {
     e.preventDefault();
     setLoading(true);
     setError("");
@@ -31,6 +40,11 @@ export default function AcademyRegisterPage() {
         data: {
           full_name: fullName,
           organization,
+          phone,
+          country,
+          city,
+          job_title: jobTitle,
+          work_status: workStatus,
         },
       },
     });
@@ -41,14 +55,20 @@ export default function AcademyRegisterPage() {
       return;
     }
 
-   setSuccess(
-  "Account created successfully. You can now log in to access your learner dashboard and request course enrollment."
-);
-setLoading(false);
+    setSuccess("Account created successfully. You can now log in to continue.");
+    setLoading(false);
 
-setTimeout(() => {
-  router.push("/academy/login");
-}, 1800);
+    const query = new URLSearchParams();
+    if (course) query.set("course", course);
+    if (action) query.set("action", action);
+
+    setTimeout(() => {
+      router.push(
+        query.toString()
+          ? `/academy/login?${query.toString()}`
+          : "/academy/login",
+      );
+    }, 1200);
   };
 
   return (
@@ -59,94 +79,112 @@ setTimeout(() => {
             DataRay Academy
           </p>
 
-          <h1 className="mt-4 text-3xl font-semibold tracking-tight">
-            Create your account
-          </h1>
+          <h1 className="mt-4 text-3xl font-semibold">Create account</h1>
 
           <p className="mt-3 text-sm leading-6 text-slate-400">
-            Register to access DataRay Academy. Course enrollment can be approved
-            manually after registration.
+            Create your learner account to continue with your course request.
           </p>
 
-          <form onSubmit={handleRegister} className="mt-8 space-y-5">
-            <div>
-              <label className="mb-2 block text-sm text-slate-300">
-                Full name
-              </label>
-              <input
-                type="text"
-                value={fullName}
-                onChange={(e) => setFullName(e.target.value)}
-                required
-                className="w-full rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-white outline-none transition focus:border-cyan-300/40"
-                placeholder="Your full name"
-              />
-            </div>
+          <form onSubmit={handleRegister} className="mt-8 space-y-4">
+            <input
+              type="text"
+              placeholder="Full name"
+              value={fullName}
+              onChange={(e) => setFullName(e.target.value)}
+              required
+              className="w-full rounded-xl border border-white/10 bg-white/5 px-4 py-3"
+            />
 
-            <div>
-              <label className="mb-2 block text-sm text-slate-300">
-                Organization <span className="text-slate-500">(optional)</span>
-              </label>
-              <input
-                type="text"
-                value={organization}
-                onChange={(e) => setOrganization(e.target.value)}
-                className="w-full rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-white outline-none transition focus:border-cyan-300/40"
-                placeholder="Organization or institution"
-              />
-            </div>
+            <input
+              type="text"
+              placeholder="Organization"
+              value={organization}
+              onChange={(e) => setOrganization(e.target.value)}
+              className="w-full rounded-xl border border-white/10 bg-white/5 px-4 py-3"
+            />
 
-            <div>
-              <label className="mb-2 block text-sm text-slate-300">Email</label>
-              <input
-                type="email"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                required
-                className="w-full rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-white outline-none transition focus:border-cyan-300/40"
-                placeholder="you@example.com"
-              />
-            </div>
+            <input
+              type="tel"
+              placeholder="Phone"
+              value={phone}
+              onChange={(e) => setPhone(e.target.value)}
+              className="w-full rounded-xl border border-white/10 bg-white/5 px-4 py-3"
+            />
 
-            <div>
-              <label className="mb-2 block text-sm text-slate-300">
-                Password
-              </label>
-              <input
-                type="password"
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
-                required
-                minLength={6}
-                className="w-full rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-white outline-none transition focus:border-cyan-300/40"
-                placeholder="Create a password"
-              />
-            </div>
+            <input
+              type="text"
+              placeholder="Country"
+              value={country}
+              onChange={(e) => setCountry(e.target.value)}
+              className="w-full rounded-xl border border-white/10 bg-white/5 px-4 py-3"
+            />
 
-            {error && (
-              <div className="rounded-xl border border-red-400/20 bg-red-400/10 px-4 py-3 text-sm text-red-200">
-                {error}
-              </div>
-            )}
+            <input
+              type="text"
+              placeholder="City"
+              value={city}
+              onChange={(e) => setCity(e.target.value)}
+              required
+              className="w-full rounded-xl border border-white/10 bg-white/5 px-4 py-3"
+            />
 
-            {success && (
-              <div className="rounded-xl border border-cyan-400/20 bg-cyan-400/10 px-4 py-3 text-sm text-cyan-100">
-                {success}
-              </div>
-            )}
+            <input
+              type="text"
+              placeholder="Job title / role"
+              value={jobTitle}
+              onChange={(e) => setJobTitle(e.target.value)}
+              className="w-full rounded-xl border border-white/10 bg-white/5 px-4 py-3"
+            />
+
+            <input
+              type="text"
+              placeholder="Work status (optional)"
+              value={workStatus}
+              onChange={(e) => setWorkStatus(e.target.value)}
+              className="w-full rounded-xl border border-white/10 bg-white/5 px-4 py-3"
+            />
+
+            <input
+              type="email"
+              placeholder="Email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              required
+              className="w-full rounded-xl border border-white/10 bg-white/5 px-4 py-3"
+            />
+
+            <input
+              type="password"
+              placeholder="Password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              required
+              minLength={8}
+              className="w-full rounded-xl border border-white/10 bg-white/5 px-4 py-3"
+            />
+
+            {error && <p className="text-sm text-red-300">{error}</p>}
+            {success && <p className="text-sm text-cyan-200">{success}</p>}
 
             <button
               type="submit"
               disabled={loading}
-              className="w-full rounded-xl bg-cyan-400 px-5 py-3 font-semibold text-slate-950 transition hover:brightness-110 disabled:cursor-not-allowed disabled:opacity-70"
+              className="w-full rounded-xl bg-cyan-400 px-5 py-3 font-semibold text-slate-950"
             >
-              {loading ? "Creating account..." : "Create account"}
+              {loading ? "Creating..." : "Create account"}
             </button>
           </form>
 
           <p className="mt-6 text-sm text-slate-400">
             Already registered?{" "}
-            <Link href="/academy/login" className="font-medium text-cyan-300">
+            <Link
+              href={
+                course
+                  ? `/academy/login?course=${course}${action ? `&action=${action}` : ""}`
+                  : "/academy/login"
+              }
+              className="text-cyan-300"
+            >
               Log in
             </Link>
           </p>

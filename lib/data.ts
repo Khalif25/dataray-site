@@ -27,14 +27,51 @@ export const navLinks = [
   { href: "/contact", label: "Contact" },
 ];
 
-export const academyTracks = [
+export type AcademyTrackSlug = "foundation" | "professional" | "advanced";
+
+export interface AcademyTrack {
+  slug: AcademyTrackSlug;
+  title: string;
+  shortTitle: string;
+  description: string;
+  courses: string[];
+  pathwayTitle: string;
+  pathwayDescription: string;
+}
+
+export interface AcademyCourse {
+  slug: string;
+  title: string;
+  track: AcademyTrackSlug;
+  description: string;
+  duration: string;
+  level: string;
+  format: string;
+  status: "live" | "coming-soon";
+  objectives: string[];
+  modules: string[];
+}
+
+export interface AcademyProgram {
+  slug: string;
+  title: string;
+  track: AcademyTrackSlug;
+  description: string;
+  audience: string;
+  duration: string;
+  format: string;
+  status: "available" | "coming-soon";
+  highlights: string[];
+}
+
+export const academyTracks: AcademyTrack[] = [
   {
     slug: "foundation",
     title: "Data Foundations",
     shortTitle: "Foundation",
     description:
       "Build essential data literacy, analytical thinking, and core technical confidence for modern data work.",
-    courses: ["data-literacy", "python-data-analysis", "sql"],
+    courses: ["data-literacy", "intro-to-ai", "python-data-analysis", "sql"],
     pathwayTitle: "Data Foundations Pathway",
     pathwayDescription:
       "For institutions building foundational data understanding and technical confidence across teams.",
@@ -63,14 +100,14 @@ export const academyTracks = [
   },
 ];
 
-export const academyCourses = [
+export const academyCourses: AcademyCourse[] = [
   {
     slug: "data-literacy",
     title: "Data Literacy",
     track: "foundation",
     description:
       "An introductory course that builds core data understanding, analytical thinking, and confidence in working with information for decisions.",
-    duration: "2–4 weeks",
+    duration: "6–9 weeks",
     level: "Beginner",
     format: "Self-paced / guided",
     status: "coming-soon",
@@ -88,12 +125,38 @@ export const academyCourses = [
     ],
   },
   {
+    slug: "intro-to-ai",
+    title: "Introduction to AI",
+    track: "foundation",
+    description:
+      "A beginner-friendly introduction to artificial intelligence, covering core concepts, real-world applications, responsible use, and how AI supports modern decision-making and innovation.",
+    duration: "7–14 weeks",
+    level: "Beginner",
+    format: "Self-paced / guided",
+    status: "coming-soon",
+    objectives: [
+      "Understand what artificial intelligence is and how it differs from traditional software",
+      "Recognize major AI concepts including machine learning, generative AI, and automation",
+      "Identify practical AI use cases across business, education, healthcare, and public services",
+      "Understand key benefits, risks, and responsible-use considerations in AI adoption",
+      "Build foundational confidence for progressing into more advanced AI and data science learning paths",
+    ],
+    modules: [
+      "What Artificial Intelligence Means in Practice",
+      "Types of AI and Core Concepts",
+      "Machine Learning, Generative AI, and Automation",
+      "Real-World AI Applications Across Sectors",
+      "Risks, Ethics, and Responsible AI Use",
+      "Getting Started with AI-Enabled Workflows",
+    ],
+  },
+  {
     slug: "python-data-analysis",
     title: "Python for Data Analysis",
     track: "foundation",
     description:
       "A practical introduction to using Python for cleaning, exploring, and analyzing data in real-world workflows.",
-    duration: "5–7 weeks",
+    duration: "7–10 weeks",
     level: "Beginner to Intermediate",
     format: "Self-paced / guided exercises",
     status: "coming-soon",
@@ -311,14 +374,15 @@ export const academyCourses = [
   },
 ];
 
-export const academyPrograms = [
+export const academyPrograms: AcademyProgram[] = [
   {
     slug: "foundation-pathway",
     title: "Data Foundations Program",
     track: "foundation",
     description:
       "A structured training pathway for institutions building essential data understanding and analytical confidence across teams.",
-    audience: "Beginners, junior staff, operational teams, institutions building baseline capability",
+    audience:
+      "Beginners, junior staff, operational teams, institutions building baseline capability",
     duration: "4–8 weeks",
     format: "Live / cohort-based / customized",
     status: "available",
@@ -335,7 +399,8 @@ export const academyPrograms = [
     track: "professional",
     description:
       "A structured pathway for organizations strengthening dashboards, reporting, monitoring, and visualization capability.",
-    audience: "Analysts, M&E teams, reporting teams, program staff, institutions",
+    audience:
+      "Analysts, M&E teams, reporting teams, program staff, institutions",
     duration: "4–8 weeks",
     format: "Live / workshop-based / customized",
     status: "available",
@@ -352,7 +417,8 @@ export const academyPrograms = [
     track: "advanced",
     description:
       "A higher-level pathway for organizations adopting machine learning, advanced analytics, and sector-focused intelligence.",
-    audience: "Technical teams, analysts, institutions, healthcare teams, innovation-focused organizations",
+    audience:
+      "Technical teams, analysts, institutions, healthcare teams, innovation-focused organizations",
     duration: "6–10 weeks",
     format: "Live / cohort-based / customized",
     status: "available",
@@ -382,10 +448,10 @@ export const academyPrograms = [
   },
 ];
 
-export const getCoursesByTrack = (trackSlug: string) => {
+export const getCoursesByTrack = (trackSlug: AcademyTrackSlug) => {
   return academyCourses.filter((course) => course.track === trackSlug);
 };
 
-export const getProgramsByTrack = (trackSlug: string) => {
+export const getProgramsByTrack = (trackSlug: AcademyTrackSlug) => {
   return academyPrograms.filter((program) => program.track === trackSlug);
 };

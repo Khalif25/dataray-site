@@ -12,28 +12,55 @@ export async function POST(req: Request) {
     return NextResponse.json({ error: "Not authenticated" }, { status: 401 });
   }
 
-  const { course_slug } = await req.json();
+  const { course_slug, action } = await req.json();
 
-  const { data: existing } = await supabase
+  if (!course_slug) {
+    return NextResponse.json({ error: "Missing course_slug" }, { status: 400 });
+  }
+
+  const status = action === "waitlist" ? "waitlist" : "pending";
+  const request_type = action === "waitlist" ? "waitlist" : "course";
+
+  const { data: existing, error: existingError } = await supabase
     .from("enrollments")
-    .select("id")
+    .select("id, status, course_slug")
     .eq("user_id", user.id)
     .eq("course_slug", course_slug)
     .maybeSingle();
 
-  if (existing) {
-    return NextResponse.json({ message: "Already enrolled" });
+  if (existingError) {
+    return NextResponse.json({ error: existingError.message }, { status: 500 });
   }
 
-  const { error } = await supabase.from("enrollments").insert({
+  if (existing) {
+    return NextResponse.json({
+      success: true,
+      message:
+        existing.status === "approved"
+          ? "You already have access to this course."
+          : existing.status === "waitlist"
+            ? "You are already on the waitlist."
+            : "You already submitted a request.",
+    });
+  }
+
+  const { error: insertError } = await supabase.from("enrollments").insert({
     user_id: user.id,
     course_slug,
-    status: "pending",
+    status,
+    request_type,
+    source: "academy-web",
   });
 
-  if (error) {
-    return NextResponse.json({ error: error.message }, { status: 500 });
+  if (insertError) {
+    return NextResponse.json({ error: insertError.message }, { status: 500 });
   }
 
-  return NextResponse.json({ success: true, message: "Enrollment submitted" });
+  return NextResponse.json({
+    success: true,
+    message:
+      status === "waitlist"
+        ? "You have been added to the waitlist."
+        : "Your enrollment request has been submitted.",
+  });
 }

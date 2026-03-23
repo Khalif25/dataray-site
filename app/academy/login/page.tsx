@@ -1,21 +1,24 @@
 "use client";
 
 import { FormEvent, useState } from "react";
+import { useRouter, useSearchParams } from "next/navigation";
 import Link from "next/link";
-import { useRouter } from "next/navigation";
 import { createClient } from "@/lib/supabase/client";
 
-export default function AcademyLoginPage() {
-  const router = useRouter();
+export default function LoginPage() {
   const supabase = createClient();
+  const router = useRouter();
+  const searchParams = useSearchParams();
+
+  const course = searchParams.get("course");
+  const action = searchParams.get("action");
 
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
 
-  const handleLogin = async (e: FormEvent<HTMLFormElement>) => {
+  const handleLogin = async (e: FormEvent) => {
     e.preventDefault();
     setLoading(true);
     setError("");
@@ -31,6 +34,37 @@ export default function AcademyLoginPage() {
       return;
     }
 
+    if (course && action === "waitlist") {
+      const res = await fetch("/api/enroll", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          course_slug: course,
+          action: "waitlist",
+        }),
+      });
+
+      const data = await res.json();
+
+      if (!res.ok) {
+        setError(data.error || "Failed to join waitlist.");
+        setLoading(false);
+        return;
+      }
+
+      router.push("/academy/dashboard");
+      router.refresh();
+      return;
+    }
+
+    if (course && action === "payment") {
+      router.push(`/academy/payment?course=${course}`);
+      router.refresh();
+      return;
+    }
+
     router.push("/academy/dashboard");
     router.refresh();
   };
@@ -42,54 +76,55 @@ export default function AcademyLoginPage() {
           <p className="text-sm font-medium uppercase tracking-[0.2em] text-cyan-300/80">
             DataRay Academy
           </p>
-          <h1 className="mt-4 text-3xl font-semibold tracking-tight">Log in</h1>
-          <p className="mt-3 text-sm leading-6 text-slate-400">
-            Access your learner dashboard and approved Academy content.
-          </p>
 
-          <form onSubmit={handleLogin} className="mt-8 space-y-5">
-            <div>
-              <label className="mb-2 block text-sm text-slate-300">Email</label>
-              <input
-                type="email"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                required
-                className="w-full rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-white outline-none transition focus:border-cyan-300/40"
-                placeholder="you@example.com"
-              />
-            </div>
+          <h1 className="mt-4 text-3xl font-semibold">Log in</h1>
 
-            <div>
-              <label className="mb-2 block text-sm text-slate-300">Password</label>
-              <input
-                type="password"
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
-                required
-                className="w-full rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-white outline-none transition focus:border-cyan-300/40"
-                placeholder="Your password"
-              />
-            </div>
+          <form onSubmit={handleLogin} className="mt-8 space-y-4">
+            <input
+              type="email"
+              placeholder="Email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              required
+              className="w-full rounded-xl border border-white/10 bg-white/5 px-4 py-3"
+            />
 
-            {error && (
-              <div className="rounded-xl border border-red-400/20 bg-red-400/10 px-4 py-3 text-sm text-red-200">
-                {error}
-              </div>
-            )}
+            <input
+              type="password"
+              placeholder="Password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              required
+              className="w-full rounded-xl border border-white/10 bg-white/5 px-4 py-3"
+            />
+
+            {error && <p className="text-sm text-red-300">{error}</p>}
 
             <button
               type="submit"
               disabled={loading}
-              className="w-full rounded-xl bg-cyan-400 px-5 py-3 font-semibold text-slate-950 transition hover:brightness-110 disabled:cursor-not-allowed disabled:opacity-70"
+              className="w-full rounded-xl bg-cyan-400 px-5 py-3 font-semibold text-slate-950"
             >
               {loading ? "Logging in..." : "Log in"}
             </button>
           </form>
 
+          <p className="mt-4 text-sm text-slate-400">
+            <Link href="/academy/forgot-password" className="text-cyan-300">
+              Forgot your password?
+            </Link>
+          </p>
+
           <p className="mt-6 text-sm text-slate-400">
             Need an account?{" "}
-            <Link href="/academy/register" className="font-medium text-cyan-300">
+            <Link
+              href={
+                course
+                  ? `/academy/register?course=${course}${action ? `&action=${action}` : ""}`
+                  : "/academy/register"
+              }
+              className="text-cyan-300"
+            >
               Register
             </Link>
           </p>
