@@ -4,6 +4,9 @@ import Navbar from "@/components/navbar";
 import Footer from "@/components/footer";
 import { GoogleAnalytics } from "@next/third-parties/google";
 
+import { Analytics } from "@vercel/analytics/react";
+import { SpeedInsights } from "@vercel/speed-insights/next";
+
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.dataraysmart.com"),
 
@@ -62,11 +65,23 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className="min-h-screen text-white antialiased">
+        {/* Background grid */}
         <div className="pointer-events-none fixed inset-0 -z-10 bg-[linear-gradient(rgba(255,255,255,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.02)_1px,transparent_1px)] bg-[size:40px_40px]" />
+
         <Navbar />
+
         {children}
+
         <Footer />
+
+        {/* Google Analytics */}
         <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GA_ID || ""} />
+
+        {/* Vercel Analytics (user tracking) */}
+        <Analytics />
+
+        {/* Vercel Speed Insights (performance tracking) */}
+        <SpeedInsights />
       </body>
     </html>
   );
