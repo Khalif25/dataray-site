@@ -93,7 +93,11 @@ function PaymentPageContent() {
 
             <div>
               <p className="text-sm text-slate-400">Dahabshiil</p>
-              <p className="mt-1 font-medium text-white">XXXXX</p>
+              <p className="mt-1 font-medium text-white">WJLD3825</p>
+            </div>
+            <div>
+              <p className="text-sm text-slate-400">Golis</p>
+              <p className="mt-1 font-medium text-white">+252907736110</p>
             </div>
 
             <div>
