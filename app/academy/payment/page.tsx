@@ -1,13 +1,13 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { Suspense, useMemo, useState } from "react";
 import Link from "next/link";
 import { useRouter, useSearchParams } from "next/navigation";
 import { academyCourses } from "@/lib/data";
 
 const SUPPORT_EMAIL = "abdinur.khalif@dataraysmart.com";
 
-export default function PaymentPage() {
+function PaymentPageContent() {
   const router = useRouter();
   const searchParams = useSearchParams();
   const courseSlug = searchParams.get("course");
@@ -147,5 +147,21 @@ export default function PaymentPage() {
         </div>
       </div>
     </main>
+  );
+}
+
+export default function PaymentPage() {
+  return (
+    <Suspense
+      fallback={
+        <main className="min-h-screen bg-[#020817] px-4 py-12 text-white sm:px-6 lg:px-8">
+          <div className="mx-auto max-w-2xl rounded-[28px] border border-white/10 bg-white/5 p-8">
+            <p className="text-sm text-slate-400">Loading payment page...</p>
+          </div>
+        </main>
+      }
+    >
+      <PaymentPageContent />
+    </Suspense>
   );
 }

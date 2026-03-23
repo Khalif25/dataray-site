@@ -1,11 +1,11 @@
 "use client";
 
-import { FormEvent, useState } from "react";
+import { FormEvent, Suspense, useState } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
 import Link from "next/link";
 import { createClient } from "@/lib/supabase/client";
 
-export default function RegisterPage() {
+function RegisterPageContent() {
   const supabase = createClient();
   const router = useRouter();
   const searchParams = useSearchParams();
@@ -66,7 +66,7 @@ export default function RegisterPage() {
       router.push(
         query.toString()
           ? `/academy/login?${query.toString()}`
-          : "/academy/login",
+          : "/academy/login"
       );
     }, 1200);
   };
@@ -191,5 +191,23 @@ export default function RegisterPage() {
         </div>
       </div>
     </main>
+  );
+}
+
+export default function RegisterPage() {
+  return (
+    <Suspense
+      fallback={
+        <main className="min-h-screen bg-[#020817] px-4 py-12 text-white sm:px-6 lg:px-8">
+          <div className="mx-auto max-w-md">
+            <div className="rounded-[24px] border border-white/10 bg-white/5 p-8">
+              <p className="text-sm text-slate-400">Loading registration page...</p>
+            </div>
+          </div>
+        </main>
+      }
+    >
+      <RegisterPageContent />
+    </Suspense>
   );
 }
