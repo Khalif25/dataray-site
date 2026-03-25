@@ -6,24 +6,23 @@ type LessonCompleteButtonProps = {
   courseSlug: string;
   lessonId: string;
   completed: boolean;
+  onProgressChange?: (lessonId: string, completed: boolean) => void;
 };
 
 export default function LessonCompleteButton({
   courseSlug,
   lessonId,
   completed,
+  onProgressChange,
 }: LessonCompleteButtonProps) {
   const [isPending, setIsPending] = useState(false);
   const [error, setError] = useState("");
-  const [localCompleted, setLocalCompleted] = useState(completed);
 
   async function handleToggle() {
     setError("");
     setIsPending(true);
 
-    const nextCompleted = !localCompleted;
-
-    setLocalCompleted(nextCompleted);
+    const nextCompleted = !completed;
 
     try {
       const res = await fetch("/api/lesson-progress", {
@@ -41,11 +40,12 @@ export default function LessonCompleteButton({
       const data = await res.json();
 
       if (!res.ok) {
-        setLocalCompleted(!nextCompleted);
         setError(data.error || "Failed to update lesson progress.");
+        return;
       }
+
+      onProgressChange?.(lessonId, nextCompleted);
     } catch {
-      setLocalCompleted(!nextCompleted);
       setError("Something went wrong while updating lesson progress.");
     } finally {
       setIsPending(false);
@@ -59,14 +59,14 @@ export default function LessonCompleteButton({
         onClick={handleToggle}
         disabled={isPending}
         className={`inline-flex items-center justify-center rounded-xl px-4 py-3 text-sm font-semibold transition ${
-          localCompleted
+          completed
             ? "border border-white/10 bg-white/5 text-white hover:bg-white/10"
             : "bg-cyan-400 text-slate-950 hover:brightness-110"
         }`}
       >
         {isPending
           ? "Updating..."
-          : localCompleted
+          : completed
             ? "Mark as incomplete"
             : "Mark lesson complete"}
       </button>

@@ -1,6 +1,6 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import Link from "next/link";
 import LessonCompleteButton from "@/components/academy/lesson-complete-button";
 
@@ -76,20 +76,76 @@ export default function LessonPlayer({
   progressRows,
   initialLessonSlug,
 }: LessonPlayerProps) {
-  const [currentLessonSlug, setCurrentLessonSlug] = useState(
-    initialLessonSlug && lessons.some((l) => l.lesson_slug === initialLessonSlug)
-      ? initialLessonSlug
-      : lessons[0]?.lesson_slug ?? "",
+  const [currentLessonSlug, setCurrentLessonSlug] = useState("");
+
+  useEffect(() => {
+    const storageKey = `course-${slug}-last-lesson`;
+    const savedLessonSlug =
+      typeof window !== "undefined"
+        ? localStorage.getItem(storageKey)
+        : null;
+
+    if (
+      initialLessonSlug &&
+      lessons.some((lesson) => lesson.lesson_slug === initialLessonSlug)
+    ) {
+      setCurrentLessonSlug(initialLessonSlug);
+      return;
+    }
+
+    if (
+      savedLessonSlug &&
+      lessons.some((lesson) => lesson.lesson_slug === savedLessonSlug)
+    ) {
+      setCurrentLessonSlug(savedLessonSlug);
+      return;
+    }
+
+    setCurrentLessonSlug(lessons[0]?.lesson_slug ?? "");
+  }, [slug, initialLessonSlug, lessons]);
+
+  useEffect(() => {
+    if (!currentLessonSlug) return;
+
+    const storageKey = `course-${slug}-last-lesson`;
+    localStorage.setItem(storageKey, currentLessonSlug);
+  }, [slug, currentLessonSlug]);
+
+  const [localProgress, setLocalProgress] = useState<ProgressRow[]>(
+    progressRows ?? [],
   );
+
+  function handleProgressChange(lessonId: string, completed: boolean) {
+    setLocalProgress((prev) => {
+      const existingIndex = prev.findIndex((row) => row.lesson_id === lessonId);
+
+      if (existingIndex >= 0) {
+        const next = [...prev];
+        next[existingIndex] = {
+          ...next[existingIndex],
+          is_completed: completed,
+        };
+        return next;
+      }
+
+      return [
+        ...prev,
+        {
+          lesson_id: lessonId,
+          is_completed: completed,
+        },
+      ];
+    });
+  }
 
   const completedLessonIds = useMemo(
     () =>
       new Set(
-        (progressRows ?? [])
+        (localProgress ?? [])
           .filter((row) => row.is_completed)
           .map((row) => row.lesson_id),
       ),
-    [progressRows],
+    [localProgress],
   );
 
   const groupedModules = useMemo(() => groupLessonsByModule(lessons), [lessons]);
@@ -123,6 +179,7 @@ export default function LessonPlayer({
     return (
       <main className="min-h-screen bg-[#020817] px-4 py-8 text-white sm:px-6 lg:px-8">
         <div className="mx-auto max-w-5xl rounded-[24px] border border-white/10 bg-white/5 p-6">
+        
           <p className="text-slate-300">No lesson is available for this course yet.</p>
         </div>
       </main>
@@ -236,7 +293,7 @@ export default function LessonPlayer({
             </div>
           </aside>
 
-          <section className="min-w-0 rounded-[24px] border border-white/10 bg-white/5 p-6">
+          <section className="min-w-0 rounded-[24px] border border-white/10 bg-[linear-gradient(180deg,rgba(255,255,255,0.05),rgba(255,255,255,0.02))]">
             <div className="flex flex-col gap-4 border-b border-white/10 pb-6 md:flex-row md:items-start md:justify-between">
               <div className="max-w-3xl">
                 <p className="text-sm font-medium uppercase tracking-[0.2em] text-cyan-300/80">
@@ -252,6 +309,7 @@ export default function LessonPlayer({
                   courseSlug={slug}
                   lessonId={currentLesson.id}
                   completed={completedLessonIds.has(currentLesson.id)}
+                  onProgressChange={handleProgressChange}
                 />
               </div>
             </div>
