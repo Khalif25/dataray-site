@@ -88,7 +88,7 @@ export default function AIInitiativePage() {
         <div className="mx-auto max-w-6xl px-6 py-16 sm:py-20 lg:px-8">
           <div className="max-w-4xl">
             <p className="text-sm font-semibold uppercase tracking-[0.2em] text-blue-700">
-              National Initiative
+              Somalia AI & Data Literacy Initiative
             </p>
 
             <h1 className="mt-4 text-4xl font-bold tracking-tight text-black sm:text-5xl">
