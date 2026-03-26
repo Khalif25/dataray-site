@@ -11,29 +11,36 @@ export default function Navbar() {
   const [aboutOpen, setAboutOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 z-50 border-b border-cyan-400/10 bg-[linear-gradient(180deg,#243754_0%,#223451_100%)] shadow-[0_10px_40px_rgba(0,0,0,0.2)] backdrop-blur-xl">
+    <header className="sticky top-0 z-50 border-b border-white/10 bg-[linear-gradient(180deg,#34465d_0%,#2a3a4f_100%)] shadow-[0_12px_40px_rgba(0,0,0,0.22)] backdrop-blur-xl">
       <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-4 sm:px-6">
         <Link
           href="/"
-          className="flex items-center gap-3 shrink-0"
+          className="flex items-center gap-4 shrink-0"
           aria-label="DataRay Smart Solutions home"
         >
-          <div className="relative flex h-[64px] w-[64px] items-center justify-center overflow-hidden rounded-full border border-cyan-300/20 bg-[#0a1730] shadow-[0_10px_30px_rgba(0,0,0,0.35)]">
+          <div
+            className="relative flex h-[66px] w-[66px] items-center justify-center overflow-hidden rounded-full
+            border border-cyan-300/25
+            bg-[radial-gradient(circle_at_30%_30%,rgba(255,255,255,0.09),transparent_58%),#0b1f3f]
+            shadow-[0_12px_35px_rgba(0,0,0,0.42)]"
+          >
+            <div className="absolute inset-0 rounded-full bg-cyan-400/15 blur-2xl opacity-80" />
+
             <Image
-              src="/dataray-mark-clean.png"
+              src="/premium_logo.png"
               alt="DataRay logo"
               fill
               priority
-              className="object-cover scale-[1.12]"
-              sizes="64px"
+              className="object-cover scale-[1.9] translate-y-[2%] contrast-125 saturate-130"
+              sizes="66px"
             />
           </div>
 
           <div className="flex flex-col leading-none">
-            <span className="text-[1.55rem] font-semibold tracking-[-0.02em] text-white">
+            <span className="text-[1.6rem] font-semibold tracking-[-0.02em] text-white">
               DataRay
             </span>
-            <span className="mt-1 text-[0.72rem] font-medium uppercase tracking-[0.28em] text-cyan-200/80">
+            <span className="mt-1 text-[0.72rem] font-medium uppercase tracking-[0.28em] text-cyan-100/75">
               Smart Solutions
             </span>
           </div>
@@ -42,21 +49,21 @@ export default function Navbar() {
         <nav className="hidden items-center gap-6 lg:flex">
           <Link
             href="/"
-            className="text-sm text-white/80 transition-colors duration-300 hover:text-cyan-300"
+            className="text-[15px] text-white/85 transition-colors duration-300 hover:text-cyan-300"
           >
             Home
           </Link>
 
           <Link
             href="/services"
-            className="text-sm text-white/80 transition-colors duration-300 hover:text-cyan-300"
+            className="text-[15px] text-white/85 transition-colors duration-300 hover:text-cyan-300"
           >
             Services
           </Link>
 
           <Link
             href="/projects"
-            className="text-sm text-white/80 transition-colors duration-300 hover:text-cyan-300"
+            className="text-[15px] text-white/85 transition-colors duration-300 hover:text-cyan-300"
           >
             Projects
           </Link>
@@ -68,7 +75,7 @@ export default function Navbar() {
           >
             <Link
               href="/insights"
-              className="inline-flex items-center gap-2 text-sm text-white/80 transition-colors duration-300 hover:text-cyan-300"
+              className="inline-flex items-center gap-2 text-[15px] text-white/85 transition-colors duration-300 hover:text-cyan-300"
             >
               Insights
               <span
@@ -81,7 +88,7 @@ export default function Navbar() {
             </Link>
 
             <div
-              className={`absolute left-0 top-full z-50 mt-3 w-56 rounded-2xl border border-white/10 bg-[#081a36]/95 p-2 shadow-[0_18px_60px_rgba(0,0,0,0.35)] backdrop-blur-xl transition-all duration-200 ${
+              className={`absolute left-0 top-full z-50 mt-3 w-56 rounded-2xl border border-white/10 bg-[#122238]/95 p-2 shadow-[0_18px_60px_rgba(0,0,0,0.35)] backdrop-blur-xl transition-all duration-200 ${
                 insightsOpen
                   ? "visible translate-y-0 opacity-100"
                   : "invisible -translate-y-1 opacity-0"
@@ -110,7 +117,7 @@ export default function Navbar() {
           >
             <Link
               href="/academy"
-              className="inline-flex items-center gap-2 text-sm text-white/80 transition-colors duration-300 hover:text-cyan-300"
+              className="inline-flex items-center gap-2 text-[15px] text-white/85 transition-colors duration-300 hover:text-cyan-300"
             >
               Academy
               <span
@@ -123,7 +130,7 @@ export default function Navbar() {
             </Link>
 
             <div
-              className={`absolute left-0 top-full z-50 mt-3 w-60 rounded-2xl border border-white/10 bg-[#081a36]/95 p-2 shadow-[0_18px_60px_rgba(0,0,0,0.35)] backdrop-blur-xl transition-all duration-200 ${
+              className={`absolute left-0 top-full z-50 mt-3 w-60 rounded-2xl border border-white/10 bg-[#122238]/95 p-2 shadow-[0_18px_60px_rgba(0,0,0,0.35)] backdrop-blur-xl transition-all duration-200 ${
                 academyOpen
                   ? "visible translate-y-0 opacity-100"
                   : "invisible -translate-y-1 opacity-0"
@@ -159,7 +166,7 @@ export default function Navbar() {
           >
             <Link
               href="/about"
-              className="inline-flex items-center gap-2 text-sm text-white/80 transition-colors duration-300 hover:text-cyan-300"
+              className="inline-flex items-center gap-2 text-[15px] text-white/85 transition-colors duration-300 hover:text-cyan-300"
             >
               About
               <span
@@ -172,7 +179,7 @@ export default function Navbar() {
             </Link>
 
             <div
-              className={`absolute left-0 top-full z-50 mt-3 w-72 rounded-2xl border border-white/10 bg-[#081a36]/95 p-2 shadow-[0_18px_60px_rgba(0,0,0,0.35)] backdrop-blur-xl transition-all duration-200 ${
+              className={`absolute left-0 top-full z-50 mt-3 w-80 rounded-2xl border border-white/10 bg-[#122238]/95 p-2 shadow-[0_18px_60px_rgba(0,0,0,0.35)] backdrop-blur-xl transition-all duration-200 ${
                 aboutOpen
                   ? "visible translate-y-0 opacity-100"
                   : "invisible -translate-y-1 opacity-0"
@@ -189,21 +196,21 @@ export default function Navbar() {
                 href="/ai-initiative"
                 className="block rounded-xl px-4 py-3 text-sm text-slate-300 transition hover:bg-white/5 hover:text-white"
               >
-                Somalia AI & Data Literacy Initiative
+                Somalia AI &amp; Data Literacy Initiative
               </Link>
 
               <Link
                 href="/about/somali-social-stability-ai"
                 className="block rounded-xl px-4 py-3 text-sm text-slate-300 transition hover:bg-white/5 hover:text-white"
               >
-                Somalia AI Initiative
+                Somali Social Stability AI
               </Link>
             </div>
           </div>
 
           <Link
             href="/contact"
-            className="text-sm text-white/80 transition-colors duration-300 hover:text-cyan-300"
+            className="text-[15px] text-white/85 transition-colors duration-300 hover:text-cyan-300"
           >
             Contact
           </Link>
@@ -212,7 +219,7 @@ export default function Navbar() {
         <div className="flex items-center gap-3">
           <Link
             href="/contact"
-            className="hidden rounded-full border border-white/15 bg-white/5 px-5 py-2.5 text-sm font-medium text-white transition duration-300 hover:border-cyan-300/40 hover:bg-white/10 lg:inline-flex"
+            className="hidden rounded-full border border-white/20 bg-white/10 px-6 py-2.5 text-sm font-medium text-white backdrop-blur-md transition duration-300 hover:border-cyan-300/40 hover:bg-white/15 lg:inline-flex"
           >
             Request Consultation
           </Link>
@@ -220,7 +227,7 @@ export default function Navbar() {
           <button
             type="button"
             onClick={() => setMenuOpen(!menuOpen)}
-            className="inline-flex items-center justify-center rounded-lg border border-white/15 bg-white/5 px-3 py-2 text-sm text-white lg:hidden"
+            className="inline-flex items-center justify-center rounded-lg border border-white/15 bg-white/8 px-3 py-2 text-sm text-white lg:hidden"
             aria-label="Toggle menu"
           >
             Menu
@@ -229,7 +236,7 @@ export default function Navbar() {
       </div>
 
       {menuOpen && (
-        <div className="border-t border-white/10 bg-[#06152D] lg:hidden">
+        <div className="border-t border-white/10 bg-[#24354d]/98 lg:hidden">
           <nav className="mx-auto flex max-w-7xl flex-col px-4 py-4 sm:px-6">
             <Link
               href="/"
@@ -318,7 +325,7 @@ export default function Navbar() {
                   className="block rounded-lg px-3 py-2 text-sm text-white/75 transition hover:bg-white/5 hover:text-cyan-300"
                   onClick={() => setMenuOpen(false)}
                 >
-                  National Initiative
+                  Somalia AI &amp; Data Literacy Initiative
                 </Link>
 
                 <Link
@@ -341,7 +348,7 @@ export default function Navbar() {
 
             <Link
               href="/contact"
-              className="mt-3 inline-flex w-fit rounded-full border border-white/15 bg-white/5 px-5 py-2.5 text-sm font-medium text-white transition duration-300 hover:border-cyan-300/40 hover:bg-white/10"
+              className="mt-3 inline-flex w-fit rounded-full border border-white/20 bg-white/10 px-5 py-2.5 text-sm font-medium text-white transition duration-300 hover:border-cyan-300/40 hover:bg-white/15"
               onClick={() => setMenuOpen(false)}
             >
               Request Consultation
