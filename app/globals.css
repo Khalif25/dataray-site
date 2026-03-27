@@ -1,5 +1,7 @@
 @import "tailwindcss";
 
+/* ---------- Base ---------- */
+
 :root {
   --background: #f8fafc;
   --foreground: #0f172a;
@@ -24,42 +26,213 @@ a {
   color: #0f172a;
 }
 
+/* ---------- Existing layout ---------- */
+
 .container-shell {
-  @apply mx-auto max-w-7xl px-6;
+  max-width: 80rem;
+  margin-inline: auto;
+  padding-inline: 1.5rem;
 }
 
 .section-light {
-  @apply bg-slate-50 text-slate-900;
+  background: #f8fafc;
+  color: #0f172a;
 }
 
 .section-white {
-  @apply bg-white text-slate-900;
+  background: white;
+  color: #0f172a;
 }
 
 .eyebrow {
-  @apply text-xs font-semibold uppercase tracking-[0.28em] text-blue-600;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.28em;
+  color: #2563eb;
 }
 
 .section-title {
-  @apply text-3xl font-semibold tracking-tight text-slate-950 sm:text-4xl;
+  font-size: 2rem;
+  font-weight: 600;
+  color: #020617;
 }
 
 .section-copy {
-  @apply mt-4 max-w-2xl text-base leading-7 text-slate-600;
+  margin-top: 1rem;
+  max-width: 32rem;
+  font-size: 1rem;
+  line-height: 1.75;
+  color: #475569;
 }
 
-.service-card {
-  @apply rounded-[28px] border border-slate-200 bg-white p-6 shadow-[0_10px_30px_rgba(15,23,42,0.06)] transition duration-300 hover:-translate-y-1 hover:shadow-[0_18px_50px_rgba(37,99,235,0.12)];
-}
+/* ---------- Navbar + buttons ---------- */
 
 .nav-link {
-  @apply text-sm text-white/75 transition-colors duration-300 hover:text-cyan-300;
+  font-size: 0.875rem;
+  color: rgba(255, 255, 255, 0.75);
+  transition: 0.3s;
+}
+
+.nav-link:hover {
+  color: #67e8f9;
 }
 
 .hero-primary-button {
-  @apply rounded-full bg-gradient-to-r from-blue-600 to-cyan-500 px-6 py-3 text-sm font-medium text-white shadow-[0_10px_30px_rgba(37,99,235,0.28)] transition duration-300 hover:-translate-y-0.5 hover:shadow-[0_14px_40px_rgba(6,182,212,0.35)];
+  border-radius: 9999px;
+  background: linear-gradient(to right, #2563eb, #06b6d4);
+  padding: 0.75rem 1.5rem;
+  color: white;
 }
 
 .hero-secondary-button {
-  @apply rounded-full border border-white/15 bg-white/5 px-6 py-3 text-sm font-medium text-white backdrop-blur-md transition duration-300 hover:border-cyan-300/40 hover:bg-white/10;
+  border-radius: 9999px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  background: rgba(255, 255, 255, 0.05);
+  padding: 0.75rem 1.5rem;
+  color: white;
+}
+
+/* ========================================================= */
+/* 🔥 DataRay Dark Theme System (GUARANTEED WORKING) */
+/* ========================================================= */
+
+.dr-dark-page {
+  min-height: 100vh;
+  background: #06152d;
+  color: white;
+}
+
+.dr-dark-page-soft {
+  min-height: 100vh;
+  color: white;
+  background:
+    radial-gradient(circle at top, rgba(34, 211, 238, 0.08), transparent 28%),
+    linear-gradient(180deg, #0a1b36 0%, #06152d 100%);
+}
+
+.dr-dark-section {
+  max-width: 72rem;
+  margin-inline: auto;
+  padding: 4rem 1.5rem;
+}
+
+.dr-dark-card {
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 1.5rem;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.18);
+}
+
+.dr-dark-card-soft {
+  border: 1px solid rgba(34, 211, 238, 0.1);
+  background: linear-gradient(
+    180deg,
+    rgba(34, 211, 238, 0.05),
+    rgba(255, 255, 255, 0.02)
+  );
+  border-radius: 1.5rem;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.18);
+}
+
+.dr-label {
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.28em;
+  color: rgba(103, 232, 249, 0.8);
+}
+
+.dr-heading-1 {
+  font-size: 3rem;
+  font-weight: 600;
+  letter-spacing: -0.03em;
+  color: white;
+}
+
+.dr-heading-2 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: white;
+}
+
+.dr-heading-3 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: white;
+}
+
+/* 👇 IMPORTANT: brighter body text */
+
+.dr-body {
+  font-size: 1rem;
+  line-height: 1.8;
+  color: #e2e8f0; /* slate-200 (brighter than before) */
+}
+
+.dr-body-sm {
+  font-size: 0.875rem;
+  line-height: 1.7;
+  color: #e2e8f0;
+}
+
+.dr-muted {
+  font-size: 0.875rem;
+  color: #94a3b8;
+}
+
+.dr-accent {
+  color: #67e8f9;
+}
+
+.dr-divider {
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+.dr-list-card {
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: #0b1c39;
+  border-radius: 1rem;
+  padding: 0.75rem 1rem;
+  font-size: 0.875rem;
+  color: #e2e8f0;
+}
+
+.dr-primary-button {
+  display: inline-flex;
+  border-radius: 9999px;
+  border: 1px solid rgba(103, 232, 249, 0.2);
+  background: rgba(255, 255, 255, 0.05);
+  padding: 0.75rem 1.25rem;
+  font-size: 0.875rem;
+  color: white;
+  transition: 0.3s;
+}
+
+.dr-primary-button:hover {
+  border-color: rgba(103, 232, 249, 0.4);
+  background: rgba(255, 255, 255, 0.1);
+}
+
+/* ---------- Article / content blocks ---------- */
+
+.dr-prose {
+  color: #e2e8f0;
+}
+
+.dr-prose p {
+  line-height: 1.8;
+  color: #e2e8f0;
+}
+
+.dr-prose h2 {
+  margin-top: 2rem;
+  font-size: 1.5rem;
+  color: white;
+}
+
+.dr-prose h3 {
+  margin-top: 1.5rem;
+  font-size: 1.25rem;
+  color: white;
 }
