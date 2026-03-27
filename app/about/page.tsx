@@ -12,7 +12,7 @@ export default function AboutPage() {
 </h2>
 
 <p className="mt-4 leading-8 text-neutral-600">
-  DataRay Smart Solutions is an AI-driven analytics and data intelligence company focused on transforming how organizations use data to make decisions. We work with governments, NGOs, healthcare institutions, and businesses to design systems that turn complex data into clear, actionable insight.
+  Founded in 2024, DataRay Smart Solutions is an AI-driven analytics and data intelligence company focused on transforming how organizations use data to make decisions. We work with governments, NGOs, healthcare institutions, and businesses to design systems that turn complex data into clear, actionable insight.
 </p>
 
 <p className="mt-4 leading-8 text-neutral-600">
