@@ -53,7 +53,7 @@ export default function SomaliSocialStabilityAIPage() {
               <div className="mt-8 space-y-8">
                 <div>
                   <h3 className="text-xl font-semibold text-blue-600">
-                    Step 1: Build labeled dataset
+                    Phase 1: Build labeled dataset
                   </h3>
 
                   <p className="mt-3 leading-8 text-slate-600">
@@ -85,7 +85,7 @@ export default function SomaliSocialStabilityAIPage() {
 
                 <div>
                   <h3 className="text-xl font-semibold text-blue-600">
-                    Step 2: Train classification model
+                    Phase 2: Train classification model
                   </h3>
 
                   <p className="mt-3 leading-8 text-slate-600">
@@ -98,7 +98,7 @@ export default function SomaliSocialStabilityAIPage() {
 
                 <div>
                   <h3 className="text-xl font-semibold text-blue-600">
-                    Step 3: Deploy system
+                    Phase 3: Deploy system
                   </h3>
 
                   <p className="mt-3 leading-8 text-slate-600">
