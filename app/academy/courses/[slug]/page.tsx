@@ -130,7 +130,7 @@ export default async function CoursePage({
                 <p className="mt-1 font-medium text-slate-900">
                   {isLive
                     ? "Open for learner enrollment"
-                    : "Planned for release within the next 6 months"}
+                    : "Planned for release in the coming months"}
                 </p>
               </div>
 
