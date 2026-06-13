@@ -24,6 +24,10 @@ export default function Footer() {
             Services
           </Link>
 
+          <Link href="/laspro" className="hover:text-cyan-300 transition">
+            LasPro
+          </Link>
+
           <Link href="/insights" className="hover:text-cyan-300 transition">
             Insights
           </Link>

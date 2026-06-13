@@ -7,6 +7,15 @@ const withMDX = createMDX({
 
 const nextConfig: NextConfig = {
   pageExtensions: ["ts", "tsx", "md", "mdx"],
+  async redirects() {
+    return [
+      {
+        source: "/lasocodpro/:path*",
+        destination: "/laspro",
+        permanent: true,
+      },
+    ];
+  },
 };
 
 export default withMDX(nextConfig);

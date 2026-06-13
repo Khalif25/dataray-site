@@ -48,6 +48,73 @@ export default function HomePage() {
       <Hero />
 
       <main className="bg-slate-50 text-slate-900">
+        {/* LasPro Product Section */}
+        <section className="border-b border-slate-200 bg-white px-4 py-16 sm:px-6 sm:py-20 lg:py-24">
+          <div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-[0.95fr_1.05fr] lg:items-center">
+            <div>
+              <p className="eyebrow">Product</p>
+              <h2 className="mt-4 max-w-3xl text-3xl font-semibold tracking-tight text-slate-950 sm:text-5xl">
+                LasPro for inventory, sales, stock, and light accounting
+              </h2>
+              <p className="mt-5 max-w-2xl text-base leading-8 text-slate-600">
+                LasPro is DataRay Smart Solutions&apos; fast business management
+                system for shops and growing businesses that need cleaner sales,
+                stock, purchases, customer credits, supplier payables, expenses,
+                and reports.
+              </p>
+
+              <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+                <Link
+                  href="/laspro"
+                  className="inline-flex justify-center rounded-full bg-slate-950 px-6 py-3 text-sm font-semibold text-white transition hover:bg-slate-800"
+                >
+                  Explore LasPro
+                </Link>
+                <Link
+                  href="/contact"
+                  className="inline-flex justify-center rounded-full border border-slate-200 bg-white px-6 py-3 text-sm font-semibold text-slate-900 transition hover:border-slate-300 hover:bg-slate-50"
+                >
+                  Request Demo
+                </Link>
+              </div>
+            </div>
+
+            <div className="rounded-[28px] border border-slate-200 bg-slate-950 p-6 text-white shadow-[0_24px_60px_rgba(15,23,42,0.16)]">
+              <div className="flex items-center justify-between border-b border-white/10 pb-5">
+                <div>
+                  <p className="text-xs font-medium uppercase tracking-[0.22em] text-cyan-300">
+                    LasPro
+                  </p>
+                  <h3 className="mt-1 text-xl font-semibold">
+                    Shop Operations View
+                  </h3>
+                </div>
+                <div className="rounded-full bg-emerald-300/10 px-3 py-1 text-xs font-medium text-emerald-200">
+                  Public Product
+                </div>
+              </div>
+
+              <div className="mt-5 grid gap-4 sm:grid-cols-2">
+                {[
+                  "Fast selling",
+                  "Stock visibility",
+                  "Customer collections",
+                  "Daily reports",
+                ].map((item) => (
+                  <div
+                    key={item}
+                    className="rounded-2xl border border-white/10 bg-white/[0.04] p-4"
+                  >
+                    <p className="text-sm text-slate-300">{item}</p>
+                    <div className="mt-4 h-2 rounded-full bg-cyan-300/70" />
+                    <div className="mt-2 h-2 w-2/3 rounded-full bg-white/15" />
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </section>
+
         {/* Services Section */}
         <section className="px-4 py-16 sm:px-6 sm:py-20 lg:py-24">
           <div className="mx-auto max-w-7xl">
@@ -425,19 +492,19 @@ export default function HomePage() {
                   </p>
 
                   <div className="mt-8 flex flex-wrap gap-4">
-                    <a
+                    <Link
                       href="/research-survey"
                       className="inline-flex rounded-full bg-slate-950 px-6 py-3 text-sm font-medium text-white transition hover:bg-slate-800"
                     >
                       Participate in the Survey
-                    </a>
+                    </Link>
 
-                    <a
+                    <Link
                       href="/insights"
                       className="inline-flex rounded-full border border-slate-200 bg-white px-6 py-3 text-sm font-medium text-slate-900 transition hover:border-slate-300 hover:bg-slate-50"
                     >
                       Explore Insights
-                    </a>
+                    </Link>
                   </div>
                 </div>
 

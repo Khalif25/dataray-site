@@ -76,7 +76,15 @@ export default function LessonPlayer({
   progressRows,
   initialLessonSlug,
 }: LessonPlayerProps) {
-  const [currentLessonSlug, setCurrentLessonSlug] = useState("");
+  const initialCurrentLessonSlug =
+    initialLessonSlug &&
+    lessons.some((lesson) => lesson.lesson_slug === initialLessonSlug)
+      ? initialLessonSlug
+      : lessons[0]?.lesson_slug ?? "";
+
+  const [currentLessonSlug, setCurrentLessonSlug] = useState(
+    initialCurrentLessonSlug,
+  );
 
   useEffect(() => {
     const storageKey = `course-${slug}-last-lesson`;
@@ -85,23 +93,22 @@ export default function LessonPlayer({
         ? localStorage.getItem(storageKey)
         : null;
 
-    if (
+    const nextLessonSlug =
       initialLessonSlug &&
       lessons.some((lesson) => lesson.lesson_slug === initialLessonSlug)
-    ) {
-      setCurrentLessonSlug(initialLessonSlug);
-      return;
-    }
+        ? initialLessonSlug
+        : savedLessonSlug &&
+            lessons.some((lesson) => lesson.lesson_slug === savedLessonSlug)
+          ? savedLessonSlug
+          : lessons[0]?.lesson_slug ?? "";
 
-    if (
-      savedLessonSlug &&
-      lessons.some((lesson) => lesson.lesson_slug === savedLessonSlug)
-    ) {
-      setCurrentLessonSlug(savedLessonSlug);
-      return;
-    }
+    const timeoutId = window.setTimeout(() => {
+      setCurrentLessonSlug((current) =>
+        current === nextLessonSlug ? current : nextLessonSlug,
+      );
+    }, 0);
 
-    setCurrentLessonSlug(lessons[0]?.lesson_slug ?? "");
+    return () => window.clearTimeout(timeoutId);
   }, [slug, initialLessonSlug, lessons]);
 
   useEffect(() => {

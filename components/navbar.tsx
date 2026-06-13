@@ -62,6 +62,13 @@ export default function Navbar() {
           </Link>
 
           <Link
+            href="/laspro"
+            className="text-[15px] font-medium text-cyan-100 transition-colors duration-300 hover:text-cyan-300"
+          >
+            LasPro
+          </Link>
+
+          <Link
             href="/projects"
             className="text-[15px] text-white/85 transition-colors duration-300 hover:text-cyan-300"
           >
@@ -252,6 +259,14 @@ export default function Navbar() {
               onClick={() => setMenuOpen(false)}
             >
               Services
+            </Link>
+
+            <Link
+              href="/laspro"
+              className="rounded-lg px-3 py-3 text-sm font-medium text-cyan-100 transition hover:bg-white/5 hover:text-cyan-300"
+              onClick={() => setMenuOpen(false)}
+            >
+              LasPro
             </Link>
 
             <Link

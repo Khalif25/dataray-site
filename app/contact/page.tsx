@@ -74,7 +74,8 @@ export default function ContactPage() {
 
           <p className="mt-6 text-lg leading-8 text-neutral-600">
             We work with institutions, businesses, and organizations seeking
-            practical data-driven solutions.
+            practical data-driven solutions, including LasPro demos for shops
+            and growing businesses.
           </p>
         </section>
 
@@ -129,6 +130,7 @@ export default function ContactPage() {
               <p className="mt-4 leading-7 text-neutral-600">
                 All project inquiries, collaboration requests, and partnership
                 discussions are coordinated through our central contact channel.
+                You can also request a LasPro demo or onboarding support here.
               </p>
 
               <div className="mt-6 space-y-5">
@@ -228,6 +230,7 @@ export default function ContactPage() {
                     className="mt-2 w-full rounded-xl border border-neutral-200 px-4 py-3 outline-none transition focus:border-black/20"
                   >
                     <option>AI Strategy & Advisory</option>
+                    <option>LasPro Demo / Onboarding</option>
                     <option>Executive Dashboards</option>
                     <option>Advanced Analytics</option>
                     <option>Research & Market Intelligence</option>
