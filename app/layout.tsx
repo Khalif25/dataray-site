@@ -3,12 +3,13 @@ import "./globals.css";
 import Navbar from "@/components/navbar";
 import Footer from "@/components/footer";
 import { GoogleAnalytics } from "@next/third-parties/google";
+import { SITE_URL } from "@/lib/site-url";
 
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://www.dataraysmart.com"),
+  metadataBase: new URL(SITE_URL),
 
   title: {
     default: "DataRay | AI, Data & Strategic Intelligence",
@@ -35,7 +36,7 @@ export const metadata: Metadata = {
     title: "DataRay | AI, Data & Strategic Intelligence",
     description:
       "AI-driven analytics, dashboards, research insights, and strategic intelligence.",
-    url: "https://www.dataraysmart.com",
+    url: SITE_URL,
     siteName: "DataRay",
     images: [
       {

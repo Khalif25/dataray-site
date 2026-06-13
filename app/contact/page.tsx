@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Link from "next/link";
 import { siteConfig } from "@/lib/data";
 import { trackEvent } from "@/lib/analytics";
 
@@ -130,7 +131,14 @@ export default function ContactPage() {
               <p className="mt-4 leading-7 text-neutral-600">
                 All project inquiries, collaboration requests, and partnership
                 discussions are coordinated through our central contact channel.
-                You can also request a LasPro demo or onboarding support here.
+                You can also request a{" "}
+                <Link
+                  href="/laspro"
+                  className="font-medium text-blue-600 transition hover:text-blue-700"
+                >
+                  LasPro demo or onboarding support
+                </Link>{" "}
+                here.
               </p>
 
               <div className="mt-6 space-y-5">

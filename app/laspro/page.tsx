@@ -24,8 +24,8 @@ import {
   Users,
   WalletCards,
 } from "lucide-react";
+import { SITE_URL } from "@/lib/site-url";
 
-const siteUrl = "https://dataraysmart.com";
 const appUrl =
   process.env.NEXT_PUBLIC_LASPRO_APP_URL || "https://app.dataraysmart.com";
 
@@ -251,10 +251,10 @@ const jsonLd = {
   "@graph": [
     {
       "@type": "Organization",
-      "@id": `${siteUrl}/#organization`,
+      "@id": `${SITE_URL}/#organization`,
       name: "DataRay Smart Solutions",
-      url: siteUrl,
-      logo: `${siteUrl}/premium_logo.png`,
+      url: SITE_URL,
+      logo: `${SITE_URL}/premium_logo.png`,
       contactPoint: {
         "@type": "ContactPoint",
         contactType: "customer support",
@@ -266,36 +266,36 @@ const jsonLd = {
     },
     {
       "@type": "SoftwareApplication",
-      "@id": `${siteUrl}/laspro#software`,
+      "@id": `${SITE_URL}/laspro#software`,
       name: "LasPro",
       applicationCategory: "BusinessApplication",
       operatingSystem: "Web",
       provider: {
-        "@id": `${siteUrl}/#organization`,
+        "@id": `${SITE_URL}/#organization`,
       },
-      url: `${siteUrl}/laspro`,
+      url: `${SITE_URL}/laspro`,
       description:
         "Inventory, sales, stock, and light accounting system for businesses.",
       offers: {
         "@type": "Offer",
         availability: "https://schema.org/InStock",
-        url: `${siteUrl}/contact`,
+        url: `${SITE_URL}/contact`,
       },
     },
     {
       "@type": "Product",
-      "@id": `${siteUrl}/laspro#product`,
+      "@id": `${SITE_URL}/laspro#product`,
       name: "LasPro",
       brand: {
-        "@id": `${siteUrl}/#organization`,
+        "@id": `${SITE_URL}/#organization`,
       },
       category: "Inventory and sales management software",
       description,
-      url: `${siteUrl}/laspro`,
+      url: `${SITE_URL}/laspro`,
     },
     {
       "@type": "FAQPage",
-      "@id": `${siteUrl}/laspro#faq`,
+      "@id": `${SITE_URL}/laspro#faq`,
       mainEntity: faqs.map((faq) => ({
         "@type": "Question",
         name: faq.question,
@@ -316,18 +316,18 @@ export const metadata: Metadata = {
   description,
   keywords,
   alternates: {
-    canonical: `${siteUrl}/laspro`,
+    canonical: `${SITE_URL}/laspro`,
   },
   openGraph: {
     title:
       "LasPro Inventory and Sales Management System | DataRay Smart Solutions",
     description,
-    url: `${siteUrl}/laspro`,
+    url: `${SITE_URL}/laspro`,
     siteName: "DataRay Smart Solutions",
     type: "website",
     images: [
       {
-        url: "/og-image.png",
+        url: `${SITE_URL}/og-image.png`,
         width: 1200,
         height: 630,
         alt: "DataRay Smart Solutions",
@@ -339,7 +339,7 @@ export const metadata: Metadata = {
     title:
       "LasPro Inventory and Sales Management System | DataRay Smart Solutions",
     description,
-    images: ["/og-image.png"],
+    images: [`${SITE_URL}/og-image.png`],
   },
   robots: {
     index: true,
@@ -400,7 +400,8 @@ export default function LasProPage() {
             <p className="mt-6 max-w-3xl text-lg leading-8 text-slate-200">
               A simple, fast, and reliable business system by DataRay Smart
               Solutions for managing sales, stock, purchases, customer credits,
-              supplier payables, expenses, and reports.
+              supplier payables, expenses, and reports for shops and small
+              businesses in Somalia and beyond.
             </p>
 
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
@@ -425,10 +426,6 @@ export default function LasProPage() {
               </a>
             </div>
 
-            <p className="mt-6 max-w-2xl text-sm leading-7 text-slate-300">
-              Previously introduced as LaSocodPro, LasPro is the updated product
-              name under DataRay Smart Solutions.
-            </p>
           </div>
 
           <div className="rounded-[28px] border border-white/12 bg-white/[0.06] p-4 shadow-[0_30px_90px_rgba(0,0,0,0.24)] backdrop-blur">
@@ -499,9 +496,10 @@ export default function LasProPage() {
               Simple business control without heavy ERP complexity
             </h2>
             <p className="mt-5 text-base leading-8 text-slate-600">
-              LasPro helps shop owners and teams manage inventory, sales
-              recording, stock tracking, financial awareness, and business
-              reports from one practical web system.
+              LasPro inventory management system brings inventory control, a
+              sales management system, stock management, financial awareness,
+              and business reporting into one practical web system from DataRay
+              Smart Solutions.
             </p>
           </div>
 
