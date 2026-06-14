@@ -115,6 +115,76 @@ export default function HomePage() {
           </div>
         </section>
 
+        {/* DataRay ERP Section */}
+        <section className="border-b border-slate-200 bg-slate-50 px-4 py-16 sm:px-6 sm:py-20 lg:py-24">
+          <div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-[1fr_0.9fr] lg:items-center">
+            <div>
+              <p className="eyebrow">Upcoming ERP</p>
+              <h2 className="mt-4 max-w-3xl text-3xl font-semibold tracking-tight text-slate-950 sm:text-5xl">
+                DataRay ERP for structured operations and enterprise
+                intelligence
+              </h2>
+              <p className="mt-5 max-w-2xl text-base leading-8 text-slate-600">
+                DataRay ERP is an upcoming enterprise management solution for
+                businesses, NGOs, universities, healthcare institutions, and
+                public organizations that need better workflows, dashboards,
+                reporting, and AI-enhanced decision support.
+              </p>
+
+              <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+                <Link
+                  href="/erp"
+                  className="inline-flex justify-center rounded-full bg-slate-950 px-6 py-3 text-sm font-semibold text-white transition hover:bg-slate-800"
+                >
+                  Explore DataRay ERP
+                </Link>
+                <Link
+                  href="/contact"
+                  className="inline-flex justify-center rounded-full border border-slate-200 bg-white px-6 py-3 text-sm font-semibold text-slate-900 transition hover:border-slate-300 hover:bg-slate-50"
+                >
+                  Request ERP Consultation
+                </Link>
+              </div>
+            </div>
+
+            <div className="rounded-[28px] border border-slate-200 bg-white p-6 shadow-[0_24px_60px_rgba(15,23,42,0.10)]">
+              <div className="border-b border-slate-200 pb-5">
+                <p className="text-xs font-medium uppercase tracking-[0.22em] text-cyan-700">
+                  ERP Tiers
+                </p>
+                <h3 className="mt-2 text-xl font-semibold text-slate-950">
+                  Operations today, intelligence next
+                </h3>
+              </div>
+
+              <div className="mt-5 grid gap-4">
+                {[
+                  {
+                    title: "DataRay ERP",
+                    copy: "Standard enterprise workflows, reporting, approvals, and dashboards.",
+                  },
+                  {
+                    title: "DataRay ERP+",
+                    copy: "AI-powered analytics, forecasting, executive intelligence, and reporting.",
+                  },
+                ].map((tier) => (
+                  <div
+                    key={tier.title}
+                    className="rounded-2xl border border-slate-200 bg-slate-50 p-5"
+                  >
+                    <p className="text-sm font-semibold text-slate-950">
+                      {tier.title}
+                    </p>
+                    <p className="mt-2 text-sm leading-7 text-slate-600">
+                      {tier.copy}
+                    </p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </section>
+
         {/* Services Section */}
         <section className="px-4 py-16 sm:px-6 sm:py-20 lg:py-24">
           <div className="mx-auto max-w-7xl">

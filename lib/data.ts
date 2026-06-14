@@ -14,6 +14,7 @@ export const navLinks = [
   { href: "/", label: "Home" },
   { href: "/services", label: "Services" },
   { href: "/laspro", label: "LasPro" },
+  { href: "/erp", label: "DataRay ERP" },
   { href: "/insights", label: "Insights" },
   {
     label: "Academy",

@@ -18,6 +18,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.98,
     },
     {
+      url: `${SITE_URL}/erp`,
+      lastModified,
+      changeFrequency: "monthly",
+      priority: 0.92,
+    },
+    {
       url: `${SITE_URL}/services`,
       lastModified,
       changeFrequency: "monthly",

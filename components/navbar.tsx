@@ -69,6 +69,13 @@ export default function Navbar() {
           </Link>
 
           <Link
+            href="/erp"
+            className="text-[15px] font-medium text-cyan-100 transition-colors duration-300 hover:text-cyan-300"
+          >
+            ERP
+          </Link>
+
+          <Link
             href="/projects"
             className="text-[15px] text-white/85 transition-colors duration-300 hover:text-cyan-300"
           >
@@ -267,6 +274,14 @@ export default function Navbar() {
               onClick={() => setMenuOpen(false)}
             >
               LasPro
+            </Link>
+
+            <Link
+              href="/erp"
+              className="rounded-lg px-3 py-3 text-sm font-medium text-cyan-100 transition hover:bg-white/5 hover:text-cyan-300"
+              onClick={() => setMenuOpen(false)}
+            >
+              DataRay ERP
             </Link>
 
             <Link

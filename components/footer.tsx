@@ -14,7 +14,8 @@ export default function Footer() {
             AI, analytics, dashboards, and decision intelligence for
             organizations that need clarity, insight, and practical execution.
             DataRay Smart Solutions also builds LasPro for business inventory,
-            sales, stock, and reporting workflows.
+            sales, stock, and reporting workflows, with DataRay ERP upcoming
+            for larger enterprise operations.
           </p>
         </div>
 
@@ -28,6 +29,10 @@ export default function Footer() {
 
           <Link href="/laspro" className="hover:text-cyan-300 transition">
             LasPro
+          </Link>
+
+          <Link href="/erp" className="hover:text-cyan-300 transition">
+            DataRay ERP
           </Link>
 
           <Link href="/insights" className="hover:text-cyan-300 transition">
