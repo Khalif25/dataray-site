@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Image from "next/image";
 import { articles, getReadingTime } from "@/lib/articles";
+import { SITE_URL } from "@/lib/site-url";
 
 type PageProps = {
   params: Promise<{ slug: string }>;
@@ -17,21 +18,21 @@ export async function generateMetadata({
 
   if (!article) {
     return {
-      title: "Article not found | DataRay",
+      title: "Article not found | DataRay Smart Solutions",
     };
   }
 
   return {
-    title: `${article.title} | DataRay`,
+    title: `${article.title} | DataRay Smart Solutions`,
     description: article.excerpt,
     openGraph: {
       title: article.title,
       description: article.excerpt,
-      url: `https://dataray-site.vercel.app/insights/${article.slug}`,
-      siteName: "DataRay",
+      url: `${SITE_URL}/insights/${article.slug}`,
+      siteName: "DataRay Smart Solutions",
       images: [
         {
-          url: `https://dataray-site.vercel.app${article.image}`,
+          url: `${SITE_URL}${article.image}`,
           width: 1200,
           height: 630,
           alt: article.title,
@@ -43,7 +44,7 @@ export async function generateMetadata({
       card: "summary_large_image",
       title: article.title,
       description: article.excerpt,
-      images: [`https://dataray-site.vercel.app${article.image}`],
+      images: [`${SITE_URL}${article.image}`],
     },
   };
 }
@@ -64,17 +65,21 @@ export default async function InsightArticlePage({
     "@type": "Article",
     headline: article.title,
     description: article.excerpt,
-    image: [`https://dataray-site.vercel.app${article.image}`],
+    image: [`${SITE_URL}${article.image}`],
     author: {
       "@type": "Organization",
-      name: "DataRay",
+      name: "DataRay Smart Solutions",
+      alternateName: "DataRay",
     },
     publisher: {
       "@type": "Organization",
-      name: "DataRay",
+      name: "DataRay Smart Solutions",
+      alternateName: "DataRay",
+      url: SITE_URL,
+      logo: `${SITE_URL}/premium_logo.png`,
     },
     datePublished: article.date,
-    mainEntityOfPage: `https://dataray-site.vercel.app/insights/${article.slug}`,
+    mainEntityOfPage: `${SITE_URL}/insights/${article.slug}`,
   };
 
   return (

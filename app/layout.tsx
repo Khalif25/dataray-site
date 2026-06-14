@@ -10,10 +10,11 @@ import { SpeedInsights } from "@vercel/speed-insights/next";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
+  applicationName: "DataRay Smart Solutions",
 
   title: {
-    default: "DataRay | AI, Data & Strategic Intelligence",
-    template: "%s | DataRay",
+    default: "DataRay Smart Solutions",
+    template: "%s | DataRay Smart Solutions",
   },
 
   description:
@@ -29,20 +30,23 @@ export const metadata: Metadata = {
     "machine learning analytics",
   ],
 
-  authors: [{ name: "DataRay" }],
-  creator: "DataRay",
+  authors: [{ name: "DataRay Smart Solutions" }],
+  creator: "DataRay Smart Solutions",
+  publisher: "DataRay Smart Solutions",
+  manifest: "/manifest.webmanifest",
 
   openGraph: {
-    title: "DataRay | AI, Data & Strategic Intelligence",
+    title: "DataRay Smart Solutions",
     description:
       "AI-driven analytics, dashboards, research insights, and strategic intelligence.",
     url: SITE_URL,
-    siteName: "DataRay",
+    siteName: "DataRay Smart Solutions",
     images: [
       {
-        url: "/og-image.png",
+        url: `${SITE_URL}/og-image.png`,
         width: 1200,
         height: 630,
+        alt: "DataRay Smart Solutions",
       },
     ],
     locale: "en_US",
@@ -51,10 +55,10 @@ export const metadata: Metadata = {
 
   twitter: {
     card: "summary_large_image",
-    title: "DataRay",
+    title: "DataRay Smart Solutions",
     description:
       "AI-driven analytics, dashboards, and strategic intelligence.",
-    images: ["/og-image.png"],
+    images: [`${SITE_URL}/og-image.png`],
   },
 };
 
@@ -78,10 +82,10 @@ export default function RootLayout({
         {/* Google Analytics */}
         <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GA_ID || ""} />
 
-        {/* Vercel Analytics (user tracking) */}
+        {/* Web analytics */}
         <Analytics />
 
-        {/* Vercel Speed Insights (performance tracking) */}
+        {/* Speed insights */}
         <SpeedInsights />
       </body>
     </html>

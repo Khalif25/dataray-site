@@ -2,6 +2,7 @@ import Link from "next/link";
 import NewsletterSignup from "@/components/newsletter-signup";
 import Hero from "@/components/hero";
 import ServiceCard from "@/components/service-card";
+import { SITE_URL } from "@/lib/site-url";
 
 const services = [
   {
@@ -42,9 +43,37 @@ const services = [
   },
 ];
 
+const homeJsonLd = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "@id": `${SITE_URL}/#website`,
+      name: "DataRay Smart Solutions",
+      alternateName: "DataRay",
+      url: SITE_URL,
+      publisher: {
+        "@id": `${SITE_URL}/#organization`,
+      },
+    },
+    {
+      "@type": "Organization",
+      "@id": `${SITE_URL}/#organization`,
+      name: "DataRay Smart Solutions",
+      alternateName: "DataRay",
+      url: SITE_URL,
+      logo: `${SITE_URL}/premium_logo.png`,
+    },
+  ],
+};
+
 export default function HomePage() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(homeJsonLd) }}
+      />
       <Hero />
 
       <main className="bg-slate-50 text-slate-900">
