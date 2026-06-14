@@ -54,13 +54,13 @@ export default function HomePage() {
             <div>
               <p className="eyebrow">Product</p>
               <h2 className="mt-4 max-w-3xl text-3xl font-semibold tracking-tight text-slate-950 sm:text-5xl">
-                LasPro for inventory, sales, stock, and light accounting
+                LasPro by DataRay Smart Solutions for inventory and sales management
               </h2>
               <p className="mt-5 max-w-2xl text-base leading-8 text-slate-600">
-                LasPro is DataRay Smart Solutions&apos; fast business management
-                system for shops and growing businesses that need cleaner sales,
-                stock, purchases, customer credits, supplier payables, expenses,
-                and reports.
+                DataRay LasPro helps shops and growing businesses manage
+                inventory, sales, stock, purchases, customer credits, supplier
+                payables, expenses, and business reporting in one practical web
+                system.
               </p>
 
               <div className="mt-8 flex flex-col gap-3 sm:flex-row">
@@ -68,13 +68,13 @@ export default function HomePage() {
                   href="/laspro"
                   className="inline-flex justify-center rounded-full bg-slate-950 px-6 py-3 text-sm font-semibold text-white transition hover:bg-slate-800"
                 >
-                  Explore LasPro
+                  LasPro inventory and sales management system
                 </Link>
                 <Link
                   href="/contact"
                   className="inline-flex justify-center rounded-full border border-slate-200 bg-white px-6 py-3 text-sm font-semibold text-slate-900 transition hover:border-slate-300 hover:bg-slate-50"
                 >
-                  Request Demo
+                  Request LasPro Demo
                 </Link>
               </div>
             </div>

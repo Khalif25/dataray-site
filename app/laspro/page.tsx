@@ -30,15 +30,23 @@ const appUrl =
   process.env.NEXT_PUBLIC_LASPRO_APP_URL || "https://app.dataraysmart.com";
 
 const description =
-  "LasPro is a fast inventory, sales, stock, and light accounting system by DataRay Smart Solutions for retail shops, wholesalers, cosmetics stores, phone shops, pharmacies, and growing businesses.";
+  "LasPro by DataRay Smart Solutions is a web-based inventory, sales, stock, and business reporting system for small businesses in Somalia.";
 
 const keywords = [
   "LasPro",
   "DataRay Smart Solutions",
+  "DataRay LasPro",
+  "LasPro inventory management system",
+  "LasPro sales management system",
+  "LasPro stock management system",
+  "LasPro business reporting system",
+  "LasPro inventory and sales management system",
   "inventory system Somalia",
-  "stock management system",
   "sales management system",
+  "stock management system",
+  "business reporting software",
   "POS system Somalia",
+  "small business software",
   "inventory software",
   "shop management system",
   "retail management system",
@@ -205,9 +213,14 @@ const faqs = [
       "LasPro is a web-based business system by DataRay Smart Solutions for managing sales, inventory, stock, purchases, expenses, customer credits, supplier payables, and reports.",
   },
   {
-    question: "Who is LasPro for?",
+    question: "Is LasPro a DataRay Smart Solutions product?",
     answer:
-      "LasPro is for retail shops, wholesalers, cosmetics stores, clothing shops, phone and accessory shops, supermarkets, pharmacies, beauty stores, and other growing businesses.",
+      "Yes. LasPro is the official inventory and sales management product from DataRay Smart Solutions for shops and small businesses.",
+  },
+  {
+    question: "What businesses can use LasPro?",
+    answer:
+      "LasPro is for retail shops, wholesalers, cosmetics stores, clothing shops, phone and accessory shops, supermarkets, pharmacies, beauty stores, and small businesses in Somalia that need inventory, sales, stock, and business reporting support.",
   },
   {
     question: "Does LasPro support barcode or SKU search?",
@@ -240,9 +253,9 @@ const faqs = [
       "Yes. LasPro is built to be simple, fast, and practical for small and medium businesses that need better control without heavy ERP complexity.",
   },
   {
-    question: "How can I request a demo?",
+    question: "Can I request a LasPro demo?",
     answer:
-      "You can request a LasPro demo by contacting DataRay Smart Solutions through the contact page.",
+      "Yes. You can request a LasPro demo from DataRay Smart Solutions through the contact page and discuss inventory, sales, stock, and business reporting needs for your business.",
   },
 ];
 
@@ -268,6 +281,7 @@ const jsonLd = {
       "@type": "SoftwareApplication",
       "@id": `${SITE_URL}/laspro#software`,
       name: "LasPro",
+      alternateName: "DataRay LasPro",
       applicationCategory: "BusinessApplication",
       operatingSystem: "Web",
       provider: {
@@ -275,7 +289,7 @@ const jsonLd = {
       },
       url: `${SITE_URL}/laspro`,
       description:
-        "Inventory, sales, stock, and light accounting system for businesses.",
+        "LasPro by DataRay Smart Solutions is an inventory, sales, stock, and business reporting system for small businesses.",
       offers: {
         "@type": "Offer",
         availability: "https://schema.org/InStock",
@@ -383,14 +397,17 @@ export default function LasProPage() {
               LasPro by DataRay Smart Solutions
             </p>
             <h1 className="mt-5 max-w-4xl text-4xl font-semibold tracking-tight text-white sm:text-5xl lg:text-6xl">
-              LasPro: Fast Inventory, Sales, and Stock Management for Growing
-              Businesses
+              LasPro Inventory and Sales Management System
             </h1>
             <p className="mt-6 max-w-3xl text-lg leading-8 text-slate-200">
-              A simple, fast, and reliable business system by DataRay Smart
-              Solutions for managing sales, stock, purchases, customer credits,
-              supplier payables, expenses, and reports for shops and small
-              businesses in Somalia and beyond.
+              LasPro by DataRay Smart Solutions is a web-based inventory,
+              sales, stock, and business reporting system for small businesses
+              in Somalia. It helps teams manage sales, purchases, customer
+              credits, supplier payables, expenses, and reports.
+            </p>
+            <p className="mt-5 max-w-2xl text-sm leading-7 text-slate-300">
+              LasPro is the official inventory and sales management product
+              from DataRay Smart Solutions.
             </p>
 
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
@@ -485,10 +502,9 @@ export default function LasProPage() {
               Simple business control without heavy ERP complexity
             </h2>
             <p className="mt-5 text-base leading-8 text-slate-600">
-              LasPro inventory management system brings inventory control, a
+              The DataRay LasPro inventory system brings inventory control, a
               sales management system, stock management, financial awareness,
-              and business reporting into one practical web system from DataRay
-              Smart Solutions.
+              and business reporting into one practical web system.
             </p>
           </div>
 

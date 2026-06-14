@@ -13,6 +13,8 @@ export default function Footer() {
           <p className="mt-2 max-w-md text-sm leading-7 text-slate-400">
             AI, analytics, dashboards, and decision intelligence for
             organizations that need clarity, insight, and practical execution.
+            DataRay Smart Solutions also builds LasPro for business inventory,
+            sales, stock, and reporting workflows.
           </p>
         </div>
 

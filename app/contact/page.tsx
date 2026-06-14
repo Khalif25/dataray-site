@@ -75,8 +75,8 @@ export default function ContactPage() {
 
           <p className="mt-6 text-lg leading-8 text-neutral-600">
             We work with institutions, businesses, and organizations seeking
-            practical data-driven solutions, including LasPro demos for shops
-            and growing businesses.
+            practical data-driven solutions, including LasPro by DataRay Smart
+            Solutions demos for shops and growing businesses.
           </p>
         </section>
 
@@ -131,14 +131,14 @@ export default function ContactPage() {
               <p className="mt-4 leading-7 text-neutral-600">
                 All project inquiries, collaboration requests, and partnership
                 discussions are coordinated through our central contact channel.
-                You can also request a{" "}
+                Businesses can also visit the LasPro page to{" "}
                 <Link
                   href="/laspro"
                   className="font-medium text-blue-600 transition hover:text-blue-700"
                 >
-                  LasPro demo or onboarding support
+                  request a LasPro demo
                 </Link>{" "}
-                here.
+                for LasPro by DataRay Smart Solutions here.
               </p>
 
               <div className="mt-6 space-y-5">
