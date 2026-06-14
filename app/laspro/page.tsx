@@ -283,17 +283,6 @@ const jsonLd = {
       },
     },
     {
-      "@type": "Product",
-      "@id": `${SITE_URL}/laspro#product`,
-      name: "LasPro",
-      brand: {
-        "@id": `${SITE_URL}/#organization`,
-      },
-      category: "Inventory and sales management software",
-      description,
-      url: `${SITE_URL}/laspro`,
-    },
-    {
       "@type": "FAQPage",
       "@id": `${SITE_URL}/laspro#faq`,
       mainEntity: faqs.map((faq) => ({
