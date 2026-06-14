@@ -198,6 +198,7 @@ export default function ErpPage() {
       <section className="border-b border-slate-200 bg-slate-50 px-6 py-20">
         <div className="mx-auto grid max-w-7xl gap-8 lg:grid-cols-2">
           <TierSection
+            id="erp-standard"
             eyebrow="DataRay ERP Standard"
             title="Structured enterprise management for growing organizations"
             description="DataRay ERP Standard is designed for organizations that need a reliable, integrated management system for daily operations, reporting, workflows, and departmental coordination."

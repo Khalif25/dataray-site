@@ -8,6 +8,7 @@ export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [academyOpen, setAcademyOpen] = useState(false);
   const [insightsOpen, setInsightsOpen] = useState(false);
+  const [erpOpen, setErpOpen] = useState(false);
   const [aboutOpen, setAboutOpen] = useState(false);
 
   return (
@@ -68,12 +69,47 @@ export default function Navbar() {
             LasPro
           </Link>
 
-          <Link
-            href="/erp"
-            className="text-[15px] font-medium text-cyan-100 transition-colors duration-300 hover:text-cyan-300"
+          <div
+            className="group relative"
+            onMouseEnter={() => setErpOpen(true)}
+            onMouseLeave={() => setErpOpen(false)}
           >
-            ERP
-          </Link>
+            <Link
+              href="/erp"
+              className="inline-flex items-center gap-2 text-[15px] font-medium text-cyan-100 transition-colors duration-300 hover:text-cyan-300"
+            >
+              ERP
+              <span
+                className={`text-xs transition-transform duration-200 ${
+                  erpOpen ? "rotate-180" : ""
+                }`}
+              >
+                ▼
+              </span>
+            </Link>
+
+            <div
+              className={`absolute left-0 top-full z-50 mt-3 w-64 rounded-2xl border border-white/10 bg-[#122238]/95 p-2 shadow-[0_18px_60px_rgba(0,0,0,0.35)] backdrop-blur-xl transition-all duration-200 ${
+                erpOpen
+                  ? "visible translate-y-0 opacity-100"
+                  : "invisible -translate-y-1 opacity-0"
+              }`}
+            >
+              <Link
+                href="/erp#erp-standard"
+                className="block rounded-xl px-4 py-3 text-sm text-slate-300 transition hover:bg-white/5 hover:text-white"
+              >
+                DataRay ERP Standard
+              </Link>
+
+              <Link
+                href="/erp#erp-plus"
+                className="block rounded-xl px-4 py-3 text-sm text-slate-300 transition hover:bg-white/5 hover:text-white"
+              >
+                DataRay ERP+
+              </Link>
+            </div>
+          </div>
 
           <Link
             href="/projects"
@@ -276,13 +312,33 @@ export default function Navbar() {
               LasPro
             </Link>
 
-            <Link
-              href="/erp"
-              className="rounded-lg px-3 py-3 text-sm font-medium text-cyan-100 transition hover:bg-white/5 hover:text-cyan-300"
-              onClick={() => setMenuOpen(false)}
-            >
-              DataRay ERP
-            </Link>
+            <div className="mt-1 rounded-xl border border-white/10 bg-white/[0.03] p-2">
+              <Link
+                href="/erp"
+                className="block rounded-lg px-3 py-3 text-sm font-medium text-cyan-100 transition hover:bg-white/5 hover:text-cyan-300"
+                onClick={() => setMenuOpen(false)}
+              >
+                DataRay ERP
+              </Link>
+
+              <div className="ml-2 border-l border-white/10 pl-3">
+                <Link
+                  href="/erp#erp-standard"
+                  className="block rounded-lg px-3 py-2 text-sm text-white/75 transition hover:bg-white/5 hover:text-cyan-300"
+                  onClick={() => setMenuOpen(false)}
+                >
+                  DataRay ERP Standard
+                </Link>
+
+                <Link
+                  href="/erp#erp-plus"
+                  className="block rounded-lg px-3 py-2 text-sm text-white/75 transition hover:bg-white/5 hover:text-cyan-300"
+                  onClick={() => setMenuOpen(false)}
+                >
+                  DataRay ERP+
+                </Link>
+              </div>
+            </div>
 
             <Link
               href="/projects"
