@@ -59,6 +59,29 @@ const comparison = [
   },
 ];
 
+const demoSignals = [
+  {
+    label: "Revenue trend",
+    value: "+14%",
+    detail: "Sample month-over-month growth signal",
+  },
+  {
+    label: "Approvals",
+    value: "7",
+    detail: "Pending management decisions",
+  },
+  {
+    label: "Risk alerts",
+    value: "3",
+    detail: "High-priority sample exceptions",
+  },
+  {
+    label: "Stock pressure",
+    value: "Medium",
+    detail: "Forecasted inventory watch item",
+  },
+];
+
 export const metadata: Metadata = {
   title: {
     absolute:
@@ -140,12 +163,24 @@ export default function ErpPage() {
               >
                 Request ERP Consultation
               </Link>
+              <Link
+                href="/erp/demo"
+                className="inline-flex justify-center rounded-full border border-cyan-200/30 bg-cyan-200/10 px-6 py-3 text-sm font-semibold text-cyan-50 transition hover:border-cyan-200/70 hover:bg-cyan-200/15"
+              >
+                View Demo
+              </Link>
               <a
                 href="#erp-plus"
                 className="inline-flex justify-center rounded-full border border-white/20 bg-white/10 px-6 py-3 text-sm font-semibold text-white transition hover:border-cyan-200/60 hover:bg-white/15"
               >
                 Explore ERP+
               </a>
+              <Link
+                href="/erp/login"
+                className="inline-flex justify-center rounded-full border border-white/20 bg-white px-6 py-3 text-sm font-semibold text-slate-950 transition hover:bg-slate-100"
+              >
+                Log in
+              </Link>
             </div>
           </div>
 
@@ -219,6 +254,76 @@ export default function ErpPage() {
             cta="Join ERP+ Pilot Interest List"
             featured
           />
+        </div>
+      </section>
+
+      <section id="erp-demo" className="border-y border-slate-200 bg-white px-6 py-20">
+        <div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
+          <div>
+            <p className="eyebrow">Interactive Demo</p>
+            <h2 className="mt-4 text-3xl font-semibold tracking-tight text-slate-950 sm:text-4xl">
+              See the ERP+ command center before requesting access
+            </h2>
+            <p className="mt-5 text-base leading-8 text-slate-600">
+              The public demo uses sample information to show how DataRay ERP+
+              can combine operations, approvals, risk, forecasting, and
+              executive reporting into one decision workspace.
+            </p>
+            <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+              <Link
+                href="/erp/demo"
+                className="inline-flex justify-center rounded-full bg-slate-950 px-6 py-3 text-sm font-semibold text-white transition hover:bg-slate-800"
+              >
+                Open Full Demo
+              </Link>
+              <Link
+                href="/erp/login"
+                className="inline-flex justify-center rounded-full border border-slate-300 px-6 py-3 text-sm font-semibold text-slate-900 transition hover:border-cyan-500 hover:text-cyan-700"
+              >
+                Go to Login Page
+              </Link>
+            </div>
+          </div>
+
+          <div className="rounded-[28px] border border-slate-200 bg-slate-50 p-6 shadow-sm">
+            <div className="flex items-start justify-between gap-4 border-b border-slate-200 pb-5">
+              <div>
+                <p className="text-xs font-semibold uppercase tracking-[0.2em] text-cyan-700">
+                  Sample Dashboard
+                </p>
+                <h3 className="mt-2 text-2xl font-semibold tracking-tight text-slate-950">
+                  Executive Command Center
+                </h3>
+              </div>
+              <span className="rounded-full bg-cyan-100 px-3 py-1 text-xs font-semibold text-cyan-800">
+                Demo
+              </span>
+            </div>
+
+            <div className="mt-6 grid gap-4 sm:grid-cols-2">
+              {demoSignals.map((signal) => (
+                <div
+                  key={signal.label}
+                  className="rounded-2xl border border-slate-200 bg-white p-5"
+                >
+                  <p className="text-sm font-medium text-slate-600">
+                    {signal.label}
+                  </p>
+                  <p className="mt-3 text-3xl font-semibold tracking-tight text-slate-950">
+                    {signal.value}
+                  </p>
+                  <p className="mt-2 text-sm leading-6 text-slate-500">
+                    {signal.detail}
+                  </p>
+                </div>
+              ))}
+            </div>
+
+            <p className="mt-5 rounded-2xl border border-cyan-100 bg-cyan-50 p-4 text-sm leading-7 text-cyan-900">
+              Demo panels are illustrative only. Live ERP data appears only
+              after authenticated access and the correct permissions.
+            </p>
+          </div>
         </div>
       </section>
 

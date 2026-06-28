@@ -34,3 +34,15 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+
+## ERP app link
+
+By default, `https://www.dataraysmart.com/erp` redirects to `https://erp.dataraysmart.com`.
+
+Use `ERP_APP_URL` in the production environment only if the ERP app needs to move to a different host.
+
+```bash
+ERP_APP_URL=https://your-custom-erp-app-url.example
+```
+
+`NEXT_PUBLIC_ERP_APP_URL` is also supported for compatibility with the existing app-link pattern.
