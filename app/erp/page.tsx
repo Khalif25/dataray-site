@@ -129,9 +129,37 @@ export const metadata: Metadata = {
   },
 };
 
+const erpJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  name: "DataRay ERP+",
+  alternateName: ["DataRay ERP", "DataRay ERP Plus"],
+  applicationCategory: "BusinessApplication",
+  operatingSystem: "Web",
+  url: `${SITE_URL}/erp`,
+  description:
+    "DataRay ERP+ combines enterprise management workflows with AI-powered analytics, predictive intelligence, and executive decision dashboards.",
+  publisher: {
+    "@type": "Organization",
+    name: "DataRay Smart Solutions",
+    url: `${SITE_URL}/`,
+    logo: {
+      "@type": "ImageObject",
+      url: `${SITE_URL}/premium_logo.png`,
+      width: 1024,
+      height: 1024,
+    },
+  },
+};
+
 export default function ErpPage() {
   return (
-    <main className="bg-white text-slate-900">
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(erpJsonLd) }}
+      />
+      <main className="bg-white text-slate-900">
       <section className="relative overflow-hidden bg-[#07172d] px-6 py-20 text-white sm:py-24 lg:py-28">
         <div className="absolute inset-0 bg-[linear-gradient(120deg,rgba(14,165,233,0.18),transparent_42%),linear-gradient(180deg,rgba(255,255,255,0.08),transparent)]" />
 
@@ -391,7 +419,8 @@ export default function ErpPage() {
           </div>
         </div>
       </section>
-    </main>
+      </main>
+    </>
   );
 }
 

@@ -1,8 +1,15 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import NewsletterSignup from "@/components/newsletter-signup";
 import Hero from "@/components/hero";
 import ServiceCard from "@/components/service-card";
 import { SITE_URL } from "@/lib/site-url";
+
+export const metadata: Metadata = {
+  alternates: {
+    canonical: `${SITE_URL}/`,
+  },
+};
 
 const services = [
   {
@@ -50,8 +57,9 @@ const homeJsonLd = {
       "@type": "WebSite",
       "@id": `${SITE_URL}/#website`,
       name: "DataRay Smart Solutions",
-      alternateName: "DataRay",
-      url: SITE_URL,
+      alternateName: ["DataRay", "DataRay Smart", "DataRay ERP"],
+      url: `${SITE_URL}/`,
+      inLanguage: "en",
       publisher: {
         "@id": `${SITE_URL}/#organization`,
       },
@@ -60,9 +68,14 @@ const homeJsonLd = {
       "@type": "Organization",
       "@id": `${SITE_URL}/#organization`,
       name: "DataRay Smart Solutions",
-      alternateName: "DataRay",
-      url: SITE_URL,
-      logo: `${SITE_URL}/premium_logo.png`,
+      alternateName: ["DataRay", "DataRay Smart"],
+      url: `${SITE_URL}/`,
+      logo: {
+        "@type": "ImageObject",
+        url: `${SITE_URL}/premium_logo.png`,
+        width: 1024,
+        height: 1024,
+      },
     },
   ],
 };

@@ -34,6 +34,16 @@ export const metadata: Metadata = {
   creator: "DataRay Smart Solutions",
   publisher: "DataRay Smart Solutions",
   manifest: "/manifest.webmanifest",
+  icons: {
+    icon: [
+      { url: "/icon.png", sizes: "512x512", type: "image/png" },
+      { url: "/favicon.ico", sizes: "1024x1024", type: "image/png" },
+    ],
+    apple: [
+      { url: "/apple-icon.png", sizes: "180x180", type: "image/png" },
+    ],
+    shortcut: ["/icon.png"],
+  },
 
   openGraph: {
     title: "DataRay Smart Solutions",

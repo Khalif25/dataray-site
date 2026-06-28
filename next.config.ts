@@ -7,11 +7,23 @@ const withMDX = createMDX({
 
 const SITE_URL = "https://www.dataraysmart.com";
 const ERP_HOST = "erp.dataraysmart.com";
+const VERCEL_DEPLOYMENT_HOST = "dataray-site\\.vercel\\.app";
 const ERP_APP_URL = (
   process.env.ERP_APP_URL ||
   process.env.NEXT_PUBLIC_ERP_APP_URL ||
-  `https://${ERP_HOST}`
+  ""
 ).replace(/\/$/, "");
+const SHOULD_REDIRECT_TO_EXTERNAL_ERP_APP = (() => {
+  if (!ERP_APP_URL) {
+    return false;
+  }
+
+  try {
+    return new URL(ERP_APP_URL).hostname !== ERP_HOST;
+  } catch {
+    return true;
+  }
+})();
 
 const nextConfig: NextConfig = {
   pageExtensions: ["ts", "tsx", "md", "mdx"],
@@ -51,7 +63,18 @@ const nextConfig: NextConfig = {
   },
   async redirects() {
     return [
-      ...(ERP_APP_URL
+      {
+        source: "/:path*",
+        has: [
+          {
+            type: "host",
+            value: VERCEL_DEPLOYMENT_HOST,
+          },
+        ],
+        destination: `${SITE_URL}/:path*`,
+        permanent: true,
+      },
+      ...(SHOULD_REDIRECT_TO_EXTERNAL_ERP_APP
         ? [
             {
               source: "/erp",
