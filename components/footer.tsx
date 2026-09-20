@@ -13,9 +13,8 @@ export default function Footer() {
           <p className="mt-2 max-w-md text-sm leading-7 text-slate-400">
             AI, analytics, dashboards, and decision intelligence for
             organizations that need clarity, insight, and practical execution.
-            DataRay Smart Solutions also builds LasPro for business inventory,
-            sales, stock, and reporting workflows, with DataRay ERP upcoming
-            for larger enterprise operations.
+            DataRay ERP serves small and medium businesses. DataRay ERP+
+            serves larger businesses and institutions.
           </p>
         </div>
 
@@ -25,10 +24,6 @@ export default function Footer() {
 
           <Link href="/services" className="hover:text-cyan-300 transition">
             Services
-          </Link>
-
-          <Link href="/laspro" className="hover:text-cyan-300 transition">
-            LasPro
           </Link>
 
           <Link href="/erp" className="hover:text-cyan-300 transition">

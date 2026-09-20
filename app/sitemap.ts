@@ -12,28 +12,22 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 1,
     },
     {
-      url: `${SITE_URL}/laspro`,
+      url: `${SITE_URL}/erp`,
       lastModified,
       changeFrequency: "weekly",
       priority: 0.98,
     },
     {
-      url: `${SITE_URL}/erp`,
+      url: `${SITE_URL}/download/android`,
       lastModified,
-      changeFrequency: "monthly",
-      priority: 0.92,
+      changeFrequency: "weekly",
+      priority: 0.85,
     },
     {
       url: `${SITE_URL}/erp/demo`,
       lastModified,
       changeFrequency: "monthly",
       priority: 0.86,
-    },
-    {
-      url: `${SITE_URL}/erp/login`,
-      lastModified,
-      changeFrequency: "monthly",
-      priority: 0.72,
     },
     {
       url: `${SITE_URL}/services`,

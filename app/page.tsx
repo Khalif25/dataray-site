@@ -50,6 +50,29 @@ const services = [
   },
 ];
 
+const erpTiersPreview = [
+  {
+    id: "erp",
+    name: "DataRay ERP",
+    label: "For small and medium businesses",
+    purpose:
+      "Simple sales, inventory, stock, purchases, expenses, customer credits, supplier payables, and daily reporting.",
+    target:
+      "Retail shops, pharmacies, cosmetics stores, clothing shops, phone accessory shops, wholesalers, and small businesses.",
+    points: ["Fast selling", "Stock visibility", "Customer and supplier balances"],
+  },
+  {
+    id: "erp-plus",
+    name: "DataRay ERP+",
+    label: "AI intelligence",
+    purpose:
+      "Advanced ERP intelligence with AI reporting, forecasting, anomaly detection, executive dashboards, and natural-language business queries.",
+    target:
+      "Large companies, major NGOs, universities, hospitals, government institutions, and data-intensive enterprises.",
+    points: ["Predictive analytics", "AI executive assistant", "Decision intelligence"],
+  },
+];
+
 const homeJsonLd = {
   "@context": "https://schema.org",
   "@graph": [
@@ -90,139 +113,79 @@ export default function HomePage() {
       <Hero />
 
       <main className="bg-slate-50 text-slate-900">
-        {/* LasPro Product Section */}
+        {/* DataRay ERP Product Family */}
         <section className="border-b border-slate-200 bg-white px-4 py-16 sm:px-6 sm:py-20 lg:py-24">
-          <div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-[0.95fr_1.05fr] lg:items-center">
-            <div>
-              <p className="eyebrow">Product</p>
-              <h2 className="mt-4 max-w-3xl text-3xl font-semibold tracking-tight text-slate-950 sm:text-5xl">
-                LasPro by DataRay Smart Solutions for inventory and sales management
-              </h2>
-              <p className="mt-5 max-w-2xl text-base leading-8 text-slate-600">
-                DataRay LasPro helps shops and growing businesses manage
-                inventory, sales, stock, purchases, customer credits, supplier
-                payables, expenses, and business reporting in one practical web
-                system.
-              </p>
-
-              <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-                <Link
-                  href="/laspro"
-                  className="inline-flex justify-center rounded-full bg-slate-950 px-6 py-3 text-sm font-semibold text-white transition hover:bg-slate-800"
-                >
-                  LasPro inventory and sales management system
-                </Link>
-                <Link
-                  href="/contact"
-                  className="inline-flex justify-center rounded-full border border-slate-200 bg-white px-6 py-3 text-sm font-semibold text-slate-900 transition hover:border-slate-300 hover:bg-slate-50"
-                >
-                  Request LasPro Demo
-                </Link>
-              </div>
-            </div>
-
-            <div className="rounded-[28px] border border-slate-200 bg-slate-950 p-6 text-white shadow-[0_24px_60px_rgba(15,23,42,0.16)]">
-              <div className="flex items-center justify-between border-b border-white/10 pb-5">
-                <div>
-                  <p className="text-xs font-medium uppercase tracking-[0.22em] text-cyan-300">
-                    LasPro
-                  </p>
-                  <h3 className="mt-1 text-xl font-semibold">
-                    Shop Operations View
-                  </h3>
-                </div>
-                <div className="rounded-full bg-emerald-300/10 px-3 py-1 text-xs font-medium text-emerald-200">
-                  Public Product
-                </div>
-              </div>
-
-              <div className="mt-5 grid gap-4 sm:grid-cols-2">
-                {[
-                  "Fast selling",
-                  "Stock visibility",
-                  "Customer collections",
-                  "Daily reports",
-                ].map((item) => (
-                  <div
-                    key={item}
-                    className="rounded-2xl border border-white/10 bg-white/[0.04] p-4"
-                  >
-                    <p className="text-sm text-slate-300">{item}</p>
-                    <div className="mt-4 h-2 rounded-full bg-cyan-300/70" />
-                    <div className="mt-2 h-2 w-2/3 rounded-full bg-white/15" />
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* DataRay ERP Section */}
-        <section className="border-b border-slate-200 bg-slate-50 px-4 py-16 sm:px-6 sm:py-20 lg:py-24">
-          <div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-[1fr_0.9fr] lg:items-center">
-            <div>
-              <p className="eyebrow">Upcoming ERP</p>
-              <h2 className="mt-4 max-w-3xl text-3xl font-semibold tracking-tight text-slate-950 sm:text-5xl">
-                DataRay ERP for structured operations and enterprise
-                intelligence
-              </h2>
-              <p className="mt-5 max-w-2xl text-base leading-8 text-slate-600">
-                DataRay ERP is an upcoming enterprise management solution for
-                businesses, NGOs, universities, healthcare institutions, and
-                public organizations that need better workflows, dashboards,
-                reporting, and AI-enhanced decision support.
-              </p>
-
-              <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-                <Link
-                  href="/erp"
-                  className="inline-flex justify-center rounded-full bg-slate-950 px-6 py-3 text-sm font-semibold text-white transition hover:bg-slate-800"
-                >
-                  Explore DataRay ERP
-                </Link>
-                <Link
-                  href="/contact"
-                  className="inline-flex justify-center rounded-full border border-slate-200 bg-white px-6 py-3 text-sm font-semibold text-slate-900 transition hover:border-slate-300 hover:bg-slate-50"
-                >
-                  Request ERP Consultation
-                </Link>
-              </div>
-            </div>
-
-            <div className="rounded-[28px] border border-slate-200 bg-white p-6 shadow-[0_24px_60px_rgba(15,23,42,0.10)]">
-              <div className="border-b border-slate-200 pb-5">
-                <p className="text-xs font-medium uppercase tracking-[0.22em] text-cyan-700">
-                  ERP Tiers
+          <div className="mx-auto max-w-7xl">
+            <div className="grid gap-10 lg:grid-cols-[0.85fr_1.15fr] lg:items-end">
+              <div>
+                <p className="eyebrow">Product Family</p>
+                <h2 className="mt-4 max-w-3xl text-3xl font-semibold tracking-tight text-slate-950 sm:text-5xl">
+                  DataRay ERP for shops, growing organizations, and
+                  enterprise intelligence
+                </h2>
+                <p className="mt-5 max-w-2xl text-base leading-8 text-slate-600">
+                  Choose DataRay ERP for small and medium businesses, or
+                  DataRay ERP+ for large businesses and enterprise intelligence.
                 </p>
-                <h3 className="mt-2 text-xl font-semibold text-slate-950">
-                  Operations today, intelligence next
-                </h3>
               </div>
 
-              <div className="mt-5 grid gap-4">
-                {[
-                  {
-                    title: "DataRay ERP",
-                    copy: "Standard enterprise workflows, reporting, approvals, and dashboards.",
-                  },
-                  {
-                    title: "DataRay ERP+",
-                    copy: "AI-powered analytics, forecasting, executive intelligence, and reporting.",
-                  },
-                ].map((tier) => (
-                  <div
-                    key={tier.title}
-                    className="rounded-2xl border border-slate-200 bg-slate-50 p-5"
-                  >
-                    <p className="text-sm font-semibold text-slate-950">
-                      {tier.title}
-                    </p>
-                    <p className="mt-2 text-sm leading-7 text-slate-600">
-                      {tier.copy}
-                    </p>
-                  </div>
-                ))}
+              <div className="rounded-[28px] border border-slate-200 bg-slate-950 p-6 text-white shadow-[0_24px_60px_rgba(15,23,42,0.16)]">
+                <p className="text-xs font-medium uppercase tracking-[0.22em] text-cyan-300">
+                  One ERP Brand
+                </p>
+                <h3 className="mt-2 text-2xl font-semibold">
+                  DataRay ERP and DataRay ERP+
+                </h3>
+                <p className="mt-4 text-sm leading-7 text-slate-300">
+                  The product family scales from fast retail inventory and sales
+                  workflows to full ERP operations and executive AI decision
+                  intelligence.
+                </p>
               </div>
+            </div>
+
+            <div className="mt-12 grid gap-5 lg:grid-cols-2">
+              {erpTiersPreview.map((tier) => (
+                <article
+                  key={tier.id}
+                  className="rounded-[24px] border border-slate-200 bg-slate-50 p-6 shadow-sm"
+                >
+                  <p className="text-xs font-semibold uppercase tracking-[0.18em] text-cyan-700">
+                    {tier.label}
+                  </p>
+                  <h3 className="mt-4 text-2xl font-semibold tracking-tight text-slate-950">
+                    {tier.name}
+                  </h3>
+                  <p className="mt-4 text-sm font-semibold text-slate-900">
+                    Purpose
+                  </p>
+                  <p className="mt-2 text-sm leading-7 text-slate-600">
+                    {tier.purpose}
+                  </p>
+                  <p className="mt-5 text-sm font-semibold text-slate-900">
+                    Best for
+                  </p>
+                  <p className="mt-2 text-sm leading-7 text-slate-600">
+                    {tier.target}
+                  </p>
+                  <div className="mt-5 grid gap-2">
+                    {tier.points.map((point) => (
+                      <div
+                        key={point}
+                        className="rounded-xl border border-slate-200 bg-white px-3 py-2 text-sm text-slate-700"
+                      >
+                        {point}
+                      </div>
+                    ))}
+                  </div>
+                  <Link
+                    href={`/erp#${tier.id}`}
+                    className="mt-6 inline-flex rounded-full bg-slate-950 px-5 py-2.5 text-sm font-semibold text-white transition hover:bg-slate-800"
+                  >
+                    View tier
+                  </Link>
+                </article>
+              ))}
             </div>
           </div>
         </section>

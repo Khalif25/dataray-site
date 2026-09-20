@@ -6,12 +6,17 @@ export default function robots(): MetadataRoute.Robots {
     rules: [
       {
         userAgent: "*",
-        allow: ["/", "/laspro"],
+        allow: ["/", "/erp"],
         disallow: [
           "/api/",
           "/admin/",
           "/dashboard/",
           "/login/",
+          "/erp/login",
+          "/erp/access",
+          "/erp/lite/login",
+          "/erp/standard/login",
+          "/erp/plus/login",
           "/app/",
           "/academy/dashboard",
           "/academy/learn",

@@ -75,9 +75,8 @@ export default function ContactPage() {
 
           <p className="mt-6 text-lg leading-8 text-neutral-600">
             We work with institutions, businesses, and organizations seeking
-            practical data-driven solutions, including LasPro by DataRay Smart
-            Solutions demos and DataRay ERP consultations for growing
-            organizations.
+            practical data-driven solutions, including DataRay ERP demos
+            for small and medium businesses and DataRay ERP+ consultations for large businesses.
           </p>
         </section>
 
@@ -132,19 +131,19 @@ export default function ContactPage() {
               <p className="mt-4 leading-7 text-neutral-600">
                 All project inquiries, collaboration requests, and partnership
                 discussions are coordinated through our central contact channel.
-                Businesses can also visit the LasPro page to{" "}
+                Businesses can also review{" "}
                 <Link
-                  href="/laspro"
+                  href="/erp#erp"
                   className="font-medium text-blue-600 transition hover:text-blue-700"
                 >
-                  request a LasPro demo
+                  DataRay ERP
                 </Link>{" "}
-                for LasPro by DataRay Smart Solutions, or explore{" "}
+                for shop and small-business needs, or explore{" "}
                 <Link
                   href="/erp"
                   className="font-medium text-blue-600 transition hover:text-blue-700"
                 >
-                  DataRay ERP consultations
+                  the full DataRay ERP product family
                 </Link>
                 .
               </p>
@@ -246,8 +245,7 @@ export default function ContactPage() {
                     className="mt-2 w-full rounded-xl border border-neutral-200 px-4 py-3 outline-none transition focus:border-black/20"
                   >
                     <option>AI Strategy & Advisory</option>
-                    <option>LasPro Demo / Onboarding</option>
-                    <option>DataRay ERP Consultation</option>
+                    <option>DataRay ERP Demo / Onboarding</option>
                     <option>DataRay ERP+ Pilot Interest</option>
                     <option>Executive Dashboards</option>
                     <option>Advanced Analytics</option>

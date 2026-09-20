@@ -1,86 +1,79 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { SITE_URL } from "@/lib/site-url";
-
-const ERP_APP_URL = (
-  process.env.ERP_APP_URL ||
-  process.env.NEXT_PUBLIC_ERP_APP_URL ||
-  "https://erp.dataraysmart.com"
-).replace(/\/$/, "");
-
-const loginHref = `${ERP_APP_URL}/login`;
+import { erpLoginProducts } from "../_components/product-login";
 
 export const metadata: Metadata = {
-  title: "DataRay ERP Login | Secure ERP Access",
+  title: "DataRay ERP Login | Choose Your ERP App",
   description:
-    "Access the DataRay ERP secure login handoff page for authorized ERP users and organizations requesting ERP access.",
+    "Choose the correct DataRay ERP login for DataRay ERP or DataRay ERP+.",
   alternates: {
     canonical: `${SITE_URL}/erp/login`,
   },
+  robots: {
+    index: false,
+    follow: true,
+  },
 };
 
-export default function ErpLoginPage() {
+export default function ErpLoginSelectorPage() {
   return (
     <main className="bg-[#07172d] px-6 py-20 text-white sm:py-24">
-      <section className="mx-auto grid max-w-7xl gap-12 lg:grid-cols-[1fr_0.85fr] lg:items-center">
-        <div>
+      <section className="mx-auto max-w-7xl">
+        <div className="max-w-4xl">
           <p className="text-sm font-semibold uppercase tracking-[0.28em] text-cyan-200">
             Secure ERP Access
           </p>
-          <h1 className="mt-5 max-w-4xl text-4xl font-semibold tracking-tight sm:text-5xl">
-            Log in to your DataRay ERP command center.
+          <h1 className="mt-5 text-4xl font-semibold tracking-tight sm:text-5xl">
+            Choose the DataRay ERP app you want to log in to.
           </h1>
-          <p className="mt-6 max-w-2xl text-lg leading-8 text-slate-200">
-            Authorized users can continue from the public ERP domain to the
-            secure DataRay ERP login. Public website pages never expose
-            internal ERP records.
-          </p>
-          <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-            <Link
-              href={loginHref}
-              className="inline-flex justify-center rounded-full bg-cyan-300 px-6 py-3 text-sm font-semibold text-slate-950 transition hover:bg-cyan-200"
-            >
-              Open ERP Login
-            </Link>
-            <Link
-              href="/erp/demo"
-              className="inline-flex justify-center rounded-full border border-white/20 bg-white/10 px-6 py-3 text-sm font-semibold text-white transition hover:border-cyan-200/60"
-            >
-              View Demo
-            </Link>
-            <Link
-              href="/erp"
-              className="inline-flex justify-center rounded-full border border-white/20 px-6 py-3 text-sm font-semibold text-white transition hover:border-cyan-200/60"
-            >
-              ERP Overview
-            </Link>
-          </div>
-          <p className="mt-5 max-w-2xl text-sm leading-7 text-cyan-100">
-            Use your authorized DataRay ERP account. If your organization has
-            not been onboarded yet, request access through DataRay support.
+          <p className="mt-6 max-w-3xl text-lg leading-8 text-slate-200">
+            DataRay ERP is for small and medium businesses. DataRay ERP+
+            is for larger businesses. Choose your workspace below.
           </p>
         </div>
 
-        <div className="rounded-[28px] border border-white/10 bg-white/[0.06] p-7 shadow-[0_30px_90px_rgba(0,0,0,0.28)]">
-          <h2 className="text-2xl font-semibold tracking-tight">
-            Access layers
-          </h2>
-          <div className="mt-6 grid gap-3">
-            {[
-              "DataRay ERP Standard",
-              "DataRay ERP+",
-              "Manager permissions",
-              "AI provider configuration",
-              "Human-reviewed reports",
-            ].map((item) => (
-              <div
-                key={item}
-                className="rounded-2xl border border-white/10 bg-white/[0.05] px-4 py-3 text-sm text-slate-200"
-              >
-                {item}
+        <div className="mt-12 grid gap-6 lg:grid-cols-2">
+          {erpLoginProducts.map((product) => (
+            <article
+              key={product.slug}
+              className="rounded-[28px] border border-white/10 bg-white/[0.06] p-7 shadow-[0_30px_90px_rgba(0,0,0,0.2)]"
+            >
+              <p className="text-xs font-semibold uppercase tracking-[0.22em] text-cyan-200">
+                {product.eyebrow}
+              </p>
+              <h2 className="mt-4 text-2xl font-semibold tracking-tight">
+                {product.name}
+              </h2>
+              <p className="mt-4 text-sm leading-7 text-slate-300">
+                {product.description}
+              </p>
+              <div className="mt-6 rounded-2xl border border-white/10 bg-white/[0.05] p-4 text-sm leading-7 text-slate-200">
+                {product.audience}
               </div>
-            ))}
-          </div>
+              <Link
+                href={product.route}
+                className="mt-7 inline-flex w-full justify-center rounded-full bg-cyan-300 px-6 py-3 text-sm font-semibold text-slate-950 transition hover:bg-cyan-200"
+              >
+                {product.primaryLabel}
+              </Link>
+            </article>
+          ))}
+        </div>
+
+        <div className="mt-10 flex flex-col gap-3 sm:flex-row">
+          <Link
+            href="/erp"
+            className="inline-flex justify-center rounded-full border border-white/20 px-6 py-3 text-sm font-semibold text-white transition hover:border-cyan-200/60"
+          >
+            Back to ERP Overview
+          </Link>
+          <Link
+            href="/contact"
+            className="inline-flex justify-center rounded-full border border-white/20 bg-white/10 px-6 py-3 text-sm font-semibold text-white transition hover:border-cyan-200/60"
+          >
+            Request Access Help
+          </Link>
         </div>
       </section>
     </main>

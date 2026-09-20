@@ -8,22 +8,6 @@ const withMDX = createMDX({
 const SITE_URL = "https://www.dataraysmart.com";
 const ERP_HOST = "erp.dataraysmart.com";
 const VERCEL_DEPLOYMENT_HOST = "dataray-site\\.vercel\\.app";
-const ERP_APP_URL = (
-  process.env.ERP_APP_URL ||
-  process.env.NEXT_PUBLIC_ERP_APP_URL ||
-  ""
-).replace(/\/$/, "");
-const SHOULD_REDIRECT_TO_EXTERNAL_ERP_APP = (() => {
-  if (!ERP_APP_URL) {
-    return false;
-  }
-
-  try {
-    return new URL(ERP_APP_URL).hostname !== ERP_HOST;
-  } catch {
-    return true;
-  }
-})();
 
 const nextConfig: NextConfig = {
   pageExtensions: ["ts", "tsx", "md", "mdx"],
@@ -50,6 +34,36 @@ const nextConfig: NextConfig = {
         destination: "/erp/login",
       },
       {
+        source: "/lite/login",
+        has: [
+          {
+            type: "host",
+            value: ERP_HOST,
+          },
+        ],
+        destination: "/erp/access",
+      },
+      {
+        source: "/standard/login",
+        has: [
+          {
+            type: "host",
+            value: ERP_HOST,
+          },
+        ],
+        destination: "/erp/access",
+      },
+      {
+        source: "/plus/login",
+        has: [
+          {
+            type: "host",
+            value: ERP_HOST,
+          },
+        ],
+        destination: "/erp/plus/login",
+      },
+      {
         source: "/demo",
         has: [
           {
@@ -74,20 +88,16 @@ const nextConfig: NextConfig = {
         destination: `${SITE_URL}/:path*`,
         permanent: true,
       },
-      ...(SHOULD_REDIRECT_TO_EXTERNAL_ERP_APP
-        ? [
-            {
-              source: "/erp",
-              destination: ERP_APP_URL,
-              permanent: false,
-            },
-            {
-              source: "/erp/:path*",
-              destination: `${ERP_APP_URL}/:path*`,
-              permanent: false,
-            },
-          ]
-        : []),
+      {
+        source: "/laspro",
+        destination: `${SITE_URL}/erp#erp`,
+        permanent: true,
+      },
+      {
+        source: "/laspro/:path*",
+        destination: `${SITE_URL}/erp#erp`,
+        permanent: true,
+      },
       {
         source: "/lasocodpro/:path*",
         has: [
@@ -96,12 +106,12 @@ const nextConfig: NextConfig = {
             value: "dataraysmart.com",
           },
         ],
-        destination: `${SITE_URL}/laspro`,
+        destination: `${SITE_URL}/erp#erp`,
         permanent: true,
       },
       {
         source: "/lasocodpro/:path*",
-        destination: "/laspro",
+        destination: "/erp#erp",
         permanent: true,
       },
       {

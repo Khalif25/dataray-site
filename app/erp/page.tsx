@@ -2,27 +2,28 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { SITE_URL } from "@/lib/site-url";
 
-const standardCapabilities = [
-  "Finance and accounting workflows",
-  "Inventory and stock management",
-  "Sales and customer management",
-  "Procurement and purchasing",
-  "HR and staff records",
-  "Projects and task management",
-  "Departmental reporting",
-  "Management dashboards",
-  "Role-based access and approvals",
-  "Multi-branch and multi-department support",
+const erpCapabilities = [
+  "Fast sales recording",
+  "Inventory and stock tracking",
+  "Product, SKU, and barcode lookup",
+  "Purchases and stock additions",
+  "Customer credit and collections",
+  "Supplier payable tracking",
+  "Daily expenses",
+  "Daily and weekly business reports",
+  "Low-stock visibility",
+  "Mobile and tablet friendly workflows",
 ];
 
-const standardFit = [
-  "Medium businesses",
-  "Universities",
-  "NGOs",
-  "Hospitals and clinics",
-  "Construction companies",
-  "Service organizations",
-  "Growing enterprises",
+const erpFit = [
+  "Retail shops",
+  "Cosmetics shops",
+  "Clothing shops",
+  "Phone and accessory shops",
+  "Supermarkets",
+  "Pharmacies",
+  "Wholesalers",
+  "Small and medium businesses",
 ];
 
 const advancedCapabilities = [
@@ -51,7 +52,7 @@ const advancedFit = [
 const comparison = [
   {
     label: "DataRay ERP",
-    value: "Enterprise operations management",
+    value: "Everyday control for small and medium businesses",
   },
   {
     label: "DataRay ERP+",
@@ -84,16 +85,16 @@ const demoSignals = [
 
 export const metadata: Metadata = {
   title: {
-    absolute:
-      "DataRay ERP | Enterprise Management and AI Intelligence Solutions",
+    absolute: "DataRay ERP and DataRay ERP+ | Business Software",
   },
   description:
-    "DataRay ERP is an upcoming enterprise management solution from DataRay Smart Solutions for operations, reporting, workflows, dashboards, and AI-powered decision intelligence.",
+    "DataRay ERP is the default for small and medium businesses. DataRay ERP+ supports larger businesses with enterprise workflows and decision intelligence.",
   keywords: [
     "DataRay ERP",
     "DataRay ERP+",
     "enterprise management system",
     "ERP software Somalia",
+    "inventory software Somalia",
     "AI-powered ERP",
     "ERP for NGOs",
     "ERP for universities",
@@ -105,9 +106,9 @@ export const metadata: Metadata = {
     canonical: `${SITE_URL}/erp`,
   },
   openGraph: {
-    title: "DataRay ERP | Enterprise Management Solutions",
+    title: "DataRay ERP and DataRay ERP+",
     description:
-      "Upcoming ERP and ERP+ tiers from DataRay Smart Solutions for structured operations and AI-enhanced enterprise intelligence.",
+      "A unified ERP product family from DataRay Smart Solutions for shops, growing organizations, and AI-enhanced enterprise intelligence.",
     url: `${SITE_URL}/erp`,
     siteName: "DataRay Smart Solutions",
     type: "website",
@@ -122,9 +123,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "DataRay ERP | Enterprise Management Solutions",
+    title: "DataRay ERP and DataRay ERP+",
     description:
-      "Structured ERP operations and AI-powered enterprise intelligence from DataRay Smart Solutions.",
+      "Two products: DataRay ERP for small and medium businesses, and DataRay ERP+ for large businesses.",
     images: [`${SITE_URL}/og-image.png`],
   },
 };
@@ -132,13 +133,16 @@ export const metadata: Metadata = {
 const erpJsonLd = {
   "@context": "https://schema.org",
   "@type": "SoftwareApplication",
-  name: "DataRay ERP+",
-  alternateName: ["DataRay ERP", "DataRay ERP Plus"],
+  name: "DataRay ERP",
+  alternateName: [
+    "DataRay ERP+",
+    "DataRay ERP Plus",
+  ],
   applicationCategory: "BusinessApplication",
   operatingSystem: "Web",
   url: `${SITE_URL}/erp`,
   description:
-    "DataRay ERP+ combines enterprise management workflows with AI-powered analytics, predictive intelligence, and executive decision dashboards.",
+    "DataRay ERP supports everyday operations for small and medium businesses. DataRay ERP+ is designed for larger organizations.",
   publisher: {
     "@type": "Organization",
     name: "DataRay Smart Solutions",
@@ -169,22 +173,22 @@ export default function ErpPage() {
               DataRay ERP
             </p>
             <h1 className="mt-5 max-w-4xl text-4xl font-semibold tracking-tight text-white sm:text-5xl lg:text-6xl">
-              Professional ERP solutions for growing organizations
+              One ERP family for retail operations, growing organizations, and
+              AI intelligence
             </h1>
             <p className="mt-6 max-w-3xl text-lg leading-8 text-slate-200">
-              DataRay ERP is an upcoming enterprise management solution from
-              DataRay Smart Solutions, designed to help businesses, NGOs,
-              universities, healthcare institutions, and public organizations
-              manage operations with greater structure, visibility, and
-              intelligence.
+              DataRay ERP is our default product for small and medium businesses.
+              DataRay ERP+ is designed for large businesses with more complex
+              operations and enterprise intelligence needs.
             </p>
             <p className="mt-5 max-w-2xl text-sm leading-7 text-slate-300">
-              Built around a two-tier model, DataRay ERP will support both
-              standard enterprise operations and advanced AI-powered decision
-              intelligence.
+              Choose the product that fits your business: everyday sales, stock,
+              and financial control with DataRay ERP, or enterprise planning
+              and decision support with DataRay ERP+.
             </p>
 
-            <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+            <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
+              <Link href="/download/android" className="inline-flex justify-center rounded-full bg-emerald-300 px-6 py-3 text-sm font-semibold text-slate-950 transition hover:bg-emerald-200">Download Android App</Link>
               <Link
                 href="/contact"
                 className="inline-flex justify-center rounded-full bg-cyan-300 px-6 py-3 text-sm font-semibold text-slate-950 transition hover:bg-cyan-200"
@@ -198,16 +202,16 @@ export default function ErpPage() {
                 View Demo
               </Link>
               <a
-                href="#erp-plus"
+                href="#erp"
                 className="inline-flex justify-center rounded-full border border-white/20 bg-white/10 px-6 py-3 text-sm font-semibold text-white transition hover:border-cyan-200/60 hover:bg-white/15"
               >
-                Explore ERP+
+                Compare Products
               </a>
               <Link
                 href="/erp/login"
                 className="inline-flex justify-center rounded-full border border-white/20 bg-white px-6 py-3 text-sm font-semibold text-slate-950 transition hover:bg-slate-100"
               >
-                Log in
+                Choose Login
               </Link>
             </div>
           </div>
@@ -216,23 +220,21 @@ export default function ErpPage() {
             <div className="flex items-start justify-between gap-5 border-b border-white/10 pb-5">
               <div>
                 <p className="text-xs font-medium uppercase tracking-[0.22em] text-cyan-200">
-                  Enterprise Console
+                  Product Family
                 </p>
                 <h2 className="mt-2 text-2xl font-semibold text-white">
-                  Operations to intelligence
+                  Two products. One trusted partner.
                 </h2>
               </div>
               <span className="rounded-full bg-cyan-300/15 px-3 py-1 text-xs font-medium text-cyan-100">
-                Upcoming
+                Two products
               </span>
             </div>
 
             <div className="mt-6 grid gap-4 sm:grid-cols-2">
               {[
-                "Finance",
-                "Procurement",
-                "HR Records",
-                "Dashboards",
+                "DataRay ERP",
+                "DataRay ERP+",
               ].map((item) => (
                 <div
                   key={item}
@@ -251,7 +253,8 @@ export default function ErpPage() {
               </p>
               <p className="mt-2 text-sm leading-7 text-slate-300">
                 Forecasting, anomaly detection, executive dashboards, and
-                natural-language business queries for larger organizations.
+                natural-language business queries sit on top of a practical ERP
+                foundation.
               </p>
             </div>
           </div>
@@ -259,16 +262,18 @@ export default function ErpPage() {
       </section>
 
       <section className="border-b border-slate-200 bg-slate-50 px-6 py-20">
-        <div className="mx-auto grid max-w-7xl gap-8 lg:grid-cols-2">
+        <div className="mx-auto grid max-w-7xl gap-8 xl:grid-cols-2">
           <TierSection
-            id="erp-standard"
-            eyebrow="DataRay ERP Standard"
-            title="Structured enterprise management for growing organizations"
-            description="DataRay ERP Standard is designed for organizations that need a reliable, integrated management system for daily operations, reporting, workflows, and departmental coordination."
-            capabilities={standardCapabilities}
-            bestFor={standardFit}
-            status="Upcoming / Available for consultation and pilot planning"
-            cta="Request ERP Consultation"
+            id="erp"
+            eyebrow="DataRay ERP"
+            title="Everyday control for small and medium businesses"
+            description="DataRay ERP is our default product for small and medium businesses. Manage sales, stock, purchasing, customer and supplier balances, expenses, and business reporting from one workspace."
+            capabilities={erpCapabilities}
+            bestFor={erpFit}
+            status="Web access available. Android app in controlled pilot review."
+            cta="Explore DataRay ERP"
+            loginHref="/erp/access"
+            loginLabel="Log in to DataRay ERP"
           />
 
           <TierSection
@@ -280,6 +285,8 @@ export default function ErpPage() {
             bestFor={advancedFit}
             status="Upcoming / Pilot-ready concept under development"
             cta="Join ERP+ Pilot Interest List"
+            loginHref="/erp/plus/login"
+            loginLabel="Log in to ERP+"
             featured
           />
         </div>
@@ -364,14 +371,13 @@ export default function ErpPage() {
               what comes next
             </h2>
             <p className="mt-5 text-base leading-8 text-slate-600">
-              Traditional ERP systems help organizations record activities.
-              DataRay ERP is designed to go further by helping organizations
-              manage operations, understand performance, detect risks, forecast
-              needs, and make better decisions.
+              DataRay ERP gives small and medium businesses clear daily control
+              over sales, stock, purchasing, and reporting. DataRay ERP+ brings
+              enterprise workflows and decision intelligence to larger businesses.
             </p>
           </div>
 
-          <div className="grid gap-5 sm:grid-cols-2">
+          <div className="grid gap-5 lg:grid-cols-2">
             {comparison.map((item) => (
               <div
                 key={item.label}
@@ -395,12 +401,13 @@ export default function ErpPage() {
             Request a Consultation
           </p>
           <h2 className="mt-4 max-w-3xl text-3xl font-semibold tracking-tight sm:text-4xl">
-            Explore the right ERP tier for your organization
+            Explore the right ERP product for your organization
           </h2>
           <p className="mt-5 max-w-3xl text-base leading-8 text-slate-300">
-            DataRay Smart Solutions is preparing pilot consultations for
-            organizations interested in structured ERP implementation, digital
-            transformation, and AI-enhanced decision intelligence.
+            Whether you are moving from manual shop records, organizing a
+            growing institution, or preparing for AI-enhanced decision
+            intelligence, DataRay can help you choose the right product and plan
+            the implementation path.
           </p>
 
           <div className="mt-8 flex flex-col gap-3 sm:flex-row">
@@ -433,6 +440,8 @@ function TierSection({
   bestFor,
   status,
   cta,
+  loginHref,
+  loginLabel,
   featured = false,
 }: {
   id?: string;
@@ -443,6 +452,8 @@ function TierSection({
   bestFor: string[];
   status: string;
   cta: string;
+  loginHref: string;
+  loginLabel: string;
   featured?: boolean;
 }) {
   return (
@@ -503,16 +514,28 @@ function TierSection({
       </div>
 
       <div className="mt-8">
-        <Link
-          href="/contact"
-          className={`inline-flex justify-center rounded-full px-6 py-3 text-sm font-semibold transition ${
-            featured
-              ? "bg-cyan-300 text-slate-950 hover:bg-cyan-200"
-              : "bg-slate-950 text-white hover:bg-slate-800"
-          }`}
-        >
-          {cta}
-        </Link>
+        <div className="flex flex-col gap-3">
+          <Link
+            href={loginHref}
+            className={`inline-flex justify-center rounded-full px-6 py-3 text-sm font-semibold transition ${
+              featured
+                ? "bg-cyan-300 text-slate-950 hover:bg-cyan-200"
+                : "bg-slate-950 text-white hover:bg-slate-800"
+            }`}
+          >
+            {loginLabel}
+          </Link>
+          <Link
+            href="/contact"
+            className={`inline-flex justify-center rounded-full border px-6 py-3 text-sm font-semibold transition ${
+              featured
+                ? "border-white/20 text-white hover:border-cyan-200/60"
+                : "border-slate-300 text-slate-900 hover:border-cyan-500 hover:text-cyan-700"
+            }`}
+          >
+            {cta}
+          </Link>
+        </div>
       </div>
     </article>
   );

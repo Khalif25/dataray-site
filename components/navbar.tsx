@@ -62,13 +62,6 @@ export default function Navbar() {
             Services
           </Link>
 
-          <Link
-            href="/laspro"
-            className="text-[15px] font-medium text-cyan-100 transition-colors duration-300 hover:text-cyan-300"
-          >
-            LasPro
-          </Link>
-
           <div
             className="group relative"
             onMouseEnter={() => setErpOpen(true)}
@@ -78,7 +71,7 @@ export default function Navbar() {
               href="/erp"
               className="inline-flex items-center gap-2 text-[15px] font-medium text-cyan-100 transition-colors duration-300 hover:text-cyan-300"
             >
-              ERP
+              DataRay ERP
               <span
                 className={`text-xs transition-transform duration-200 ${
                   erpOpen ? "rotate-180" : ""
@@ -96,10 +89,10 @@ export default function Navbar() {
               }`}
             >
               <Link
-                href="/erp#erp-standard"
+                href="/erp#erp"
                 className="block rounded-xl px-4 py-3 text-sm text-slate-300 transition hover:bg-white/5 hover:text-white"
               >
-                DataRay ERP Standard
+                DataRay ERP
               </Link>
 
               <Link
@@ -107,20 +100,6 @@ export default function Navbar() {
                 className="block rounded-xl px-4 py-3 text-sm text-slate-300 transition hover:bg-white/5 hover:text-white"
               >
                 DataRay ERP+
-              </Link>
-
-              <Link
-                href="/erp/demo"
-                className="block rounded-xl px-4 py-3 text-sm text-slate-300 transition hover:bg-white/5 hover:text-white"
-              >
-                ERP Demo
-              </Link>
-
-              <Link
-                href="/erp/login"
-                className="block rounded-xl px-4 py-3 text-sm text-slate-300 transition hover:bg-white/5 hover:text-white"
-              >
-                ERP Login
               </Link>
             </div>
           </div>
@@ -318,14 +297,6 @@ export default function Navbar() {
               Services
             </Link>
 
-            <Link
-              href="/laspro"
-              className="rounded-lg px-3 py-3 text-sm font-medium text-cyan-100 transition hover:bg-white/5 hover:text-cyan-300"
-              onClick={() => setMenuOpen(false)}
-            >
-              LasPro
-            </Link>
-
             <div className="mt-1 rounded-xl border border-white/10 bg-white/[0.03] p-2">
               <Link
                 href="/erp"
@@ -337,11 +308,11 @@ export default function Navbar() {
 
               <div className="ml-2 border-l border-white/10 pl-3">
                 <Link
-                  href="/erp#erp-standard"
+                  href="/erp#erp"
                   className="block rounded-lg px-3 py-2 text-sm text-white/75 transition hover:bg-white/5 hover:text-cyan-300"
                   onClick={() => setMenuOpen(false)}
                 >
-                  DataRay ERP Standard
+                  DataRay ERP
                 </Link>
 
                 <Link
@@ -350,22 +321,6 @@ export default function Navbar() {
                   onClick={() => setMenuOpen(false)}
                 >
                   DataRay ERP+
-                </Link>
-
-                <Link
-                  href="/erp/demo"
-                  className="block rounded-lg px-3 py-2 text-sm text-white/75 transition hover:bg-white/5 hover:text-cyan-300"
-                  onClick={() => setMenuOpen(false)}
-                >
-                  ERP Demo
-                </Link>
-
-                <Link
-                  href="/erp/login"
-                  className="block rounded-lg px-3 py-2 text-sm text-white/75 transition hover:bg-white/5 hover:text-cyan-300"
-                  onClick={() => setMenuOpen(false)}
-                >
-                  ERP Login
                 </Link>
               </div>
             </div>
