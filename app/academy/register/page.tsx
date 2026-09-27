@@ -3,10 +3,9 @@
 import { FormEvent, Suspense, useState } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
 import Link from "next/link";
-import { createClient } from "@/lib/supabase/client";
+import { createClient, isAcademyAuthConfigured } from "@/lib/supabase/client";
 
 function RegisterPageContent() {
-  const supabase = createClient();
   const router = useRouter();
   const searchParams = useSearchParams();
 
@@ -29,10 +28,15 @@ function RegisterPageContent() {
 
   const handleRegister = async (e: FormEvent) => {
     e.preventDefault();
+    if (!isAcademyAuthConfigured()) {
+      setError("Academy registration is temporarily unavailable. Please contact support.");
+      return;
+    }
     setLoading(true);
     setError("");
     setSuccess("");
 
+    const supabase = createClient();
     const { error } = await supabase.auth.signUp({
       email,
       password,
