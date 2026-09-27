@@ -188,7 +188,7 @@ export default function ErpPage() {
             </p>
 
             <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
-              <Link href="/download/android" className="inline-flex justify-center rounded-full bg-emerald-300 px-6 py-3 text-sm font-semibold text-slate-950 transition hover:bg-emerald-200">Android Pilot Status</Link>
+              <Link href="/download/android" className="inline-flex justify-center rounded-full bg-emerald-300 px-6 py-3 text-sm font-semibold text-slate-950 transition hover:bg-emerald-200">Download Android App</Link>
               <Link
                 href="/contact"
                 className="inline-flex justify-center rounded-full bg-cyan-300 px-6 py-3 text-sm font-semibold text-slate-950 transition hover:bg-cyan-200"
@@ -270,7 +270,7 @@ export default function ErpPage() {
             description="DataRay ERP is our default product for small and medium businesses. Manage sales, stock, purchasing, customer and supplier balances, expenses, and business reporting from one workspace."
             capabilities={erpCapabilities}
             bestFor={erpFit}
-            status="Web access available. Android app in controlled pilot review."
+            status="Web access available. Android app available for the controlled pilot."
             cta="Explore DataRay ERP"
             loginHref="/erp/access"
             loginLabel="Log in to DataRay ERP"
