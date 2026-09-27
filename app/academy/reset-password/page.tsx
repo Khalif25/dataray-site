@@ -2,10 +2,9 @@
 
 import { FormEvent, useState } from "react";
 import Link from "next/link";
-import { createClient } from "@/lib/supabase/client";
+import { createClient, isAcademyAuthConfigured } from "@/lib/supabase/client";
 
 export default function ResetPasswordPage() {
-  const supabase = createClient();
 
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
@@ -15,6 +14,10 @@ export default function ResetPasswordPage() {
 
   const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
+    if (!isAcademyAuthConfigured()) {
+      setError("Academy password reset is temporarily unavailable. Please contact support.");
+      return;
+    }
     setLoading(true);
     setMessage("");
     setError("");
@@ -25,6 +28,7 @@ export default function ResetPasswordPage() {
       return;
     }
 
+    const supabase = createClient();
     const { error } = await supabase.auth.updateUser({
       password,
     });

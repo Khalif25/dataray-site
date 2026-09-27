@@ -3,10 +3,9 @@
 import { FormEvent, Suspense, useState } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
 import Link from "next/link";
-import { createClient } from "@/lib/supabase/client";
+import { createClient, isAcademyAuthConfigured } from "@/lib/supabase/client";
 
 function LoginPageContent() {
-  const supabase = createClient();
   const router = useRouter();
   const searchParams = useSearchParams();
 
@@ -20,9 +19,14 @@ function LoginPageContent() {
 
   const handleLogin = async (e: FormEvent) => {
     e.preventDefault();
+    if (!isAcademyAuthConfigured()) {
+      setError("Academy sign-in is temporarily unavailable. Please contact support.");
+      return;
+    }
     setLoading(true);
     setError("");
 
+    const supabase = createClient();
     const { error } = await supabase.auth.signInWithPassword({
       email,
       password,
