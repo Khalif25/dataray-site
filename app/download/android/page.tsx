@@ -1,8 +1,8 @@
 import Link from "next/link";
 
-const version = "0.4.5";
+const version = "0.4.6";
 const apkPath = `/downloads/dataray-erp-app-${version}.apk`;
-const checksum = "77fb6f935ad90d390d263abbd09ea06f2bdfef93ac2c7275c0f4b18f2ff79309";
+const checksum = "8ef9da787577e5b4965a0c0915bf6016d5eb363d45c4abb6c296dc0235ddbe3f";
 
 export const metadata = {
   title: "Download DataRay ERP App for Android",
