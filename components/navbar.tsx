@@ -96,7 +96,7 @@ export default function Navbar() {
               </Link>
 
               <Link
-                href="/erp#erp-plus"
+                href="/erp/plus/login"
                 className="block rounded-xl px-4 py-3 text-sm text-slate-300 transition hover:bg-white/5 hover:text-white"
               >
                 DataRay ERP+
@@ -316,7 +316,7 @@ export default function Navbar() {
                 </Link>
 
                 <Link
-                  href="/erp#erp-plus"
+                  href="/erp/plus/login"
                   className="block rounded-lg px-3 py-2 text-sm text-white/75 transition hover:bg-white/5 hover:text-cyan-300"
                   onClick={() => setMenuOpen(false)}
                 >

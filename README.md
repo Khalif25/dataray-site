@@ -35,14 +35,25 @@ The easiest way to deploy your Next.js app is to use the [Vercel Platform](https
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
 
-## ERP app link
+## ERP login links
 
-By default, `https://www.dataraysmart.com/erp` redirects to `https://erp.dataraysmart.com`.
+`https://www.dataraysmart.com/erp` is the product overview. The ERP+ navigation
+entry and login buttons open `/erp/plus/login`; its sign-in button opens the
+existing production Odoo login at `https://erp.dataraysmart.com/web/login`.
+Credentials are entered on the ERP host, not collected by the public website.
+The separate DataRay ERP small-business app still uses
+`https://app.dataraysmart.com/login`.
 
-Use `ERP_APP_URL` in the production environment only if the ERP app needs to move to a different host.
+Set `ERP_PLUS_APP_URL` in Vercel only when changing the ERP+ backend host.
+`NEXT_PUBLIC_ERP_PLUS_APP_URL` is supported as a compatibility fallback.
+Both a base URL and a complete `/web/login` URL are accepted; HTTPS is required.
+Missing or invalid values use the existing production login, never the contact form.
+Redeploy the website after changing this build-time configuration.
 
 ```bash
-ERP_APP_URL=https://your-custom-erp-app-url.example
+ERP_PLUS_APP_URL=https://erp.dataraysmart.com
+npm run test:erp-login
 ```
 
-`NEXT_PUBLIC_ERP_APP_URL` is also supported for compatibility with the existing app-link pattern.
+Updating these links does not deploy or upgrade Odoo. Do not point production at
+the local Odoo 20 release candidate until its backend release is approved.

@@ -184,6 +184,14 @@ export default function HomePage() {
                   >
                     View tier
                   </Link>
+                  {tier.id === "erp-plus" && (
+                    <Link
+                      href="/erp/plus/login"
+                      className="ml-4 mt-6 inline-flex py-2.5 text-sm font-semibold text-cyan-700 transition hover:text-cyan-900"
+                    >
+                      Log in to ERP+
+                    </Link>
+                  )}
                 </article>
               ))}
             </div>

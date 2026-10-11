@@ -18,7 +18,7 @@ export const navLinks = [
     label: "DataRay ERP",
     children: [
       { href: "/erp#erp", label: "DataRay ERP" },
-      { href: "/erp#erp-plus", label: "DataRay ERP+" },
+      { href: "/erp/plus/login", label: "DataRay ERP+" },
     ],
   },
   { href: "/insights", label: "Insights" },

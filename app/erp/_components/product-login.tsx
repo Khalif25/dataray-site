@@ -1,7 +1,10 @@
 import Link from "next/link";
+import { getErpPlusLoginUrl } from "@/lib/erp-login-url";
+
 const erpUrl = "https://app.dataraysmart.com/login";
-const plusValue = process.env.ERP_PLUS_APP_URL || process.env.NEXT_PUBLIC_ERP_PLUS_APP_URL || "";
-const plusUrl = plusValue.startsWith("https://") ? `${plusValue.replace(/\/$/, "")}/web/login` : "";
+const plusUrl = getErpPlusLoginUrl(
+  process.env.ERP_PLUS_APP_URL || process.env.NEXT_PUBLIC_ERP_PLUS_APP_URL,
+);
 export type ErpLoginProduct = {
   slug: "erp" | "plus"; name: string; eyebrow: string; route: string;
   audience: string; description: string; loginUrl: string; primaryLabel: string;
@@ -13,7 +16,7 @@ export const erpLoginProducts: ErpLoginProduct[] = [
     loginUrl: erpUrl, primaryLabel: "Sign in to DataRay ERP" },
   { slug: "plus", name: "DataRay ERP+", eyebrow: "Large businesses", route: "/erp/plus/login",
     audience: "Large businesses, institutions, and complex organizations",
-    description: "Enterprise operations and decision intelligence. Contact DataRay to discuss access and implementation.",
+    description: "Sign in to your organization's DataRay ERP+ workspace.",
     loginUrl: plusUrl, primaryLabel: "Sign in to DataRay ERP+" },
 ];
 export function getErpLoginProduct(slug: ErpLoginProduct["slug"]) {
@@ -27,7 +30,7 @@ export function ProductLoginPage({ product }: { product: ErpLoginProduct }) {
       <p className="mt-6 text-lg leading-8 text-slate-200">{product.description}</p>
       <p className="mt-4 text-slate-300">{product.audience}</p>
       <div className="mt-8 flex flex-wrap gap-3">
-        {product.loginUrl ? <a href={product.loginUrl} className="rounded-full bg-cyan-300 px-6 py-3 font-semibold text-slate-950">{product.primaryLabel}</a> : <Link href="/contact" className="rounded-full bg-cyan-300 px-6 py-3 font-semibold text-slate-950">Request ERP+ access</Link>}
+        <a href={product.loginUrl} className="rounded-full bg-cyan-300 px-6 py-3 font-semibold text-slate-950">{product.primaryLabel}</a>
         <Link href="/erp/login" className="rounded-full border border-white/30 px-6 py-3">Choose product</Link>
         {product.slug === "erp" && <Link href="/download/android" className="rounded-full border border-emerald-300/50 px-6 py-3 text-emerald-200">Download Android App</Link>}
       </div>
