@@ -65,7 +65,7 @@ export default function ContactPage() {
       <div className="mx-auto max-w-6xl">
         <section className="max-w-4xl">
           <p className="text-sm font-medium uppercase tracking-[0.2em] text-blue-500">
-            Contact DataRay
+            Contact DataRay AI Technologies
           </p>
 
           <h1 className="mt-4 text-4xl font-semibold tracking-tight text-black sm:text-5xl">
@@ -266,7 +266,7 @@ export default function ContactPage() {
                   onChange={(e) =>
                     setForm({ ...form, message: e.target.value })
                   }
-                  placeholder="Describe your project, challenge, or what you would like DataRay to help with."
+                  placeholder="Describe your project, challenge, or what you would like DataRay AI Technologies to help with."
                   className="mt-2 w-full rounded-xl border border-neutral-200 px-4 py-3 outline-none transition focus:border-black/20"
                   required
                 />

@@ -12,7 +12,7 @@ export default function ResearchSurveyPage() {
           </h1>
 
           <p className="mt-6 text-lg leading-8 text-slate-600">
-            DataRay Smart Solutions is conducting a research survey to understand
+            DataRay AI Technologies is conducting a research survey to understand
             how organizations use market intelligence, strategic research,
             analytics, and decision intelligence in leadership and strategy.
           </p>
@@ -49,7 +49,7 @@ export default function ResearchSurveyPage() {
             <p className="text-sm font-medium text-slate-500">Outcome</p>
 
             <p className="mt-3 text-sm leading-7 text-slate-700">
-              A DataRay research report analyzing how organizations use
+              A DataRay AI Technologies research report analyzing how organizations use
               strategic intelligence and data-driven insight.
             </p>
           </div>

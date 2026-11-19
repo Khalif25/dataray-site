@@ -196,7 +196,7 @@ export default function SomaliSocialStabilityAIPage() {
               </h2>
 
               <p className="mt-3 text-slate-600">
-                This initiative reflects DataRay’s broader mission of using AI,
+                This initiative reflects DataRay AI Technologies&apos; broader mission of using AI,
                 data, and intelligence systems to support stronger institutions
                 and better decision-making.
               </p>

@@ -8,8 +8,9 @@ export const size = {
 
 export const contentType = "image/png";
 
-export default async function Image({ params }: { params: { slug: string } }) {
-  const article = articles.find((a) => a.slug === params.slug);
+export default async function Image({ params }: { params: Promise<{ slug: string }> }) {
+  const { slug } = await params;
+  const article = articles.find((a) => a.slug === slug);
 
   if (!article) {
     return new ImageResponse(
@@ -26,7 +27,7 @@ export default async function Image({ params }: { params: { slug: string } }) {
             fontSize: 60,
           }}
         >
-          DataRay
+          DataRay AI Technologies
         </div>
       ),
       size
@@ -47,7 +48,8 @@ export default async function Image({ params }: { params: { slug: string } }) {
           color: "white",
         }}
       >
-        <div style={{ fontSize: 28, opacity: 0.7 }}>DataRay Insights</div>
+        <div style={{ fontSize: 28, opacity: 0.7 }}>DataRay AI Technologies</div>
+        <div style={{ fontSize: 24, opacity: 0.7, marginTop: 12 }}>DataRay Insights</div>
 
         <div
           style={{

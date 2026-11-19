@@ -47,10 +47,10 @@ export default function ServicesPage() {
         <div className="mx-auto max-w-7xl">
           <p className="eyebrow">Services</p>
           <h1 className="mt-4 max-w-4xl text-4xl font-semibold tracking-tight text-slate-950 sm:text-5xl">
-            DataRay services for organizations that need clarity, intelligence, and practical execution
+            DataRay AI Technologies services for organizations that need clarity, intelligence, and practical execution
           </h1>
           <p className="mt-6 max-w-3xl text-lg leading-8 text-slate-600">
-            DataRay provides AI advisory, dashboard systems, analytics, predictive
+            DataRay AI Technologies provides AI advisory, dashboard systems, analytics, predictive
             modeling, research intelligence, and professional training to help
             organizations make stronger decisions and build long-term capability.
           </p>
@@ -127,7 +127,7 @@ export default function ServicesPage() {
             Looking for a partner in AI, analytics, dashboards, or research intelligence?
           </h2>
           <p className="mt-5 max-w-2xl text-base leading-8 text-slate-300">
-            DataRay works with organizations that want practical systems, sharper insight,
+            DataRay AI Technologies works with organizations that want practical systems, sharper insight,
             and stronger decision-making capacity.
           </p>
 

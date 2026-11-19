@@ -25,13 +25,13 @@ export async function POST(req: Request) {
     }
 
     await resend.emails.send({
-      from: "DataRay Website <onboarding@resend.dev>",
+      from: "DataRay AI Technologies Website <onboarding@resend.dev>",
       to: ["abdinur.khalif25@gmail.com"],
-      subject: "New DataRay weekly subscription",
+      subject: "New DataRay AI Technologies weekly subscription",
       html: `
         <h2>New weekly subscription</h2>
         <p><strong>Email:</strong> ${email}</p>
-        <p>This subscriber joined the DataRay weekly intelligence brief.</p>
+        <p>This subscriber joined the DataRay AI Technologies weekly intelligence brief.</p>
       `,
     });
 

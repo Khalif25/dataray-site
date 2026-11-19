@@ -8,7 +8,7 @@ export default function Footer() {
 
         {/* Brand */}
         <div>
-          <p className="text-lg font-semibold text-white">DataRay</p>
+          <p className="text-lg font-semibold text-white">{siteConfig.name}</p>
 
           <p className="mt-2 max-w-md text-sm leading-7 text-slate-400">
             AI, analytics, dashboards, and decision intelligence for
@@ -40,6 +40,10 @@ export default function Footer() {
 
           <Link href="/about" className="hover:text-cyan-300 transition">
             About
+          </Link>
+
+          <Link href="/about/founder" className="hover:text-cyan-300 transition">
+            Meet the Founder
           </Link>
 
           <Link href="/contact" className="hover:text-cyan-300 transition">

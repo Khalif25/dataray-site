@@ -244,7 +244,7 @@ export default function HealthcareDashboardPage() {
             Healthcare Performance & Disease Trends Dashboard
           </h1>
           <p className="mt-4 max-w-3xl text-base leading-7 text-slate-300 sm:text-lg">
-            This DataRay project demonstrates how healthcare institutions can use
+            This DataRay AI Technologies project demonstrates how healthcare institutions can use
             interactive dashboard systems to monitor operational performance,
             disease burden, and service utilization in a clear and
             decision-ready format.

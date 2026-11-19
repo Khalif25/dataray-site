@@ -76,7 +76,7 @@ export default function Hero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.55, delay: 0.22 }}
           >
-            DataRay helps businesses, institutions, and public-sector teams turn
+            DataRay AI Technologies helps businesses, institutions, and public-sector teams turn
             complex data into executive dashboards, strategic research,
             predictive insight, and practical AI solutions.
           </motion.p>

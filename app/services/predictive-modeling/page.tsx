@@ -12,7 +12,7 @@ export default function Predictive_Modeling_Page() {
             Predictive Modeling
           </h1>
           <p className="mt-6 max-w-3xl text-lg leading-8 text-slate-600">
-            DataRay builds predictive models that help organizations forecast
+            DataRay AI Technologies builds predictive models that help organizations forecast
             trends, estimate risk, and make proactive decisions. We use
             statistical and machine learning methods to turn historical data into
             forward-looking insight.
@@ -31,7 +31,7 @@ export default function Predictive_Modeling_Page() {
               attention should be focused.
             </p>
             <p className="mt-4 leading-8 text-slate-600">
-              DataRay develops practical models for forecasting, risk scoring,
+              DataRay AI Technologies develops practical models for forecasting, risk scoring,
               classification, and scenario analysis. Our approach emphasizes
               reliability, interpretability, and business relevance rather than
               technical complexity for its own sake.
@@ -106,7 +106,7 @@ export default function Predictive_Modeling_Page() {
             <div className="mt-8 rounded-2xl bg-white p-5">
               <h4 className="font-semibold">Need predictive insight?</h4>
               <p className="mt-2 text-sm leading-7 text-slate-600">
-                Let DataRay help you build forward-looking models that support smarter planning.
+                Let DataRay AI Technologies help you build forward-looking models that support smarter planning.
               </p>
               <Link
                 href="/contact"

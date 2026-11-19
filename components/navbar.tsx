@@ -16,8 +16,8 @@ export default function Navbar() {
       <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-4 sm:px-6">
         <Link
           href="/"
-          className="flex items-center gap-4 shrink-0"
-          aria-label="DataRay Smart Solutions home"
+          className="flex min-w-0 items-center gap-3 sm:gap-4"
+          aria-label="DataRay AI Technologies home"
         >
           <div
             className="relative flex h-[66px] w-[66px] items-center justify-center overflow-hidden rounded-full
@@ -29,7 +29,7 @@ export default function Navbar() {
 
             <Image
               src="/premium_logo.png"
-              alt="DataRay logo"
+              alt="DataRay AI Technologies logo"
               fill
               priority
               className="object-cover scale-[1.9] translate-y-[2%] contrast-125 saturate-130"
@@ -37,12 +37,12 @@ export default function Navbar() {
             />
           </div>
 
-          <div className="flex flex-col leading-none">
-            <span className="text-[1.6rem] font-semibold tracking-[-0.02em] text-white">
+          <div className="flex min-w-0 flex-col leading-none">
+            <span className="text-[1.6rem] font-semibold text-white">
               DataRay
             </span>
-            <span className="mt-1 text-[0.72rem] font-medium uppercase tracking-[0.28em] text-cyan-100/75">
-              Smart Solutions
+            <span className="mt-1 text-[0.72rem] font-medium uppercase text-cyan-100/75">
+              AI Technologies
             </span>
           </div>
         </Link>
@@ -206,6 +206,12 @@ export default function Navbar() {
             className="group relative"
             onMouseEnter={() => setAboutOpen(true)}
             onMouseLeave={() => setAboutOpen(false)}
+            onFocus={() => setAboutOpen(true)}
+            onBlur={(event) => {
+              if (!event.currentTarget.contains(event.relatedTarget as Node | null)) {
+                setAboutOpen(false);
+              }
+            }}
           >
             <Link
               href="/about"
@@ -233,6 +239,13 @@ export default function Navbar() {
                 className="block rounded-xl px-4 py-3 text-sm text-slate-300 transition hover:bg-white/5 hover:text-white"
               >
                 About
+              </Link>
+
+              <Link
+                href="/about/founder"
+                className="block rounded-xl px-4 py-3 text-sm text-slate-300 transition hover:bg-white/5 hover:text-white"
+              >
+                Meet the Founder
               </Link>
 
               <Link
@@ -397,6 +410,14 @@ export default function Navbar() {
                   onClick={() => setMenuOpen(false)}
                 >
                   Somalia AI &amp; Data Literacy Initiative
+                </Link>
+
+                <Link
+                  href="/about/founder"
+                  className="block rounded-lg px-3 py-2 text-sm text-white/75 transition hover:bg-white/5 hover:text-cyan-300"
+                  onClick={() => setMenuOpen(false)}
+                >
+                  Meet the Founder
                 </Link>
 
                 <Link

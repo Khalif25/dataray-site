@@ -18,18 +18,18 @@ export async function generateMetadata({
 
   if (!article) {
     return {
-      title: "Article not found | DataRay Smart Solutions",
+      title: "Article not found",
     };
   }
 
   return {
-    title: `${article.title} | DataRay Smart Solutions`,
+    title: article.title,
     description: article.excerpt,
     openGraph: {
       title: article.title,
       description: article.excerpt,
       url: `${SITE_URL}/insights/${article.slug}`,
-      siteName: "DataRay Smart Solutions",
+      siteName: "DataRay AI Technologies",
       images: [
         {
           url: `${SITE_URL}${article.image}`,
@@ -68,12 +68,12 @@ export default async function InsightArticlePage({
     image: [`${SITE_URL}${article.image}`],
     author: {
       "@type": "Organization",
-      name: "DataRay Smart Solutions",
+      name: "DataRay AI Technologies",
       alternateName: "DataRay",
     },
     publisher: {
       "@type": "Organization",
-      name: "DataRay Smart Solutions",
+      name: "DataRay AI Technologies",
       alternateName: "DataRay",
       url: SITE_URL,
       logo: `${SITE_URL}/premium_logo.png`,

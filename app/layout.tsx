@@ -10,15 +10,15 @@ import { SpeedInsights } from "@vercel/speed-insights/next";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
-  applicationName: "DataRay Smart Solutions",
+  applicationName: "DataRay AI Technologies",
 
   title: {
-    default: "DataRay Smart Solutions",
-    template: "%s | DataRay Smart Solutions",
+    default: "DataRay AI Technologies",
+    template: "%s | DataRay AI Technologies",
   },
 
   description:
-    "DataRay provides AI-driven analytics, dashboards, market intelligence, and decision-support systems for organizations.",
+    "DataRay AI Technologies provides AI-driven analytics, dashboards, market intelligence, and decision-support systems for organizations.",
 
   keywords: [
     "AI analytics",
@@ -30,9 +30,9 @@ export const metadata: Metadata = {
     "machine learning analytics",
   ],
 
-  authors: [{ name: "DataRay Smart Solutions" }],
-  creator: "DataRay Smart Solutions",
-  publisher: "DataRay Smart Solutions",
+  authors: [{ name: "DataRay AI Technologies" }],
+  creator: "DataRay AI Technologies",
+  publisher: "DataRay AI Technologies",
   manifest: "/manifest.webmanifest",
   icons: {
     icon: [
@@ -46,17 +46,17 @@ export const metadata: Metadata = {
   },
 
   openGraph: {
-    title: "DataRay Smart Solutions",
+    title: "DataRay AI Technologies",
     description:
       "AI-driven analytics, dashboards, research insights, and strategic intelligence.",
     url: SITE_URL,
-    siteName: "DataRay Smart Solutions",
+    siteName: "DataRay AI Technologies",
     images: [
       {
-        url: `${SITE_URL}/og-image.png`,
+        url: `${SITE_URL}/og-image.png?v=ai-technologies`,
         width: 1200,
         height: 630,
-        alt: "DataRay Smart Solutions",
+        alt: "DataRay AI Technologies",
       },
     ],
     locale: "en_US",
@@ -65,10 +65,10 @@ export const metadata: Metadata = {
 
   twitter: {
     card: "summary_large_image",
-    title: "DataRay Smart Solutions",
+    title: "DataRay AI Technologies",
     description:
       "AI-driven analytics, dashboards, and strategic intelligence.",
-    images: [`${SITE_URL}/og-image.png`],
+    images: [`${SITE_URL}/og-image.png?v=ai-technologies`],
   },
 };
 

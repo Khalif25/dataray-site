@@ -12,7 +12,7 @@ export default function AI_Strategy_Page() {
             AI Strategy & Advisory
           </h1>
           <p className="mt-6 max-w-3xl text-lg leading-8 text-slate-600">
-            DataRay helps organizations move from AI interest to practical
+            DataRay AI Technologies helps organizations move from AI interest to practical
             implementation. We design clear adoption roadmaps, identify the most
             valuable use cases, and align AI initiatives with operational goals,
             data readiness, and long-term organizational capacity.
@@ -28,7 +28,7 @@ export default function AI_Strategy_Page() {
               Many organizations want to use artificial intelligence, but few
               have a structured path for doing so. Without a clear strategy, AI
               efforts often become disconnected pilots that fail to deliver
-              meaningful business value. DataRay provides strategic guidance to
+              meaningful business value. DataRay AI Technologies provides strategic guidance to
               help organizations adopt AI in a practical, responsible, and
               results-oriented way.
             </p>
@@ -107,7 +107,7 @@ export default function AI_Strategy_Page() {
             <div className="mt-8 rounded-2xl bg-white p-5">
               <h4 className="font-semibold">Need a strategy session?</h4>
               <p className="mt-2 text-sm leading-7 text-slate-600">
-                Discuss your goals, priorities, and opportunities with DataRay.
+                Discuss your goals, priorities, and opportunities with DataRay AI Technologies.
               </p>
               <Link
                 href="/contact"

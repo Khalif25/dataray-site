@@ -8,11 +8,11 @@ export default function ProjectsPage() {
         <p className="eyebrow">Demonstrations</p>
 
         <h1 className="mt-4 text-4xl font-semibold tracking-tight text-slate-950 sm:text-5xl">
-          Real-World DataRay Demonstrations
+          Real-World DataRay AI Technologies Demonstrations
         </h1>
 
         <p className="mt-6 max-w-3xl text-lg text-slate-600">
-          These demonstrations illustrate how DataRay applies analytics,
+          These demonstrations illustrate how DataRay AI Technologies applies analytics,
           artificial intelligence, and data systems to generate actionable
           intelligence for organizations.
         </p>

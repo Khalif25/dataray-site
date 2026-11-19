@@ -12,7 +12,7 @@ export default function Training_Programs_Page() {
             Training Programs
           </h1>
           <p className="mt-6 max-w-3xl text-lg leading-8 text-slate-600">
-            DataRay delivers professional training programs in AI, analytics,
+            DataRay AI Technologies delivers professional training programs in AI, analytics,
             dashboards, and data literacy. We help organizations build internal
             capability so teams can understand, use, and apply data more
             effectively in real-world work.
@@ -26,7 +26,7 @@ export default function Training_Programs_Page() {
             <h2 className="text-2xl font-semibold">Overview</h2>
             <p className="mt-4 leading-8 text-slate-600">
               Technology is only valuable when people know how to use it
-              effectively. DataRay offers practical training designed to improve
+              effectively. DataRay AI Technologies offers practical training designed to improve
               data confidence, analytical capability, and modern decision-making
               skills across teams and institutions.
             </p>
@@ -106,7 +106,7 @@ export default function Training_Programs_Page() {
             <div className="mt-8 rounded-2xl bg-white p-5">
               <h4 className="font-semibold">Need a training program?</h4>
               <p className="mt-2 text-sm leading-7 text-slate-600">
-                Work with DataRay to build data, analytics, and AI capability inside your organization.
+                Work with DataRay AI Technologies to build data, analytics, and AI capability inside your organization.
               </p>
               <Link
                 href="/contact"

@@ -12,7 +12,7 @@ export default function Advanced_Analytics_Page() {
             Advanced Analytics
           </h1>
           <p className="mt-6 max-w-3xl text-lg leading-8 text-slate-600">
-            DataRay helps organizations uncover patterns, trends, risks, and
+            DataRay AI Technologies helps organizations uncover patterns, trends, risks, and
             opportunities hidden inside their data. Our advanced analytics work
             transforms raw information into insight that supports better
             operational, strategic, and policy decisions.
@@ -27,7 +27,7 @@ export default function Advanced_Analytics_Page() {
             <p className="mt-4 leading-8 text-slate-600">
               Reporting tells you what happened. Advanced analytics helps explain
               why it happened, what influences it, and what actions may improve
-              future outcomes. DataRay applies statistical analysis, data
+              future outcomes. DataRay AI Technologies applies statistical analysis, data
               science methods, and structured analytical workflows to solve
               real-world organizational problems.
             </p>
@@ -107,7 +107,7 @@ export default function Advanced_Analytics_Page() {
             <div className="mt-8 rounded-2xl bg-white p-5">
               <h4 className="font-semibold">Need deeper insight?</h4>
               <p className="mt-2 text-sm leading-7 text-slate-600">
-                Work with DataRay to turn your data into high-value analytical intelligence.
+                Work with DataRay AI Technologies to turn your data into high-value analytical intelligence.
               </p>
               <Link
                 href="/contact"

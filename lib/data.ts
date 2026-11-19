@@ -1,8 +1,8 @@
 export const siteConfig = {
-  name: "DataRay Smart Solutions",
+  name: "DataRay AI Technologies",
   tagline: "AI-driven analytics, dashboards, and strategic intelligence",
   description:
-    "DataRay helps businesses, institutions, and public-sector teams turn complex data into dashboards, predictive insight, and decision-ready intelligence.",
+    "DataRay AI Technologies helps businesses, institutions, and public-sector teams turn complex data into dashboards, predictive insight, and decision-ready intelligence.",
   contact: {
     general: "info@dataraysmart.com",
     founder: "abdinur.khalif@dataraysmart.com",
@@ -31,7 +31,11 @@ export const navLinks = [
       { href: "/academy/programs", label: "Training Programs" },
     ],
   },
-  { href: "/about", label: "About" },
+  {
+    href: "/about",
+    label: "About",
+    children: [{ href: "/about/founder", label: "Meet the Founder" }],
+  },
   { href: "/contact", label: "Contact" },
 ];
 

@@ -30,7 +30,7 @@ export default function NewsletterSignup() {
       }
 
       setStatus("success");
-      setMessage("You have successfully subscribed to weekly DataRay insights.");
+      setMessage("You have successfully subscribed to weekly DataRay AI Technologies insights.");
       setEmail("");
     } catch {
       setStatus("error");
@@ -47,7 +47,7 @@ export default function NewsletterSignup() {
           <div className="mt-4 grid gap-10 lg:grid-cols-[1fr_0.9fr] lg:items-center">
             <div>
               <h2 className="text-3xl font-semibold tracking-tight sm:text-4xl">
-                Subscribe to weekly DataRay insights
+                Subscribe to weekly DataRay AI Technologies insights
               </h2>
 
               <p className="mt-5 max-w-2xl text-base leading-8 text-slate-300">

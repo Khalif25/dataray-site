@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import NewsletterSignup from "@/components/newsletter-signup";
 import Hero from "@/components/hero";
+import FounderSpotlight from "@/components/founder-spotlight";
 import ServiceCard from "@/components/service-card";
 import { SITE_URL } from "@/lib/site-url";
 
@@ -79,8 +80,8 @@ const homeJsonLd = {
     {
       "@type": "WebSite",
       "@id": `${SITE_URL}/#website`,
-      name: "DataRay Smart Solutions",
-      alternateName: ["DataRay", "DataRay Smart", "DataRay ERP"],
+      name: "DataRay AI Technologies",
+      alternateName: ["DataRay AI", "DataRay"],
       url: `${SITE_URL}/`,
       inLanguage: "en",
       publisher: {
@@ -90,8 +91,9 @@ const homeJsonLd = {
     {
       "@type": "Organization",
       "@id": `${SITE_URL}/#organization`,
-      name: "DataRay Smart Solutions",
-      alternateName: ["DataRay", "DataRay Smart"],
+      name: "DataRay AI Technologies",
+      alternateName: ["DataRay AI", "DataRay"],
+      founder: { "@id": `${SITE_URL}/about/founder#person` },
       url: `${SITE_URL}/`,
       logo: {
         "@type": "ImageObject",
@@ -198,18 +200,24 @@ export default function HomePage() {
           </div>
         </section>
 
+        <section className="border-t border-slate-200 bg-white px-6 py-16 sm:py-20">
+          <div className="mx-auto max-w-6xl">
+            <FounderSpotlight />
+          </div>
+        </section>
+
         {/* Services Section */}
         <section className="px-4 py-16 sm:px-6 sm:py-20 lg:py-24">
           <div className="mx-auto max-w-7xl">
             <p className="eyebrow">Services</p>
 
             <h2 className="mt-4 max-w-3xl text-3xl font-semibold tracking-tight text-slate-950 sm:text-5xl">
-              What DataRay helps organizations do
+              What DataRay AI Technologies helps organizations do
             </h2>
 
             <p className="mt-5 max-w-2xl text-base leading-8 text-slate-600">
               From analytics and AI strategy to dashboards, research, and training,
-              DataRay is designed to operate like a modern intelligence firm.
+              DataRay AI Technologies is designed to operate like a modern intelligence firm.
             </p>
 
             <div className="mt-12 grid gap-6 md:grid-cols-2 xl:grid-cols-3">
@@ -241,11 +249,11 @@ export default function HomePage() {
               <p className="eyebrow">Decision Intelligence Showcase</p>
 
               <h2 className="mt-4 max-w-3xl text-3xl font-semibold tracking-tight text-slate-950 sm:text-5xl">
-                See how DataRay turns data into executive-ready decisions
+                See how DataRay AI Technologies turns data into executive-ready decisions
               </h2>
 
               <p className="mt-5 max-w-2xl text-base leading-8 text-slate-600">
-                DataRay combines analytics, visualization, research, and practical AI
+                DataRay AI Technologies combines analytics, visualization, research, and practical AI
                 into systems that help leaders monitor performance, identify risks,
                 interpret change, and act with confidence.
               </p>
@@ -388,7 +396,7 @@ export default function HomePage() {
               </h2>
 
               <p className="mt-5 max-w-2xl text-base leading-8 text-slate-600">
-                DataRay’s services are designed to adapt across public institutions,
+                DataRay AI Technologies&apos; services are designed to adapt across public institutions,
                 development organizations, businesses, academic environments, and healthcare systems.
                 Each sector faces different decision pressures, reporting demands, and data
                 challenges — and each requires the right mix of analytics, dashboards,
@@ -507,16 +515,16 @@ export default function HomePage() {
           </div>
         </section>
 
-        {/* Why DataRay Section */}
+        {/* Why DataRay AI Technologies Section */}
         <section className="border-t border-slate-200 bg-white px-4 py-16 sm:px-6 sm:py-20 lg:py-24">
           <div className="mx-auto grid max-w-7xl gap-12 lg:grid-cols-2 lg:items-start">
             <div>
-              <p className="eyebrow">Why DataRay</p>
+              <p className="eyebrow">Why DataRay AI Technologies</p>
               <h2 className="mt-4 text-3xl font-semibold tracking-tight text-slate-950 sm:text-4xl">
                 Built for decision-makers who need clarity, not noise
               </h2>
               <p className="mt-5 max-w-2xl text-base leading-8 text-slate-600">
-                DataRay combines analytics, research, and practical AI into systems that
+                DataRay AI Technologies combines analytics, research, and practical AI into systems that
                 help organizations make stronger decisions, communicate insights clearly,
                 and act with confidence.
               </p>
@@ -569,7 +577,7 @@ export default function HomePage() {
                   </h2>
 
                   <p className="mt-5 max-w-2xl text-base leading-8 text-slate-600">
-                    DataRay is conducting a research survey to understand how organizations
+                    DataRay AI Technologies is conducting a research survey to understand how organizations
                     use market intelligence, strategic research, and data-driven insight in
                     decision-making.
                   </p>
@@ -616,7 +624,7 @@ export default function HomePage() {
                     </div>
 
                     <p className="mt-3 text-sm leading-7 text-slate-600">
-                      Responses are being collected for DataRay’s first public research report.
+                      Responses are being collected for DataRay AI Technologies&apos; first public research report.
                     </p>
                   </div>
 

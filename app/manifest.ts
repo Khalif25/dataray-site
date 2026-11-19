@@ -2,10 +2,10 @@ import type { MetadataRoute } from "next";
 
 export default function manifest(): MetadataRoute.Manifest {
   return {
-    name: "DataRay Smart Solutions",
-    short_name: "DataRay",
+    name: "DataRay AI Technologies",
+    short_name: "DataRay AI",
     description:
-      "AI-driven analytics, dashboards, enterprise systems, and decision intelligence from DataRay Smart Solutions.",
+      "AI-driven analytics, dashboards, enterprise systems, and decision intelligence from DataRay AI Technologies.",
     start_url: "/",
     scope: "/",
     display: "standalone",

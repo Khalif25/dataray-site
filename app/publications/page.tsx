@@ -10,7 +10,7 @@ export default function PublicationsPage() {
 
         <p className="mt-5 max-w-3xl text-base leading-8 text-slate-600">
           Research papers, analytical reports, and technical studies published
-          by DataRay. Our publications focus on artificial intelligence, data
+          by DataRay AI Technologies. Our publications focus on artificial intelligence, data
           science, healthcare analytics, and strategic intelligence for emerging
           economies.
         </p>

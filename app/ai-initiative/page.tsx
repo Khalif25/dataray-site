@@ -9,12 +9,12 @@ export const metadata: Metadata = {
     description:
       "Building the foundation for Somalia’s digital future through AI and data literacy.",
     url: "https://www.dataraysmart.com/ai-initiative",
-    siteName: "DataRay Smart Solutions",
+    siteName: "DataRay AI Technologies",
     images: [
       {
-        url: "https://www.dataraysmart.com/opengraph-image.png",
-        width: 1200,
-        height: 630,
+        url: "https://www.dataraysmart.com/opengraph-image.png?v=ai-technologies",
+        width: 1024,
+        height: 1536,
         alt: "SADLI Poster",
       },
     ],
@@ -25,7 +25,7 @@ export const metadata: Metadata = {
     title: "Somalia AI & Data Literacy Initiative (SADLI)",
     description:
       "Building the foundation for Somalia’s digital future through AI and data literacy.",
-    images: ["https://www.dataraysmart.com/opengraph-image.png"],
+    images: ["https://www.dataraysmart.com/opengraph-image.png?v=ai-technologies"],
   },
 };
 export default function AIInitiativePage() {
@@ -392,7 +392,7 @@ export default function AIInitiativePage() {
         <SectionTitle>Institutional support and delivery model</SectionTitle>
         <p className="mt-6 max-w-4xl text-base leading-8 text-neutral-700">
           Training programs will be delivered through DataRay Academy, with
-          technical support from DataRay Smart Solutions.
+          technical support from DataRay AI Technologies.
         </p>
 
         <div className="mt-10 grid gap-6 rounded-2xl border border-neutral-200 p-6 sm:grid-cols-2">

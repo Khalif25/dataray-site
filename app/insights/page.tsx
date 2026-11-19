@@ -12,7 +12,7 @@ export default function InsightsPage() {
         <SectionHeading
           eyebrow="Insights"
           title="Research, analysis, and strategic perspective"
-          description="Explore DataRay articles on AI, analytics, dashboards, market intelligence, and decision-making."
+          description="Explore DataRay AI Technologies articles on AI, analytics, dashboards, market intelligence, and decision-making."
         />
 
         <div className="mt-12">

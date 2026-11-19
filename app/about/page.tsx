@@ -1,10 +1,12 @@
+import FounderSpotlight from "@/components/founder-spotlight";
+
 export default function AboutPage() {
   return (
     <main className="px-6 py-20">
       <div className="mx-auto max-w-6xl">
         <section className="max-w-4xl">
        <p className="text-sm font-semibold text-blue-600">
-  About DataRay
+  About DataRay AI Technologies
 </p>
 
 <h2 className="mt-4 text-2xl font-semibold tracking-tight text-black">
@@ -12,7 +14,7 @@ export default function AboutPage() {
 </h2>
 
 <p className="mt-4 leading-8 text-neutral-600">
-  Founded in 2024, DataRay Smart Solutions is an AI-driven analytics and data intelligence company focused on transforming how organizations use data to make decisions. We work with governments, NGOs, healthcare institutions, and businesses to design systems that turn complex data into clear, actionable insight.
+  Founded in 2024, DataRay AI Technologies is an AI-driven analytics and data intelligence company focused on transforming how organizations use data to make decisions. We work with governments, NGOs, healthcare institutions, and businesses to design systems that turn complex data into clear, actionable insight.
 </p>
 
 <p className="mt-4 leading-8 text-neutral-600">
@@ -20,24 +22,28 @@ export default function AboutPage() {
 </p>
 
 <p className="mt-4 leading-8 text-neutral-600">
-  At the core of DataRay is a belief that technology alone is not enough. Sustainable impact requires both intelligent systems and the people who can use them. Through our national AI and data literacy initiative, we are developing a new generation of data-literate professionals while building the analytical infrastructure needed for long-term transformation.
+  At the core of DataRay AI Technologies is a belief that technology alone is not enough. Sustainable impact requires both intelligent systems and the people who can use them. Through our national AI and data literacy initiative, we are developing a new generation of data-literate professionals while building the analytical infrastructure needed for long-term transformation.
 </p>
 
 <p className="mt-4 leading-8 text-neutral-600">
-  By connecting AI, analytics, research, and human capacity, DataRay is building the foundation for smarter, more informed decision-making in Somalia and across Africa.
+  By connecting AI, analytics, research, and human capacity, DataRay AI Technologies is building the foundation for smarter, more informed decision-making in Somalia and across Africa.
 </p>
+        </section>
+
+        <section id="founder" className="mt-16 border-y border-slate-200 py-12 sm:py-16">
+          <FounderSpotlight />
         </section>
 
         <section className="mt-20 grid gap-8 lg:grid-cols-2">
           <div className="rounded-3xl border border-black/5 bg-white p-8 shadow-sm">
             <p className="text-sm font-medium uppercase tracking-[0.2em] text-blue-500">
-              What DataRay Is
+              What DataRay AI Technologies Is
             </p>
             <h2 className="mt-4 text-2xl font-semibold tracking-tight text-black">
               A strategic analytics and intelligence partner
             </h2>
             <p className="mt-4 leading-8 text-neutral-600">
-             DataRay is built to help organizations move beyond raw data and fragmented reporting toward integrated, decision-ready intelligence. 
+             DataRay AI Technologies is built to help organizations move beyond raw data and fragmented reporting toward integrated, decision-ready intelligence.
              We design and deliver AI-powered analytics systems, interactive dashboards, and research-driven insights that support real-world decision-making. 
              Our approach combines technology, analytical thinking, and human capacity development to ensure that data is not only processed, 
              but understood, trusted, and applied effectively. By connecting data, tools, and people, we enable institutions to make smarter, faster,
@@ -80,7 +86,7 @@ export default function AboutPage() {
 
           <div className="rounded-3xl border border-black/5 bg-white p-8 shadow-sm">
             <p className="text-sm font-medium uppercase tracking-[0.2em] text-blue-500">
-              Why DataRay Is Different
+              Why DataRay AI Technologies Is Different
             </p>
             <h2 className="mt-4 text-2xl font-semibold tracking-tight text-black">
               Building intelligence systems,and the people who power them.
@@ -88,7 +94,7 @@ export default function AboutPage() {
             </h2>
             <p className="mt-4 leading-8 text-neutral-600">
 
-              DataRay goes beyond traditional analytics by combining technology with human capital development. 
+              DataRay AI Technologies goes beyond traditional analytics by combining technology with human capital development.
               While many firms focus only on tools or reporting, we build end-to-end intelligence systems supported by trained talent and real-world application. 
             Through our integrated model-linking AI solutions, research, and national capacity building,we ensure that data systems are not only delivered,
              but actively used, scaled, and embedded within organizations. The result is sustainable, long-term decision intelligence rather than short-term outputs.
@@ -122,17 +128,17 @@ export default function AboutPage() {
 
         <section className="mt-20 text-center">
           <h2 className="text-3xl font-semibold tracking-tight text-black sm:text-4xl">
-            Build smarter systems with DataRay
+            Build smarter systems with DataRay AI Technologies
           </h2>
           <p className="mx-auto mt-4 max-w-2xl text-lg leading-8 text-neutral-600">
             Whether you need analytics, dashboards, research, or AI strategy,
-            DataRay is designed to help you turn complexity into clarity.
+            DataRay AI Technologies is designed to help you turn complexity into clarity.
           </p>
           <a
             href="/contact"
             className="mt-8 inline-flex rounded-full bg-black px-6 py-3 text-sm font-medium text-white transition hover:bg-neutral-800"
           >
-            Contact DataRay
+            Contact DataRay AI Technologies
           </a>
         </section>
       </div>

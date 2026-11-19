@@ -12,7 +12,7 @@ export default function Executive_Dashboards_Page() {
             Executive Dashboards
           </h1>
           <p className="mt-6 max-w-3xl text-lg leading-8 text-slate-600">
-            DataRay designs executive dashboards that turn raw organizational
+            DataRay AI Technologies designs executive dashboards that turn raw organizational
             data into clear, interactive, decision-ready intelligence. We help
             leaders monitor performance, identify risks, and track priorities in
             one place.
@@ -27,7 +27,7 @@ export default function Executive_Dashboards_Page() {
             <p className="mt-4 leading-8 text-slate-600">
               Executive teams often struggle to make decisions quickly because
               critical information is scattered across spreadsheets, reports, and
-              disconnected systems. DataRay builds dashboard systems that bring
+              disconnected systems. DataRay AI Technologies builds dashboard systems that bring
               together the most important metrics, trends, and operational
               signals into a single visual environment.
             </p>
@@ -107,7 +107,7 @@ export default function Executive_Dashboards_Page() {
             <div className="mt-8 rounded-2xl bg-white p-5">
               <h4 className="font-semibold">Need a dashboard system?</h4>
               <p className="mt-2 text-sm leading-7 text-slate-600">
-                Let DataRay help you turn reporting into practical executive intelligence.
+                Let DataRay AI Technologies help you turn reporting into practical executive intelligence.
               </p>
               <Link
                 href="/contact"

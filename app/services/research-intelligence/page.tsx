@@ -12,7 +12,7 @@ export default function Research_Intelligence_Page() {
             Research & Market Intelligence
           </h1>
           <p className="mt-6 max-w-3xl text-lg leading-8 text-slate-600">
-            DataRay produces evidence-based research, market intelligence, and
+            DataRay AI Technologies produces evidence-based research, market intelligence, and
             sector analysis to help organizations understand environments, assess
             opportunities, and make stronger strategic decisions.
           </p>
@@ -25,7 +25,7 @@ export default function Research_Intelligence_Page() {
             <h2 className="text-2xl font-semibold">Overview</h2>
             <p className="mt-4 leading-8 text-slate-600">
               Strong decisions require more than assumptions. They require
-              evidence, context, and structured analysis. DataRay supports
+              evidence, context, and structured analysis. DataRay AI Technologies supports
               organizations with research and intelligence services that clarify
               trends, identify risks, and strengthen planning across business,
               institutional, and development settings.
@@ -104,7 +104,7 @@ export default function Research_Intelligence_Page() {
             <div className="mt-8 rounded-2xl bg-white p-5">
               <h4 className="font-semibold">Need research support?</h4>
               <p className="mt-2 text-sm leading-7 text-slate-600">
-                Partner with DataRay for structured, decision-ready intelligence.
+                Partner with DataRay AI Technologies for structured, decision-ready intelligence.
               </p>
               <Link
                 href="/contact"

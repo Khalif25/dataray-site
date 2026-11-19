@@ -108,16 +108,16 @@ export const metadata: Metadata = {
   openGraph: {
     title: "DataRay ERP and DataRay ERP+",
     description:
-      "A unified ERP product family from DataRay Smart Solutions for shops, growing organizations, and AI-enhanced enterprise intelligence.",
+      "A unified ERP product family from DataRay AI Technologies for shops, growing organizations, and AI-enhanced enterprise intelligence.",
     url: `${SITE_URL}/erp`,
-    siteName: "DataRay Smart Solutions",
+    siteName: "DataRay AI Technologies",
     type: "website",
     images: [
       {
-        url: `${SITE_URL}/og-image.png`,
+        url: `${SITE_URL}/og-image.png?v=ai-technologies`,
         width: 1200,
         height: 630,
-        alt: "DataRay Smart Solutions",
+        alt: "DataRay AI Technologies",
       },
     ],
   },
@@ -126,7 +126,7 @@ export const metadata: Metadata = {
     title: "DataRay ERP and DataRay ERP+",
     description:
       "Two products: DataRay ERP for small and medium businesses, and DataRay ERP+ for large businesses.",
-    images: [`${SITE_URL}/og-image.png`],
+    images: [`${SITE_URL}/og-image.png?v=ai-technologies`],
   },
 };
 
@@ -145,7 +145,7 @@ const erpJsonLd = {
     "DataRay ERP supports everyday operations for small and medium businesses. DataRay ERP+ is designed for larger organizations.",
   publisher: {
     "@type": "Organization",
-    name: "DataRay Smart Solutions",
+    name: "DataRay AI Technologies",
     url: `${SITE_URL}/`,
     logo: {
       "@type": "ImageObject",
@@ -406,7 +406,7 @@ export default function ErpPage() {
           <p className="mt-5 max-w-3xl text-base leading-8 text-slate-300">
             Whether you are moving from manual shop records, organizing a
             growing institution, or preparing for AI-enhanced decision
-            intelligence, DataRay can help you choose the right product and plan
+            intelligence, DataRay AI Technologies can help you choose the right product and plan
             the implementation path.
           </p>
 

@@ -21,7 +21,7 @@ export default function AndroidDownloadPage() {
           DataRay ERP App {version}
         </h1>
         <p className="mt-6 text-lg leading-8 text-slate-200">
-          The signed Android app is available for a controlled client pilot. It supports Android 8.0 or later. Install it only from this official DataRay domain and keep the web ERP available during the pilot.
+          The signed Android app is available for a controlled client pilot. It supports Android 8.0 or later. Install it only from this official DataRay AI Technologies domain and keep the web ERP available during the pilot.
         </p>
 
         <div className="mt-8 rounded-3xl border border-white/15 bg-white/5 p-7 shadow-[0_24px_80px_rgba(0,0,0,0.28)]">

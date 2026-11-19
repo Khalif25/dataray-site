@@ -24,13 +24,13 @@ export async function POST(request: Request) {
     }
 
     const { data, error } = await resend.emails.send({
-      from: "DataRay <onboarding@resend.dev>",
+      from: "DataRay AI Technologies <onboarding@resend.dev>",
       to: ["abdinur.khalif25@gmail.com"],
-      subject: `New DataRay inquiry: ${service}`,
+      subject: `New DataRay AI Technologies inquiry: ${service}`,
       replyTo: email,
       html: `
         <div style="font-family: Arial, sans-serif; line-height: 1.6;">
-          <h2>New DataRay Inquiry</h2>
+          <h2>New DataRay AI Technologies Inquiry</h2>
           <p><strong>Name:</strong> ${name}</p>
           <p><strong>Email:</strong> ${email}</p>
           <p><strong>Organization:</strong> ${organization || "Not provided"}</p>

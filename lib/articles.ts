@@ -23,7 +23,7 @@ export const articles: Article[] = [
   category: "Future of Work",
   excerpt:
     "Artificial intelligence is reshaping labor markets across the world, and Africa must prepare its workforce with the technical, analytical, and human-centered skills needed to thrive in the AI-driven economy.",
-  author: "DataRay",
+  author: "DataRay AI Technologies",
   date: "2026-03-11",
   image: "/articles/future-of-jobs-ai-africa.png",
 
@@ -86,7 +86,7 @@ export const articles: Article[] = [
     category: "Dashboards",
     excerpt:
       "The most common reasons dashboards become decorative instead of decision tools.",
-    author: "DataRay",
+    author: "DataRay AI Technologies",
     date: "2026-03-09",
     image:  "/articles/ai-competitive-advantage.png",
     content: [
@@ -94,7 +94,7 @@ export const articles: Article[] = [
       "A dashboard becomes weak when it contains too many metrics, unclear priorities, and little connection to operational action.",
       "The best dashboards are designed around the decisions leaders actually need to make, not around every possible number available in the data.",
       "This means dashboard design should start with management questions, reporting cadence, and operational accountability.",
-      "For DataRay, a useful dashboard is not simply informative. It must help leaders notice change, assess risk, and act with greater confidence.",
+      "For DataRay AI Technologies, a useful dashboard is not simply informative. It must help leaders notice change, assess risk, and act with greater confidence.",
     ],
   },
   {
@@ -103,7 +103,7 @@ export const articles: Article[] = [
     category: "AI Strategy",
     excerpt:
       "Many organizations invest in AI tools but fail to build the systems needed to turn them into real advantage.",
-    author: "DataRay",
+    author: "DataRay AI Technologies",
     date: "2026-01-15",
     image:  "/articles/dashboards-fail.png",
     content: [
@@ -111,7 +111,7 @@ export const articles: Article[] = [
       "One of the most common mistakes is focusing too heavily on tools rather than workflows. AI tools can produce impressive results, but without integration into real decision processes, those results rarely influence outcomes.",
       "Another major mistake is ignoring data quality. Organizations often rush into machine learning projects without first improving data collection, structure, and governance.",
       "Leadership engagement is also critical. AI initiatives that remain isolated within technical teams rarely produce strategic value. Leaders must understand how insights influence operational and strategic decisions.",
-      "For DataRay, the most successful AI projects combine technology, analytics, dashboards, and leadership decision systems into one coherent structure.",
+      "For DataRay AI Technologies, the most successful AI projects combine technology, analytics, dashboards, and leadership decision systems into one coherent structure.",
     ],
   },
 ];

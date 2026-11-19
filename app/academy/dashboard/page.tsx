@@ -7,7 +7,7 @@ import { academyCourses } from "@/lib/data";
 const WHATSAPP_NUMBER = "252907736110";
 
 function buildWhatsAppLink(courseTitle: string, courseSlug: string) {
-  const message = `Hello DataRay, I want to complete payment / send proof for ${courseTitle} (${courseSlug}).`;
+  const message = `Hello DataRay AI Technologies, I want to complete payment / send proof for ${courseTitle} (${courseSlug}).`;
   return `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
 }
 
