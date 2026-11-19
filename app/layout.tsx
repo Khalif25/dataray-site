@@ -2,11 +2,9 @@ import type { Metadata } from "next";
 import "./globals.css";
 import Navbar from "@/components/navbar";
 import Footer from "@/components/footer";
-import { GoogleAnalytics } from "@next/third-parties/google";
+import SiteTelemetry from "@/components/site-telemetry";
 import { SITE_URL } from "@/lib/site-url";
 
-import { Analytics } from "@vercel/analytics/react";
-import { SpeedInsights } from "@vercel/speed-insights/next";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
@@ -89,14 +87,7 @@ export default function RootLayout({
 
         <Footer />
 
-        {/* Google Analytics */}
-        <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GA_ID || ""} />
-
-        {/* Web analytics */}
-        <Analytics />
-
-        {/* Speed insights */}
-        <SpeedInsights />
+        <SiteTelemetry />
       </body>
     </html>
   );

@@ -12,6 +12,7 @@ export default function ContactPage() {
     organization: "",
     service: "AI Strategy & Advisory",
     message: "",
+    website: "",
   });
 
   const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">(
@@ -51,6 +52,7 @@ export default function ContactPage() {
         organization: "",
         service: "AI Strategy & Advisory",
         message: "",
+        website: "",
       });
     } catch (error) {
       setStatus("error");
@@ -183,6 +185,7 @@ export default function ContactPage() {
             </p>
 
             <form onSubmit={handleSubmit} className="mt-8 space-y-6">
+              <input aria-hidden="true" tabIndex={-1} autoComplete="off" name="website" value={form.website} onChange={e => setForm({ ...form, website: e.target.value })} className="hidden" />
               <div className="grid gap-6 sm:grid-cols-2">
                 <div>
                   <label className="block text-sm font-medium text-neutral-700">

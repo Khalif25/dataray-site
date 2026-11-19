@@ -4,6 +4,7 @@ import { FormEvent, useState } from "react";
 
 export default function NewsletterSignup() {
   const [email, setEmail] = useState("");
+  const [website, setWebsite] = useState("");
   const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
   const [message, setMessage] = useState("");
 
@@ -18,7 +19,7 @@ export default function NewsletterSignup() {
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify({ email }),
+        body: JSON.stringify({ email, website }),
       });
 
       const data = await res.json();
@@ -58,6 +59,7 @@ export default function NewsletterSignup() {
             </div>
 
             <form onSubmit={handleSubmit} className="space-y-4">
+              <input aria-hidden="true" tabIndex={-1} autoComplete="off" name="website" value={website} onChange={e => setWebsite(e.target.value)} className="hidden" />
               <div>
                 <label htmlFor="email" className="mb-2 block text-sm font-medium text-slate-200">
                   Email address
